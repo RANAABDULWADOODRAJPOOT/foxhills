@@ -1,0 +1,121 @@
+.options{
+    background:blue !important;
+}
+.menu-item{
+font-family: Tw Cen MT, Helvetica, sans-serif !important;
+}
+
+#filterbarhover{
+font-family: Questrial, sans-serif !important;
+}
+
+
+.pdg-10 {
+    padding: 10px;
+  }
+  
+
+
+  .settings-menu {
+    justify-content: left;
+    display: flex;
+  }
+  @media only screen and (min-width: 768px) {
+    .settings-menu {
+      justify-content: right;
+    }
+  }
+  .settings-menu > div, .settings-menu > select {
+    display: flex;
+  }
+
+.mrg-5 {
+    margin: 5px;
+  }
+  
+  .mrg-top-5 {
+    margin-top: 5px;
+  }
+  
+  .mrg-right-5 {
+    margin-right: 5px;
+  }
+  
+  .mrg-bottom-5 {
+    margin-bottom: 5px;
+  }
+  
+  .mrg-left-5 {
+    margin-left: 5px;
+  }
+  
+  .mrg-10 {
+    margin: 10px;
+  }
+  
+  .mrg-top-10 {
+    margin-top: 10px;
+  }
+  
+  .mrg-right-10 {
+    margin-right: 10px;
+  }
+  
+  .mrg-bottom-10 {
+    margin-bottom: 10px;
+  }
+  
+  .mrg-left-10 {
+    margin-left: 10px;
+  }
+  
+  .mrg-20 {
+    margin: 20px;
+  }
+  
+  .mrg-top-20 {
+    margin-top: 20px;
+  }
+  
+  .mrg-right-20 {
+    margin-right: 20px;
+  }
+  
+  .mrg-bottom-20 {
+    margin-bottom: 20px;
+  }
+  
+  .mrg-left-20 {
+    margin-left: 20px;
+  }
+.cf-group:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+.pw100 {
+    width: 100%;
+  }
+
+  .f12 {
+    font-size: 12px;
+  }
+
+  .lh16 {
+    line-height: 16px;
+  }
+
+  .brd-top {
+    border-top: 1px solid #333333;
+  }
+
+
+  .text-muted:hover{
+color:white !important;
+  }
+
+  
+
+  
