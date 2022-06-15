@@ -200,7 +200,7 @@
 	</picture>
 	<span class="override animated text-left pdg-20">
 	<h3 class="white normalcase mrg-top-auto">{!! $userproduct->productname !!}</h3>
-	<p class="white f16 lh20">{!! $userproduct->Description !!}</p>
+	<p class="white f16 lh20 text-truncate">{!! $userproduct->Description !!}</p>
 	<p class="f16 lh20 white mrg-top-10">View details ›</p>
 	</span>
 	<span class="tag">exclusive</span>
@@ -214,7 +214,7 @@
 	<li class="feature left">{!!  $title  !!}</li>
 	<li class="feature left"><span class="separator"></span>{!! $userproduct->Bedrooms !!} bd</li><li class="feature left"><span class="separator"></span>{!! $userproduct->length !!} SQ FT</li> </ul>
 	<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-	<span class="white">AED {!! $userproduct->Price !!}</span>
+	<span class="white">AED {!! number_format($userproduct->Price, 3, ',', ','); !!}</span>
 	</p>
 	</div>
 	</a>
@@ -248,8 +248,18 @@
 	<div class="wrapper cf-group">
 	<div class="mrg-top-60 mrg-bottom-60 pdg-left-10 pdg-right-10 pdg-ignore-desktop f20 lh28">
 	<div class="pw100 cf-group text-left">
-	<div class="column-66">
-	<div class="f20 lh28 mrg-bottom-20"><div itemscope="true" itemtype="https://schema.org/FAQPage"><p><br></p><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">What do you need to know about villas in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>There are numerous non-freehold and freehold villas in Dubai that are available for local and expat ownership respectively. One needs to first understand what kind of villa community they wish to be part of first and whether they are looking to rent or own a villa. Most villa communities are gated communities with high security protocols to ensure safety and security of the neighbourhood and children. Most villas also come with a garden and pool, or both. There are some villas such as those on the Palm Jumeirah, that also offer private beach access. Dubai is home to a wide variety of villa communities that will cater to each and every lifestyle. For example, the Dubai Hills Estate and Jumeirah Golf Estates villas are excellent for those that enjoy a golf-lifestyle and close proximity to schools and healthcare facilities. While purchasing a villa, you have to take into consideration the service charges payable for the area every year and the potential maintenance costs, especially for a villa with a pool or garden. Almost all villa communities are also pet-friendly, with pet-friendly outlets around as well. Another thing you may want to consider is home and contents insurance. For those that potentially want to upgrade your villa, you will need to take permissions from the developer before carrying out the renovation project.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">How affordable is living in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Despite having a high standard of living, Dubai offers you the convenience and ease unlike any other top city in the world. The affordability of living in Dubai varies greatly in terms of lifestyle. That being said, there are a number of communities one can invest in depending on the budget set out.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">Can foreigners buy a villa in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Yes, foreigners/expats can buy, rent or sell a villa in any of Dubai's freehold communities ever since 2002. Depending on the income invested, foreigners/expats can also get a residence visa.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">What are the top villa communities in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>The top villa communities in Dubai are Dubai Hills Estate, Palm Jumeirah, Emirates Hills, Arabian Ranches, Al Barari, Jumeirah Golf Estates, Meadows and Jumeirah Islands.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">Which are the best areas for family living in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>The best areas for family living would include Dubai Hills Estate, Palm Jumeirah, Arabian Ranches, Al Barari, Meadows and Jumeirah Islands. We have picked these areas due to the ample availability of schools, clinics/hospitals and easy availability for basic amenities. These areas also have several parks and walkways that are safe for children and are pet-friendly too.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">What are the top reasons to invest in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Some of the top reasons to invest in villas in Dubai include low taxes on property, a high rate of occupancy which ensures high returns for investors, a high-standard of living, and a convenient lifestyle with easy access to top-notch facilities from hospitals to gyms.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">Is it worth buying a house in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Depending on your short and long-term financial goals, Dubai can be a very good place to buy a home to either live in or invest. To protect yourself against fluctuating rent prices yearly, it may be a good idea to purchase a home if you plan to be in the city from medium to long-term. The property investor visa, no property taxes, high rental yields and relatively low service charges also make Dubai a very attractive place to purchase a home.</p></div></div></div></div></div>
+	<div>
+	<div class="f20 lh28 mrg-bottom-20"><div itemscope="true" itemtype="https://schema.org/FAQPage"><p><br></p>
+		<div class="faq-item active" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+			<h3 itemprop="name">What do you need to know about villas in Dubai?</h3>
+			<div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+				<div itemprop="text">
+					<p>There are numerous non-freehold and freehold villas in Dubai that are available for local and expat ownership respectively. One needs to first understand what kind of villa community they wish to be part of first and whether they are looking to rent or own a villa. Most villa communities are gated communities with high security protocols to ensure safety and security of the neighbourhood and children. Most villas also come with a garden and pool, or both. There are some villas such as those on the Palm Jumeirah, that also offer private beach access. Dubai is home to a wide variety of villa communities that will cater to each and every lifestyle. For example, the Dubai Hills Estate and Jumeirah Golf Estates villas are excellent for those that enjoy a golf-lifestyle and close proximity to schools and healthcare facilities. While purchasing a villa, you have to take into consideration the service charges payable for the area every year and the potential maintenance costs, especially for a villa with a pool or garden. Almost all villa communities are also pet-friendly, with pet-friendly outlets around as well. Another thing you may want to consider is home and contents insurance. For those that potentially want to upgrade your villa, you will need to take permissions from the developer before carrying out the renovation project.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">How affordable is living in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Despite having a high standard of living, Dubai offers you the convenience and ease unlike any other top city in the world. The affordability of living in Dubai varies greatly in terms of lifestyle. That being said, there are a number of communities one can invest in depending on the budget set out.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">Can foreigners buy a villa in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Yes, foreigners/expats can buy, rent or sell a villa in any of Dubai's freehold communities ever since 2002. Depending on the income invested, foreigners/expats can also get a residence visa.</p>
+				</div>
+			</div>
+		</div>
+		<div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question">
+			<h3 itemprop="name">What are the top villa communities in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>The top villa communities in Dubai are Dubai Hills Estate, Palm Jumeirah, Emirates Hills, Arabian Ranches, Al Barari, Jumeirah Golf Estates, Meadows and Jumeirah Islands.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">Which are the best areas for family living in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>The best areas for family living would include Dubai Hills Estate, Palm Jumeirah, Arabian Ranches, Al Barari, Meadows and Jumeirah Islands. We have picked these areas due to the ample availability of schools, clinics/hospitals and easy availability for basic amenities. These areas also have several parks and walkways that are safe for children and are pet-friendly too.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">What are the top reasons to invest in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Some of the top reasons to invest in villas in Dubai include low taxes on property, a high rate of occupancy which ensures high returns for investors, a high-standard of living, and a convenient lifestyle with easy access to top-notch facilities from hospitals to gyms.</p></div></div></div><div class="faq-item" itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"><h3 itemprop="name">Is it worth buying a house in Dubai?</h3><div itemscope="true" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Depending on your short and long-term financial goals, Dubai can be a very good place to buy a home to either live in or invest. To protect yourself against fluctuating rent prices yearly, it may be a good idea to purchase a home if you plan to be in the city from medium to long-term. The property investor visa, no property taxes, high rental yields and relatively low service charges also make Dubai a very attractive place to purchase a home.</p></div></div></div></div></div>
 	<!-- <button class="btn open-enquiry">request information</button> -->
 	</div>
 	<!-- <div class="mrg-top-20 lh28">
@@ -286,11 +296,11 @@
 	<div class="column-33 article">
 	<article id="article_936" class="list-item no-brd mrg-auto">
 	<a href="{!! url('Journal/'.$Journal->id ) !!}" title="Read article">
-	<img src="<?php echo asset("assets/allimages/$Journal->picture")?>" alt="The Menu: Breaking bread with Solemann Haddad" class="full-width-responsive" loading="lazy" width="377" height="227">
+	<img style="max-height: 225px;" src="<?php echo asset("assets/allimages/$Journal->picture")?>" alt="The Menu: Breaking bread with Solemann Haddad" class="full-width-responsive" loading="lazy" width="377" height="227">
 	<div class="text-left">
 	<p class="f14 mrg-top-20">{!! $Journal->Publish_date !!}</p>
 	<h2 class="tw light-silver hover uppercase mrg-top-5 mrg-bottom-20 title-eq tablet-text-left">{!! $Journal->journal_title !!}</h2>
-	<p class="f16 lh20 mrg-bottom-30 text-left">{!! substr($Journal->description,0,300) !!}</p>
+	<p class="f16 lh20 mrg-bottom-30 text-left">{!! substr($Journal->description,0,150) !!}</p>
 	</div>
 	</a>
 	</article>
@@ -312,13 +322,9 @@
      
 
 		$(".faq-item").click(function(){
-			if ($(this).hasClass("active")) {
-				$(this).removeClass("active");
-			}
-			else{
-				$(this).addClass("active");
-
-			}
+			$(".faq-item").removeClass("active");
+			$(this).addClass("active");
+			
 		});
 
 		$( document ).ready(function() {

@@ -79,7 +79,7 @@
 			<div class="mrg-bottom-5">
 			<span class="f16 lh20 uppercase silver">{!! App\Models\AvailableProperty::getPropertyType($userProducts->Category) !!}</span>
 			</div>
-			<div class="f20 lh24 uppercase white">AED {!! $userProducts->Price !!}</div>
+			<div class="f20 lh24 uppercase white">AED {!! number_format($userProducts->Price, 3, ',', ','); !!}</div>
 			</div>
 			<div class="pdg-bottom-10">
 			<div class="silver f14">

@@ -1,16 +1,9 @@
 @extends('lux_habitate')
-
-
 @section('content')
-
-
 @if( ! Agent::isMobile())
 @include('partials.homeScreenFilter')
 @endif
-
-
-
-<section class="container-fluid">
+<section class="container-fluid text-center">
 	<div class="row">
 		<div  class="col-12 text-center">
 			<img style="z-index: -1; " class="img-fluid w-100 {!!  (Agent::isMobile()) ? 'bannerheight' : '' !!}"  src="<?php echo asset("assets/allimages/salesbanner.jpg")?>" >
@@ -35,9 +28,9 @@
 <section style="{!!  (Agent::isMobile()) ? 'margin-top:60px;' : 'margin-top:100px;' !!}" class="container-fluid ">
 	<div class="row  justify-content-center">
 		<div class="col-md-10 col-12">
-			<div class="col-md-6 col-12 p-0">
-				<h5 class="standard mt-md-5 mt-4">OUR PORTFOLIO</h5>
-				<p class="text-grey my-3">By acting as a filter for the best properties on the market we attract buyers who place the quality of the home at the centre of their search. By turning down almost as much work as we take on, we keep the standards of our offering high. This quality control means that buyers trust our ability to show them only what’s worth seeing</p>
+			<div class="col-md-12 col-12 p-0 text-center">
+				<h5 class="standard mt-md-5 mt-4 ">OUR PORTFOLIO</h5>
+				<p class="text-grey my-3 text-center">By acting as a filter for the best properties on the market we attract buyers who place the quality of the home at the centre of their search. By turning down almost as much work as we take on, we keep the standards of our offering high. This quality control means that buyers trust our ability to show them only what’s worth seeing</p>
 			</div>
 			<div class="row my-5">
 				<div class="col-md-6 col-12">
@@ -79,7 +72,7 @@
 				<div class="col-md-6  col-12 my-md-5 my-2">
 					<h2 class="text-light">Our Team</h2>
 					<P class="text-grey mt-3">Our Luxury Sales Specialists will offer you the best of services and expertise to keep in mind before buying or selling your property. Each of them specialise in at least one area in Dubai and know it from a hyperlocal level. Their networking and negotiating skills will ensure that you get the results you want - whether it's a sound property investment, purchasing a property or getting the right price for your property.</P>
-					<button style="border: 1px solid white; border-radius: 10px; color: BLACK  ;" class="btn btn-md my-3">FIND AN AGENT</button>
+					<button style="border: 1px solid white; border-radius: 10px; color: BLACK;background:white;" class="btn btn-md my-3">FIND AN AGENT</button>
 				</div>
 				<div class="col-md-6  col-12 my-md-5 my-2">
 					<div style="border:2px solid #222" >
@@ -112,7 +105,7 @@
 			</div>
 			@endforeach
 		</div>
-			<div style="border-top: 1px solid #999 ;border-bottom: 1px solid #999 "  class="col-md-10 col-12 py-4 p-md-0 mt-2">
+			<div style="border-top: 1px solid #999 ;border-bottom: 1px solid #999 "  class="col-md-12 col-12 py-4 p-md-0 mt-2">
 				<h5 class="standard mt-3">Global Network</h5>
 				<p class="text-grey my-3">When your home is represented by us it benefits from the world’s largest luxury real estate network and gains exclusive access to highly qualified international clientele.</p>
 				<div class="row my-md-5">
@@ -134,12 +127,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-10 col-12 p-md-0 my-5">
+			<div class="col-md-12 col-12 p-md-0 my-5">
 				<h5 class="standard">Track record</h5>
 				<p class="text-grey my-3">We have the experience to sell your property as we’ve done it before. Since we started in 2009, we have represented thousands of properties in the more prestigious areas of the country. We have seen a huge amount of change: in the market, in the way that property is sold and, most importantly, in the way that people want to live. Our experience, insight and leadership allows us to understand the modern buyer better than any other agent.</p>
 			</div>
 			
-			<div class="col-md-10 offset-md-1 mb-5 p-md-0 col-12">
+			<div class="col-md-12 mb-5 p-md-0 col-12">
 				<h5 class="standard">Looking to sell an exceptional home?</h5>
 				<p class="text-grey my-3">Then we would love to hear from you. We'll match you with a Specialist that knows your area best. Fill out the form below, or call +971 44 55 08 88 to get started right away.</p>
 				<button style="background-color:white; border: 1px solid white; border-radius: 10px; color: black  ;" class="btn btn-md">Request a market appraisal</button>
