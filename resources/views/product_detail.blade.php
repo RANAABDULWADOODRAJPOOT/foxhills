@@ -333,13 +333,10 @@
 									<div class="col-md-6 col-12">
 										<form method="POST" action="{{url('sale/save-request-from-user')}}" enctype="multipart/form-data">
 											@csrf
-											<div class="input-group">
-												<input type="tel" class="form-control">
-												<span class="input-group-addon">Tel</span>
-											  </div>
+											
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="name" placeholder="Full Name" required>
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="email" name="email" placeholder="Email" required>
-											<input  style="height: 40px;border: none; " class="form-group w-100 " type="tel" name="phone" placeholder="Phone Number" required>
+											<input  style="height: 40px;border: none; " class="form-group w-100 " type="tel" name="phone" placeholder="Phone Number" id="mobile-number" required>
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="description" placeholder="I'd like to have more information about the property ID GS-S-36262" required>
                                             @if(str_contains( App\Models\AvailableProperty::getPropertyType($userProducts->Category) ,"Sale"))
                                            <input  style="height: 40px;border: none; " class="form-group w-100 " type="hidden" name="user_request_type" value="buy">

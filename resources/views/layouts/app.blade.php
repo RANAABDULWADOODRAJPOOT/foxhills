@@ -8,9 +8,16 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
    
+    <link rel="stylesheet" href="https://www.jquery-az.com/jquery/css/intlTelInput/intlTelInput.css">
+    <link rel="stylesheet" href="https://www.jquery-az.com/jquery/css/intlTelInput/demo.css">
+    <script src="https://www.jquery-az.com/jquery/js/intlTelInput/intlTelInput.js"></script>
 
+  >
+    
+    <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
+<link rel="stylesheet" href="{{ asset('css/demo.css') }}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -99,13 +106,34 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('js/lxt.min.1649748817.js') }}" ></script>
-    <script src="js/intlTelInput.js"></script>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="{{ asset('js/intlTelInput.js') }}"></script>
     <script>
-        $("input").intlTelInput({
-  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
-});
+      var input = document.querySelector("#mobile-number");
+      window.intlTelInput(input, {
+        // allowDropdown: false,
+        // autoHideDialCode: false,
+        // autoPlaceholder: "off",
+        // dropdownContainer: document.body,
+        // excludeCountries: ["us"],
+        // formatOnDisplay: false,
+        // geoIpLookup: function(callback) {
+        //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+        //     var countryCode = (resp && resp.country) ? resp.country : "";
+        //     callback(countryCode);
+        //   });
+        // },
+        // hiddenInput: "full_number",
+        // initialCountry: "auto",
+        // localizedCountries: { 'de': 'Deutschland' },
+        // nationalMode: false,
+        // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+        // placeholderNumberType: "MOBILE",
+        // preferredCountries: ['cn', 'jp'],
+        // separateDialCode: true,
+        utilsScript: "build/js/utils.js",
+      });
     </script>
-    
 </body>
 </html>
