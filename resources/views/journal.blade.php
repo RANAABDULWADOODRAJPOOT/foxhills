@@ -41,10 +41,10 @@
 					<img class=" img-fluid w-100" src="<?php echo asset("assets/allimages/{$Journal->picture}")?>" >
 				</div>
 				
-				<div class="col-md-6 col-12 p-md-3 p-0 py-2 {!!  (Agent::isMobile()) ? '' : 'margin-450 ' !!}">
+				<div class="col-md-6 col-12 p-md-3 p-0 py-2 float-left {!!  (Agent::isMobile()) ? '' : 'margin-450 ' !!}">
 					<p class="text-grey">{!! $Journal->journal_type   !!} </p>
-					<h1 class="text-light">{!! $Journal->journal_title !!}</h1>
-					<p class="text-grey">{!! substr($Journal->description,0,100) !!} </p>
+					<h1 class="text-light text-left ml-0 mr-0 pl-0 pr-0">{!! $Journal->journal_title !!}</h1>
+					<p class="text-grey ">{!! substr($Journal->description,0,100) !!} </p>
 				</div>
 	         @endforeach
 			</div>
@@ -66,7 +66,7 @@
 							<div class="px-3">
 								<p class="mb-0 text-grey mt-3">{!! $Journal->Publish_date !!}</p>
 								<h3 class="mt-3 mb-2 text-light">{!! $Journal->journal_title !!}</h3>
-								<p class="mb-0 text-grey">{!! substr($Journal->description,0,300) !!} </p>
+								<p class="mb-0 text-grey">{!! substr($Journal->description,0,150) !!} </p>
 							</div>
 						
 					

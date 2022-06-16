@@ -25,7 +25,7 @@
 <div class=" ml-auto">
 <div class="d-md-block d-none" style="text-align-last: end; padding-right: 10px;">
 <svg style="margin-bottom: -5px;" class="mt-1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill=""></path><path fill="#999" d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"></path></svg>
-<a  style="color: #999; text-decoration: none; font-size: 14px;">+971 48 89 67 77</Span>
+<a  style="color: #999; text-decoration: none; font-size: 14px;" href="tel:+971 48 89 67 77">+971 48 89 67 77</Span>
 {{-- <a class="mx-3"  style="color: #999; text-decoration: none; font-size: 12px;"> | </Span>
 <a  style="color: #999; text-decoration: none; font-size: 14px;">Login</a> --}}
 </div>
@@ -39,7 +39,7 @@
     <a href="{!! url($allHeading->heading.'/'.$allHeading->id) !!}"  data-id-page="{!! $allHeading->id  !!}"  class="nav-link heading   menu-item {!!  (Agent::isMobile()) ? 'mobilefont' : '' !!}" >{!! $allHeading->heading  !!}</a>
    
     @if(count($allHeading->propertydata)>0)
-    <div style="margin-top: -2px;" id="tab_{!! $allHeading->id  !!}"   class="dropdown-menu banner cover p-2">
+    <div style="margin-top: -2px;left:-144px;" id="tab_{!! $allHeading->id  !!}"   class="dropdown-menu banner cover p-2">
       <div class="d-flex px-2">
         <div class="mega-dropdown-column {!!  (Agent::isMobile()) ? '' : 'pt-5 pb-4' !!} px-10 d-flex col-12" style="overflow: clip;">
          
@@ -58,7 +58,7 @@
            @if($loop->index < 2)
           <div class="text-left col-4  d-md-block d-none m-3">
             <a href="{!! url('details/'.$type->id) !!}">
-            <img  style="height:230px; width: 300px;" srcset="https://do84cgvgcm805.cloudfront.net/8128/100/d3d17a79643f2fe218375529093d12d7e27bacf772510b50e03aae1fae5a6973.jpg 100w, https://do84cgvgcm805.cloudfront.net/8128/375/d3d17a79643f2fe218375529093d12d7e27bacf772510b50e03aae1fae5a6973.jpg 375w" sizes="auto" alt="Fully Upgraded, Chic Design Apartment with Dubai Fountain Views" class="full-width-responsive brd" loading="lazy" width="375" height="282">
+            <img  style="height:60%; width:100%" srcset="https://do84cgvgcm805.cloudfront.net/8128/100/d3d17a79643f2fe218375529093d12d7e27bacf772510b50e03aae1fae5a6973.jpg 100w, https://do84cgvgcm805.cloudfront.net/8128/375/d3d17a79643f2fe218375529093d12d7e27bacf772510b50e03aae1fae5a6973.jpg 375w" sizes="auto" alt="Fully Upgraded, Chic Design Apartment with Dubai Fountain Views" class="full-width-responsive brd" loading="lazy" width="375" height="282">
             <p class="mb-0 font-weight-bold mt-3 text-white text-left">{!! $type->productname !!}</p>
             <p class="mb-0 text-muted text-left">{!! number_format($type->Price, 3, ',', ','); !!}</p>
           </a>
