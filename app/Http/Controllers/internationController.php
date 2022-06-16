@@ -15,7 +15,7 @@ use App\Models\Journal;
 class internationController extends Controller
 {
     function index(){
-              $internationProducts = AvailableProperty::where('city', 'not like', '%' . 'dubai' . '%')->with('propertyType')->paginate(30);
+              $internationProducts = AvailableProperty::where('city', 'not like', '%' . 'dubai' . '%')->with('propertyType')->paginate(9);
               return view('Internation',compact('internationProducts'));
        }
         function detail($id){

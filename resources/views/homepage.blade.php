@@ -324,7 +324,7 @@
 				</div>
 				<div class="gallery-text text-center">
 					<div class="inner">
-						<p class="f18 tw white tablet">FEATURED PROPERTY</p><h2 class="gallery-title">{!! substr($AvailableProperty->productname, 0, 25) !!}</h2><p class="f18 white">AED {!! $AvailableProperty->Price !!}</p>
+						<p class="f18 tw white tablet">FEATURED PROPERTY</p><h2 class="gallery-title">{!! substr($AvailableProperty->productname, 0, 25) !!}</h2><p class="f18 white">AED {!! number_format($AvailableProperty->Price, 3, ',', ','); !!}</p>
 						<a href="{{ url('details/'.$AvailableProperty->id ) }}" class="gallery-btn">View the property</a>
 					</div>
 				</div>

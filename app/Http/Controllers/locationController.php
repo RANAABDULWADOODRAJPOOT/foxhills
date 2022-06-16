@@ -15,7 +15,7 @@ use App\Models\Journal;
 class locationController extends Controller
 {
    function index(){
-              $locationproducts = AvailableProperty::where('city', 'like', '%' . 'dubai' . '%')->where('Category',1)->with('propertyType')->paginate(30);
+              $locationproducts = AvailableProperty::where('city', 'like', '%' . 'dubai' . '%')->where('Category',1)->with('propertyType')->paginate(9);
               return view('Location',compact('locationproducts'));
        }
 

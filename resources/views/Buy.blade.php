@@ -136,21 +136,6 @@
 		
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		@include('includes.footer')
 	</div>
 </section> --}}

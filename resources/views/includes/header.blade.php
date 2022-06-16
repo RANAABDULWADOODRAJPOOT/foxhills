@@ -21,7 +21,7 @@
 
 
 
-<div class="collapse navbar-collapse col-md-11 m-0 p-0 ml-auto" id="navbarCollapse">
+<div class="collapse navbar-collapse m-0 p-0 ml-auto" id="navbarCollapse">
 <div class=" ml-auto">
 <div class="d-md-block d-none" style="text-align-last: end; padding-right: 10px;">
 <svg style="margin-bottom: -5px;" class="mt-1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill=""></path><path fill="#999" d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"></path></svg>
@@ -39,15 +39,15 @@
     <a href="{!! url($allHeading->heading.'/'.$allHeading->id) !!}"  data-id-page="{!! $allHeading->id  !!}"  class="nav-link heading   menu-item {!!  (Agent::isMobile()) ? 'mobilefont' : '' !!}" >{!! $allHeading->heading  !!}</a>
    
     @if(count($allHeading->propertydata)>0)
-    <div style="margin-top: -2px;left:-144px;" id="tab_{!! $allHeading->id  !!}"   class="dropdown-menu banner cover p-2">
+    <div style="margin-top: -2px;" id="tab_{!! $allHeading->id  !!}"   class="dropdown-menu banner cover p-2 pt-4">
       <div class="d-flex px-2">
-        <div class="mega-dropdown-column {!!  (Agent::isMobile()) ? '' : 'pt-5 pb-4' !!} px-10 d-flex col-12" style="overflow: clip;">
+        <div class="mega-dropdown-column {!!  (Agent::isMobile()) ? '' : '' !!} px-10 d-flex col-12" style="overflow: clip;">
          
           <div class="col-md-3 col-12">
             
             @foreach($allHeading->propertydata as $type)
             <ul style="list-style-type: none;">
-                <li class="my-2" style="font-size: 18px;"><a class="text-muted" href="{!! url($allHeading->id.'/'.$type->propertyType->id.'/'.'1') !!}">{!! $type->propertyType->title !!}</a></li>
+                <li style="font-size: 18px;"><a class="text-muted" href="{!! url($allHeading->id.'/'.$type->propertyType->id.'/'.'1') !!}">{!! $type->propertyType->title !!}</a></li>
             </ul>
             @endforeach
            </div>

@@ -301,7 +301,7 @@
 			<li class="feature left">{!!  $title  !!}</li>
 			<li class="feature left"><span class="separator"></span>{!! $data->Bedrooms  !!} BD</li><li class="feature left"><span class="separator"></span>{!! $data->length  !!} SQ FT</li> </ul>
 			<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-			<span class="white">{!! $data->Price  !!}</span>
+			<span class="white"> {!! number_format($data->Price, 3, ',', ','); !!}</span>
 			</p>
 			</div>
 			</a>

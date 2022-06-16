@@ -17,7 +17,7 @@ class buyController extends Controller
 {
     function index(){
      
-        $userproducts = AvailableProperty::where('Category',1)->with('propertyType')->paginate(30);
+        $userproducts = AvailableProperty::where('Category',1)->with('propertyType')->paginate(9);
         $allPropertyTypes = PropertyType::all();
         $Journals = Journal::take(3)->get();
         return view('Buy',compact('userproducts','allPropertyTypes','Journals'));

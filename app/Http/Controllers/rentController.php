@@ -15,7 +15,7 @@ use App\Models\Journal;
 class rentController extends Controller
 {
     function index(){
-        $rentproducts = AvailableProperty::where('Category',2)->with('propertyType')->paginate(30);
+        $rentproducts = AvailableProperty::where('Category',2)->with('propertyType')->paginate(9);
         $allPropertyTypes = PropertyType::all();
         $Journals = Journal::take(3)->get();
         return view('Rent',compact('rentproducts','allPropertyTypes','Journals'));

@@ -20,8 +20,8 @@ class journalController extends Controller
 {
        function index(){
               $MostviewJournals = '';
-              $AllJournals = Journal::paginate(30);
-              $Journals = Journal::paginate(30);
+              $AllJournals = Journal::paginate(9);
+              $Journals = Journal::paginate(9);
               $Journalp = Journal::get('id'); 
               if(!empty($Journalp)){
               foreach($Journalp as $j){
@@ -33,7 +33,7 @@ class journalController extends Controller
               if($random_key == 0){
                 $random_key=$random_key+1; 
               }
-              $MostviewJournals = Journal::where('id',$random_key)->paginate(30);
+              $MostviewJournals = Journal::where('id',$random_key)->paginate(9);
             }
               
     $allHeadings = page::with(['properties' => function($query) {
@@ -62,7 +62,7 @@ class journalController extends Controller
        
        function filterbycategory($name='',$id=''){
             $MostviewJournals = '';
-            $Journals = Journal::where('id',$id)->paginate(30);
+            $Journals = Journal::where('id',$id)->paginate(9);
             $Journalp = Journal::get('id'); 
              if(!empty($Journalp)){
               foreach($Journalp as $j){
@@ -72,7 +72,7 @@ class journalController extends Controller
               if($random_key == 0){
                 $random_key=$random_key+1; 
               }
-              $MostviewJournals = Journal::where('id',$random_key)->paginate(30);
+              $MostviewJournals = Journal::where('id',$random_key)->paginate(9);
             }
              $AllJournals = Journal::paginate(30);
             
