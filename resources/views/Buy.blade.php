@@ -22,7 +22,8 @@
 			<div style="background-color: #222;border-bottom: 1px solid #999 " class="row justify-content-center mt-5">
 				<div class="col-md-6  col-12 my-md-5 my-2">
 					<P class="text-grey mt-3">LUXHABITAT Sotheby's presents many excellent luxury properties for sale in Dubai. These homes are designed and created with some of the best materials sourced from all around the world. The properties for sale that are available in the Dubai market are beautifully made and emphasise the luxury lifestyle that Dubai exudes. Our expert luxury sales specialists can guide you through the whole process from start to finish. You can choose from a selection of apartments, villas, penthouses, lofts, and duplexes, and even purchase a plot to create your dream home.</P>
-					<button style="border: 1px solid white; border-radius: 10px; color: BLACK  ;" class="btn btn-sm my-3">Register Your Interest</button>
+					
+					
 				</div>
 				<div class="col-md-6  col-12 my-md-5 my-2">
 					@if(Agent::isMobile())
@@ -157,7 +158,8 @@
 	<div class="location-block collpase cf-group pw100 light-bg brd" data-name="Dubai ">
 	<div class="column-66 pdg-20 text-left">
 	<div class=" light-bg"><p>Dubai villas for sale provide villa owners the option of living in tranquil villa communities that are surrounded by lush greenery or the sea side. Most villa communities in Dubai are extremely family friendly and diverse; often with very close-knit communities in a gated environment that ensure safety and security. The many different styles of villa developments often include easy access to make daily life easier - from schools, strip malls to shopping centres, health facilities, gyms, and a variety of restaurants and cafés within a short distance.</p></div>
-	<button class="btn btn-white open-enquiry mrg-top-20">register your interest</button>
+	<a  class="btn btn-white open-enquiry request">request information</a>
+
 	</div>
 	<div class="column-33 right pdg-10">
 	<img src="https://do84cgvgcm805.cloudfront.net/region/1/375/ee4c705bfc2ecbd99750091bdc7bd28221bd8a41d2bb39fc8c82c04bbead6100.jpg" alt="Dubai, The City of the Future" width="375" height="211" class="full-width-responsive right brd">
@@ -193,7 +195,7 @@
 	<div class="pdg-10 relative brd-top">
 	<p class="f18 lh18 uppercase white ellipsis mrg-bottom-10">{!! $userproduct->productname !!}</p>
 	<p class="f14 lh14 ellipsis mrg-bottom-5">
-	W Sector </p>
+	{!! $userproduct->Area !!} </p>
 	<ul class="f14 lh14 ellipsis features ellipsis mrg-bottom-10">
 	  @php ($title = App\Models\AvailableProperty::getpropertytypeinfo($userproduct->property_type_id))
 	<li class="feature left">{!!  $title  !!}</li>
@@ -291,7 +293,42 @@
 	</article>
 	</div>
 	@endforeach
-	
+
+	<div  class="modal myModalAll" tabindex="-1" role="dialog">
+		<div class="col-md-8 offset-md-2 col-12 mt-5" role="document">
+			<div style="background-color: black; border: 5px solid #222;" class="modal-content">
+				<div class="modal-body p-4">
+					<div class="col-12">
+						<h3 class="text-light">Enquire about Dubai </h3>
+						<p class="text-grey d-md-block d-none">Contact our Luxury Specialist on +971 44 55 08 88 or kindly provide your details below
+						</p>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-12 mb-3">	
+                        <img style="height: 200px" class="img-fluid w-100"src="{!! config('urls.web_cdn_url') . '/assets/allimages' !!}/modalimage.JPG" >
+						</div>
+						<div class="col-md-6 col-12">
+							<form method="POST" action="{{url('sale/save-request-from-user')}}" enctype="multipart/form-data">
+								@csrf
+
+								<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="name" placeholder="Full Name" required>
+								<input  style="height: 40px;border: none; " class="form-group w-100 " type="email" name="email" placeholder="Email" required>
+								<input  style="height: 40px;border: none; " class="form-group w-100 " type="tel" name="phone" placeholder="Phone Number" id="mobile-number" required>
+								<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="description" placeholder="Inquiry message" required>
+								<input  style="height: 40px;border: none; " class="form-group w-100 " type="hidden" name="user_request_type" value="buy">
+								<div class="col-12 text-center m-0 p-0">
+									<button style="background-color:white; border: 1px solid white;  color: black  ;" class="btn btn-lg text-center btn-block mt-3">Submit Enquiry</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
 	
 
 	</div>
@@ -312,8 +349,14 @@
 			
 		});
 
+
+
 		$( document ).ready(function() {
-        
+
+			$( ".request" ).click(function() {
+				$(".myModalAll").modal("toggle")
+			});
+
 
          $( ".Category" ).click(function() {
          	var parameterarray = getUrlVars();

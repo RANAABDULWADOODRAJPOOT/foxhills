@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://www.jquery-az.com/jquery/css/intlTelInput/demo.css">
     <script src="https://www.jquery-az.com/jquery/js/intlTelInput/intlTelInput.js"></script>
 
-  >
+  
     
     <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
 <link rel="stylesheet" href="{{ asset('css/demo.css') }}">

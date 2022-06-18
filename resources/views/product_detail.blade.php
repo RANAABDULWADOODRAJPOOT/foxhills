@@ -14,9 +14,6 @@
 			<a href="/">Home</a>
 			</li>
 			<li>
-			<a href="/">Dubai </a>
-			</li>
-			<li>
 			<a href="/">{!! $userProducts->city !!}</a>
 			</li>
 			<li>
@@ -79,13 +76,13 @@
 			<div class="mrg-bottom-5">
 			<span class="f16 lh20 uppercase silver">{!! App\Models\AvailableProperty::getPropertyType($userProducts->Category) !!}</span>
 			</div>
-			<div class="f20 lh24 uppercase white">AED {!! number_format($userProducts->Price, 3, ',', ','); !!}</div>
+			<h2 class="f20 lh24 text-left white mrg-top-10 mrg-bottom-auto" style="text-transform: inherit;">{!! $userProducts->productname !!}</h2>
+			<div class="f20 lh24 uppercase white mt-3">AED {!! number_format($userProducts->Price, 3, ',', ','); !!}</div>
 			</div>
 			<div class="pdg-bottom-10">
 			<div class="silver f14">
 			<a href="/" title="View editor's picks">Editor's pick</a>
 			</div>
-			<h2 class="f20 lh24 text-left white mrg-top-10 mrg-bottom-auto" style="text-transform: inherit;">{!! $userProducts->productname !!}</h2>
 			</div>
 			</div>
 			<div class="mrg-top-10 mrg-bottom-20 tablet pw100">
@@ -321,14 +318,15 @@
 						<div style="background-color: black; border: 5px solid #222;" class="modal-content">
 							<div class="modal-body p-4">
 								<div class="col-12">
-									<h3 class="text-light">Enquiry about listing ID GS-S-36262</h3>
+									<h3 class="text-light">{!! $userProducts->productname !!}</h3>
 									<p class="text-grey d-md-block d-none">Contact our Luxury Specialist on +971 44 55 08 88 or kindly provide your details below
 									</p>
 								</div>
 
 								<div class="row">
-									<div class="col-md-6 col-12 mb-3">
-										<img class=" img-fluid w-100" src="<?php echo asset("assets/allimages/$userProducts->picture")?>" >	
+									<div class="col-md-6 col-12 mb-3">	
+
+										<img src="<?php echo asset("assets/allimages/$userProducts->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive" width="120" height="120">
 									</div>
 									<div class="col-md-6 col-12">
 										<form method="POST" action="{{url('sale/save-request-from-user')}}" enctype="multipart/form-data">
@@ -337,7 +335,7 @@
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="name" placeholder="Full Name" required>
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="email" name="email" placeholder="Email" required>
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="tel" name="phone" placeholder="Phone Number" id="mobile-number" required>
-											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="description" placeholder="I'd like to have more information about the property ID GS-S-36262" required>
+											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="description" placeholder="Inquiry message" required>
                                             @if(str_contains( App\Models\AvailableProperty::getPropertyType($userProducts->Category) ,"Sale"))
                                            <input  style="height: 40px;border: none; " class="form-group w-100 " type="hidden" name="user_request_type" value="buy">
                                             @else
@@ -376,6 +374,103 @@
 					}
 
 					});
+
+					$( document ).ready(function() {
+        
+
+         $( ".Category" ).click(function() {
+         	var parameterarray = getUrlVars();
+         	var Category = $(this).val();
+         	var typeid = parameterarray['propertytypeid'];
+         	var minsize = parameterarray['minsize'];
+         	var maxsize = parameterarray['maxsize'];
+         	var bedrooms = parameterarray['Bedrooms'];
+         	var minprice = parameterarray['minprice'];
+         	var maxprice = parameterarray['maxprice'];
+         	var pathname = window.location.origin
+         	var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+         	window.location.href = redirecturl;
+		});
+
+
+       $( ".typename" ).click(function() {
+       	    var parameterarray = getUrlVars();
+         	var Category = parameterarray['Category'];
+         	var typeid = $(this).val();
+         	var minsize = parameterarray['minsize'];
+         	var maxsize = parameterarray['maxsize'];
+         	var bedrooms = parameterarray['Bedrooms'];
+         	var minprice = parameterarray['minprice'];
+         	var maxprice = parameterarray['maxprice'];
+      
+			var pathname = window.location.origin
+			var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+         	window.location.href = redirecturl;
+		});
+
+      
+
+
+
+		$('.maxvalue').on('change', function() {
+			var parameterarray = getUrlVars();
+         	var Category = parameterarray['Category'];
+         	var typeid = parameterarray['propertytypeid'];
+         	var minsize = parameterarray['minsize'];
+         	var maxsize = $(this).val();
+         	var bedrooms = parameterarray['Bedrooms'];
+         	var minprice = parameterarray['minprice'];
+         	var maxprice = parameterarray['maxprice'];
+			var pathname = window.location.origin
+			var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+         	window.location.href = redirecturl;
+           });
+
+		  $( ".Bedrooms" ).click(function() {
+		  	var parameterarray = getUrlVars();
+         	var Category = parameterarray['Category'];
+         	var typeid = parameterarray['propertytypeid'];
+         	var minsize = parameterarray['minsize'];
+         	var maxsize = parameterarray['maxsize'];
+         	var bedrooms = $(this).val();
+         	var minprice = parameterarray['minprice'];
+         	var maxprice = parameterarray['maxprice'];
+			var pathname = window.location.origin
+		    var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+         	window.location.href = redirecturl;
+		});
+
+
+       	$('.maxprice').on('change', function() {
+       		var parameterarray = getUrlVars();
+         	var Category = parameterarray['Category'];
+         	var typeid = parameterarray['propertytypeid'];
+         	var minsize = parameterarray['minsize'];
+         	var maxsize = parameterarray['maxsize'];
+         	var bedrooms = parameterarray['Bedrooms'];
+         	var minprice = parameterarray['minprice'];
+         	var maxprice = $(this).val();
+			var pathname = window.location.origin
+		    var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+         	window.location.href = redirecturl;
+		});
+
+		});
+
+
+
+		function getUrlVars()
+		{
+			var vars = [], hash;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for(var i = 0; i < hashes.length; i++)
+			{
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		}
 			
 			var sliderImages = [
 					{
