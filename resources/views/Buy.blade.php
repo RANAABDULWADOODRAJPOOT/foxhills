@@ -1,9 +1,5 @@
 @extends('lux_habitate')
-
-
 @section('content')
-
-
 @if( ! Agent::isMobile())
 @include('partials.homeScreenFilter')
 @endif
@@ -201,7 +197,7 @@
 	<li class="feature left">{!!  $title  !!}</li>
 	<li class="feature left"><span class="separator"></span>{!! $userproduct->Bedrooms !!} bd</li><li class="feature left"><span class="separator"></span>{!! $userproduct->length !!} SQ FT</li> </ul>
 	<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-	<span class="white">AED {!! number_format($userproduct->Price, 3, ',', ','); !!}</span>
+	<span class="white">AED {!! number_format($userproduct->Price, 0, ',', ','); !!}</span>
 	</p>
 	</div>
 	</a>

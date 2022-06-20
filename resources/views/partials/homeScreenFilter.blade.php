@@ -6,15 +6,15 @@
 			<path d="M0 0h24v24H0z" fill="none"></path>
 		</svg>
 	</div>
-	<div class="col-5 p-0">
+	<div class="col-6 p-0">
 		<input  style="height: 43px;background-color:#222;border: none; " class="form-group w-100 mb-0" type="" name="" placeholder="Enter any area or development ">
 	</div>
-	<div style="margin-top: 4px; justify-content: right;" id="filterbarhover"  class="col-5 d-flex">
+	<div style="margin-top: 4px;" id="filterbarhover"  class="col-5 d-flex">
 
  @php ($allheadings = App\Models\page::getallheadings())
  <div id="Firstdropdown" class="dropdown">
 	
- 	<button id="typeButton" style="background-color: #222;border:none; color:#999;font-size: 14px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ 	<button id="typeButton" style="background-color: #222;border:none; color:#999;font-size: 12px;padding-left:7px !important" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		Category
 		<i class="fa-solid fa-angle-down"></i>
  	</button>
@@ -23,7 +23,7 @@
  		@foreach($allheadings as $allheading) 
  		<div class="d-flex px-2 my-2">
  			<input id="type_{!! $allheading->id !!}"  class="mt-1 Category" type="checkbox"  value="{!! $allheading->id !!}" data-property-name="{!! $allheading->title !!}">
- 			<label for="type_{!! $allheading->id !!}"   style="font-size:15px;" class="text-muted-filter ml-3 font-size-sm" >{!! $allheading->heading !!}</label>
+ 			<label for="type_{!! $allheading->id !!}"   style="font-size:13px;" class="text-muted-filter ml-3 font-size-sm" >{!! $allheading->heading !!}</label>
  		</div>
  		@endforeach
  	</div>
@@ -32,7 +32,7 @@
         
             @php ($types = App\Models\PropertyType::getPropertyTypes())
 			<div id="Firstdropdown" class="dropdown">
-			<button id="typeButton" style="background-color: #222;border:none; color:#999; font-size: 14px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<button id="typeButton" style="background-color: #222;border:none; color:#999; font-size: 12px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				Types
 			</button>
 			<div  style="background-color:black;  min-width: 12rem;"   class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -40,7 +40,7 @@
 				@foreach($types as $type)
 				<div class="d-flex px-3 my-2">
 				 <input id="types_{!! $type->id !!}"  class="mt-1 typename" type="checkbox"  value="{!! $type->id !!}" data-property-name="{!! $type->title !!}">
-				 <label for="types_{!! $type->id !!}"   style="font-size:15px;" class="text-muted-filter ml-3 font-size-sm" >{!! $type->title !!}</label>
+				 <label for="types_{!! $type->id !!}"   style="font-size:13px;" class="text-muted-filter ml-3 font-size-sm" >{!! $type->title !!}</label>
 				</div>
 				@endforeach
 
@@ -52,7 +52,7 @@
 		 
 		
 		<div class="subnav">
-			<button  id="sizemenu" style="background-color: #222;border:none; color:#999; margin-top:5px; font-size: 14px;width:60px;"  class="subnavbtn dropdown-toggle">Size <i class="fa-solid fa-angle-down"></i></button>
+			<button  id="sizemenu" style="background-color: #222;border:none; color:#999; margin-top:5px; font-size: 12px;width:60px;"  class="subnavbtn dropdown-toggle">SIZE <i class="fa-solid fa-angle-down"></i></button>
 			<div id="sizebar"   class="subnav-contentone d-none">
 				<div class="d-flex p-3">
 					<select style="background-color:black;" class="form-select mx-2 minvalue" aria-label="Default select example">
@@ -89,15 +89,14 @@
 		 @php ($allpropertiesbedrooms= App\Models\AvailableProperty::getallbedrooms())
 		
             <div id="Firstdropdown" class="dropdown">
-			<button id="typeButton" style="background-color: #222;border:none;color:#999; font-size: 14px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Beds
-			</button>
+			<button id="typeButton" style="background-color: #222;border:none;color:#999; font-size: 12px;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				BEDS			</button>
 			<div  style="background-color:black;  min-width: 12rem;"  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				<input  type="hidden"  class="mt-1 defaultBedrooms" type="checkbox" value="0">
 				@for($i=0;$i<4;$i++)
 				<div class="d-flex px-3 my-2">
 					<input id="typess_{!! $allpropertiesbedrooms[$i] !!}"  class="mt-1 Bedrooms" type="checkbox" value="{!! $allpropertiesbedrooms[$i] !!}">
-					 <label for="typess_{!! $allpropertiesbedrooms[$i] !!}"  style="font-size:15px;" class="text-muted-filter ml-3 font-size-sm" >{!! $allpropertiesbedrooms[$i] !!} bedrooms</label>
+					 <label for="typess_{!! $allpropertiesbedrooms[$i] !!}"  style="font-size:13px;" class="text-muted-filter ml-3 font-size-sm" >{!! $allpropertiesbedrooms[$i] !!} bedrooms</label>
 				</div>
 				@endfor
 
@@ -109,7 +108,7 @@
 
         
 		<div class="subnav">
-			<button id="pricemenu" style="background-color: #222;border:none; color:#999; margin-top:5px;font-size: 14px; width:60px;"  class="subnavbtn dropdown-toggle">Price <i class="fa-solid fa-angle-down"></i></button>
+			<button id="pricemenu" style="background-color: #222;border:none; color:#999; margin-top:5px;font-size: 12px; width:60px;"  class="subnavbtn dropdown-toggle">PRICE <i class="fa-solid fa-angle-down"></i></button>
 			<div id="pricebar" class="subnav-contenttwo d-none">
 				<div class="d-flex px-3 py-3">
 					<select  style="background-color:black;" class="form-select mx-2 minprice" aria-label="Default select example">

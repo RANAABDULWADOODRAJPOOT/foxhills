@@ -61,7 +61,7 @@
 
   <div id="City" class="form-group col-6">
     <label for="exampleInputPassword1">City</label>
-    <input type="text" class="form-control" name="city" placeholder="Enter city" >
+    <input type="text" class="form-control" name="city" placeholder="e.g Dubai" >
   </div>
 
   <div  class="form-group col-6">
@@ -71,27 +71,27 @@
 
     <div id="Price" class="form-group col-6">
     <label for="exampleInputEmail1">Price</label>
-    <input type="text" class="form-control" name="Price"  placeholder="Enter Price" >
+    <input type="text" class="form-control" name="Price"  placeholder="200000000" >
   </div>
 
   <div id="Area" class="form-group col-6">
-    <label for="exampleInputEmail1">Area</label>
-    <input type="text" class="form-control" name="Area"  placeholder="Enter Price" >
+    <label for="exampleInputEmail1">Location</label>
+    <input type="text" class="form-control" name="Area"  placeholder="e.g Dubai West" >
   </div>
 
   <div id="Bedrooms" class="form-group col-6">
     <label for="exampleInputEmail1">Bedrooms</label>
-    <input type="text" class="form-control" name="Bedrooms"  placeholder="Enter Price" >
+    <input type="text" class="form-control" name="Bedrooms"  placeholder="e.g. 5" >
   </div>
 
   <div id="length" class="form-group col-6">
-    <label for="exampleInputEmail1">length</label>
-    <input type="text" class="form-control" name="length"  placeholder="Enter Price" >
+    <label for="exampleInputEmail1">Area</label>
+    <input type="text" class="form-control" name="length"  placeholder="2200" >
   </div>
 
   <div id="Speciality" class="form-group col-6">
     <label for="exampleInputEmail1">Speciality</label>
-    <input type="text" class="form-control" name="Speciality"  placeholder="Enter Price" >
+    <input type="text" class="form-control" name="Speciality"   >
   </div>
 
   <div id="Propertytype" class="form-group col-6">

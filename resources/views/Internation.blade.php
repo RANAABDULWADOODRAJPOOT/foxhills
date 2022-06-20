@@ -16,7 +16,12 @@
 		<div class="row justify-content-center">
 			@endif
 		<div class="col-md-10 col-12">
-			<p class="text-grey text-center my-3 ">Home > International </p>
+			{{-- @foreach($userproducts as $internationProduct)
+			@if($t==2)
+			<p class="text-grey text-center my-3 ">Home > <span>{!! App\Models\PropertyType::getpropertytypeviaid($internationProduct->property_type_id) !!} </span> </p>
+			<?php break; ?>
+			@endif
+			@endforeach --}}
 			<h1  class="text-light text-center my-3">Properties</h1>
 			
 			<div class="row">
@@ -35,7 +40,7 @@
 								<h3 class="mt-3 mb-2 text-light">{!! $internationProduct->productname !!}</h3>
 								<p class="mb-0 text-grey">{!! $internationProduct->Area !!}</p>
 								<p class="mb-0 text-grey"><Span>{!! App\Models\PropertyType::getpropertytypeviaid($internationProduct->property_type_id) !!}  | {!! $internationProduct->Bedrooms !!} | {!! $internationProduct->length !!}</Span></p>
-								<h4 class="mt-2 mb-3 text-light"> {!! number_format($internationProduct->Price, 3, ',', ','); !!}</h4>
+								<h4 class="mt-2 mb-3 text-light"> {!! number_format($internationProduct->Price, 0, ',', ','); !!}</h4>
 							</div>
 						</div>
 					</a>

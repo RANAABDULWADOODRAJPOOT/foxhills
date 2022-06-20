@@ -33,8 +33,40 @@ class buyController extends Controller
 
 function filterviatype(Request $request){
         
+if($request->Category=="undefined" || $request->Category==0){
+    $request->Category=0;
+
+}
+if($request->propertytypeid=="undefined" || $request->propertytypeid==0){
+    $request->propertytypeid=0;
+}
+if($request->Bedrooms=="undefined"){
+    $request->Bedrooms=0;
+}
+
+if($request->maxsize=="undefined"){
+    $request->maxsize=0;
+}
+if($request->minsize=="undefined"){
+    $request->minsize=0;
+}
+if($request->maxprice=="undefined"){
+    $request->maxprice=0;
+}
+if($request->minprice=="undefined"){
+    $request->minprice=0;
+}
+
+$t=0;
 
 
+if($request->Category!=0){
+    $t=1;
+
+}elseif($request->propertytypeidCategory!=0){
+    $t=2;
+}
+   
 
         $a='';
         $b='';
@@ -47,7 +79,6 @@ function filterviatype(Request $request){
         if($request->Category != 0){
             $a =  'Category=' . $request->Category;
         }
-
 
 
       if($a != ''){
@@ -139,7 +170,7 @@ function filterviatype(Request $request){
       $head->propertydata = $propertydata;
     }
    
-        return view('Internation',compact('userproducts','allPropertyTypes','Journals','allHeadings'));
+        return view('Internation',compact('userproducts','allPropertyTypes','Journals','allHeadings', 't'));
 }
 
 // function filterviasize(Request $request){

@@ -3,6 +3,11 @@
 @if( ! Agent::isMobile())
 @include('partials.homeScreenFilter')
 @endif
+
+
+
+
+
 <section class="container-fluid text-center">
 	<div class="row">
 		<div  class="col-12 text-center">

@@ -77,7 +77,7 @@
 			<span class="f16 lh20 uppercase silver">{!! App\Models\AvailableProperty::getPropertyType($userProducts->Category) !!}</span>
 			</div>
 			<h2 class="f20 lh24 text-left white mrg-top-10 mrg-bottom-auto" style="text-transform: inherit;">{!! $userProducts->productname !!}</h2>
-			<div class="f20 lh24 uppercase white mt-3">AED {!! number_format($userProducts->Price, 3, ',', ','); !!}</div>
+			<div class="f20 lh24 uppercase white mt-3">AED {!! number_format($userProducts->Price, 0, ',', ','); !!}</div>
 			</div>
 			<div class="pdg-bottom-10">
 			<div class="silver f14">
@@ -285,7 +285,7 @@
 			<img style="height: 250px;" class=" img-fluid w-100" src="{!! config('urls.web_cdn_url') . '/assets/allimages' !!}/{!! $data->picture  !!}">
 			<span class="override animated text-left pdg-20">
 				
-			<h2 class="white normalcase mrg-top-auto">{!! $data->Description  !!}.</p>
+			<h2 class="white normalcase mrg-top-auto text-truncate">{!! $data->Description  !!}.</p>
 			<p class="f16 lh20 white mrg-top-10">Click to view more details ›</p>
 			</span>
 			</div>
@@ -298,7 +298,7 @@
 			<li class="feature left">{!!  $title  !!}</li>
 			<li class="feature left"><span class="separator"></span>{!! $data->Bedrooms  !!} BD</li><li class="feature left"><span class="separator"></span>{!! $data->length  !!} SQ FT</li> </ul>
 			<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-			<span class="white"> {!! number_format($data->Price, 3, ',', ','); !!}</span>
+			<span class="white">AED {!! number_format($data->Price, 0, ',', ','); !!}</span>
 			</p>
 			</div>
 			</a>
@@ -319,7 +319,7 @@
 							<div class="modal-body p-4">
 								<div class="col-12">
 									<h3 class="text-light">{!! $userProducts->productname !!}</h3>
-									<p class="text-grey d-md-block d-none">Contact our Luxury Specialist on +971 44 55 08 88 or kindly provide your details below
+									<p class="text-grey d-md-block d-none">Contact our Luxury Specialist on <a  style="color: #999; text-decoration: none; font-size: 14px;" href="tel:+971 48 89 67 77">+971 48 89 67 77</Span> or kindly provide your details below
 									</p>
 								</div>
 
@@ -331,11 +331,10 @@
 									<div class="col-md-6 col-12">
 										<form method="POST" action="{{url('sale/save-request-from-user')}}" enctype="multipart/form-data">
 											@csrf
-											
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="name" placeholder="Full Name" required>
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="email" name="email" placeholder="Email" required>
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="tel" name="phone" placeholder="Phone Number" id="mobile-number" required>
-											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="description" placeholder="Inquiry message" required>
+											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="description" value="I'd like to have more information about the property ID #  {!! $data->id !!}" required>
                                             @if(str_contains( App\Models\AvailableProperty::getPropertyType($userProducts->Category) ,"Sale"))
                                            <input  style="height: 40px;border: none; " class="form-group w-100 " type="hidden" name="user_request_type" value="buy">
                                             @else

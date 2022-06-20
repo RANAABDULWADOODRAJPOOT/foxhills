@@ -23,9 +23,9 @@
       <th scope="col">City</th>
       <th scope="col">Description</th>
       <th scope="col">Price</th>
-      <th scope="col">Area</th>
+      {{-- <th scope="col">Area</th> --}}  <th scope="col">Location</th>
       <th scope="col">Bedrooms</th>
-      <th scope="col">length</th>
+      {{-- <th scope="col">length</th> --}}  <th scope="col">Area</th>
       <th scope="col">Speciality</th>
       <th scope="col">PropertyType</th>
       <th scope="col">Image</th>

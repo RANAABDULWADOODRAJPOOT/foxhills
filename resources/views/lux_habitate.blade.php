@@ -233,6 +233,8 @@ margin-bottom: 1rem;
 
 
     </style>
+
+    
 </head>
 <body style="background-color:black;">
 
@@ -268,19 +270,27 @@ margin-bottom: 1rem;
 
     <script>
 
-$("#mobile-number").intlTelInput({
-      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.14/js/utils.js"
-});
+
+
+
+
   $("#mobile-number").intlTelInput({
     initialCountry: "auto",
+    separateDialCode:true,
+
       geoIpLookup: function(callback) {
-        $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+        $.get('https://ipinfo.io?token=317822c5d46c93', function() {}, "jsonp").always(function(resp) {
+           
           var countryCode = (resp && resp.country) ? resp.country : "";
+          console.log(countryCode);
+        //   return countryCode
           callback(countryCode);
         });
       },
-     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.14/js/utils.js"
+     utilsScript: "{{ asset('assets/js/utils.js') }}"
   });
+
+
  
 
     </script>

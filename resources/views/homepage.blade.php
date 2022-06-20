@@ -324,7 +324,7 @@
 				</div>
 				<div class="gallery-text text-center">
 					<div class="inner">
-						<p class="f18 tw white tablet">FEATURED PROPERTY</p><h2 class="gallery-title">{!! substr($AvailableProperty->productname, 0, 25) !!}</h2><p class="f18 white">AED {!! number_format($AvailableProperty->Price, 3, ',', ','); !!}</p>
+						<p class="f18 tw white tablet">FEATURED PROPERTY</p><h2 class="gallery-title">{!! substr($AvailableProperty->productname, 0, 25) !!}</h2><p class="f18 white">AED {!! number_format($AvailableProperty->Price, 0, ',', ','); !!}</p>
 						<a href="{{ url('details/'.$AvailableProperty->id ) }}" class="gallery-btn">View the property</a>
 					</div>
 				</div>
@@ -435,7 +435,7 @@
 	<li class="feature left">{!! $saleVilla->propertyType->title !!}</li>
 	<li class="feature left"><span class="separator"></span>{!! $saleVilla->Bedrooms !!} BD</li><li class="feature left"><span class="separator"></span>{!! $saleVilla->length !!} SQ FT</li> </ul>
 	<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-	<span class="white">AED {!! number_format($saleVilla->Price, 3, ',', ','); !!} </span>
+	<span class="white">AED {!! number_format($saleVilla->Price, 0, ',', ','); !!} </span>
 	</p>
 	</div>
 	</a>
@@ -461,7 +461,7 @@
 	<li class="feature left">{!! $saleVilla->propertyType->title !!}</li>
 	<li class="feature left"><span class="separator"></span>{!! $saleVilla->Bedrooms !!} BD</li><li class="feature left"><span class="separator"></span>{!! $saleVilla->length !!} SQ FT</li> </ul>
 	<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-	<span class="white">AED {!! number_format($saleVilla->Price, 3, ',', ','); !!}</span>
+	<span class="white">AED {!! number_format($saleVilla->Price, 0, ',', ','); !!}</span>
 	</p>
 	</div>
 	</a>
@@ -487,7 +487,7 @@
 	<li class="feature left">{!! $saleVilla->propertyType->title !!}</li>
 	<li class="feature left"><span class="separator"></span>{!! $saleVilla->Bedrooms !!} BD</li><li class="feature left"><span class="separator"></span>{!! $saleVilla->length !!} SQ FT</li> </ul>
 	<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-	<span class="white">AED {!! number_format($saleVilla->Price, 3, ',', ','); !!}</span>
+	<span class="white">AED {!! number_format($saleVilla->Price, 0, ',', ','); !!}</span>
 	</p>
 	</div>
 	</a>
@@ -550,7 +550,7 @@
 								<li class="feature left">{!! $saleApartment->propertyType->title !!}</li>
 								<li class="feature left"><span class="separator"></span>{!! $saleApartment->Bedrooms !!} BD</li><li class="feature left"><span class="separator"></span>{!! $saleApartment->length !!} SQ FT</li> </ul>
 								<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-									<span class="white">AED  {!! number_format($saleApartment->Price, 3, ',', ',');!!}</span>
+									<span class="white">AED  {!! number_format($saleApartment->Price, 0, ',', ',');!!}</span>
 								</p>
 							</div>
 						</a>

@@ -36,7 +36,7 @@
 						<div class="d-md-flex justify-content-between mb-md-3 mb-2">
 							<div>
 								<span style="font-size:17px;" class="text-light">Price</span>
-								<span class="text-grey mx-3">{!! $projectProduct->Price !!} </span>
+								<span class="text-grey mx-3">AED {!! number_format($projectProduct->Price, 0, ',', ','); !!} </span>
 							</div>
 							<div>
 								<span style="font-size:17px;"  class="text-light">Built up area:</span>

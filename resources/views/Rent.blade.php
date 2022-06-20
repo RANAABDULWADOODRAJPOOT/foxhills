@@ -59,7 +59,7 @@
 								<h3 class="mt-3 mb-2 text-light">{!! $rentproduct->productname !!}</h3>
 								<p class="mb-0 text-grey">{!! $rentproduct->Area !!}</p>
 								<p class="mb-0 text-grey"><Span>{!! $rentproduct->propertyType->title !!} | {!! $rentproduct->Bedrooms !!} | {!! $rentproduct->length !!}</Span></p>
-								<h4 class="mt-2 mb-3 text-light">{!! $rentproduct->Price !!}</h4>
+								<h4 class="mt-2 mb-3 text-light"> AED {!! number_format($rentproduct->Price, 0, ',', ','); !!}</h4>
 							</div>
 						</div>
 					</a>
