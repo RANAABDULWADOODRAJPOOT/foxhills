@@ -39,7 +39,7 @@
     <a href="{!! url($allHeading->heading.'/'.$allHeading->id) !!}"  data-id-page="{!! $allHeading->id  !!}"  class="nav-link heading   menu-item {!!  (Agent::isMobile()) ? 'mobilefont' : '' !!}" >{!! $allHeading->heading  !!}</a>
    
     @if(count($allHeading->propertydata)>0)
-    <div style="margin-top: -2px;" id="tab_{!! $allHeading->id  !!}"   class="dropdown-menu banner cover p-2 pt-4">
+    <div style="margin-top: 0px;" id="tab_{!! $allHeading->id  !!}"   class="dropdown-menu banner cover p-2 pt-4 pb-4">
       <div class="d-flex px-2">
         <div class="mega-dropdown-column {!!  (Agent::isMobile()) ? '' : '' !!} px-10 d-flex col-12" style="overflow: clip;">
          
@@ -58,7 +58,7 @@
            @if($loop->index < 2)
           <div class="text-left col-4  d-md-block d-none ">
             <a href="{!! url('details/'.$type->id) !!}">
-            <img  style="height:60%; width:100%" srcset="https://do84cgvgcm805.cloudfront.net/8128/100/d3d17a79643f2fe218375529093d12d7e27bacf772510b50e03aae1fae5a6973.jpg 100w, https://do84cgvgcm805.cloudfront.net/8128/375/d3d17a79643f2fe218375529093d12d7e27bacf772510b50e03aae1fae5a6973.jpg 375w" sizes="auto" alt="Fully Upgraded, Chic Design Apartment with Dubai Fountain Views" class="full-width-responsive brd" loading="lazy" width="375" height="282">
+            <img  style="height:200px; width:100%" srcset="https://do84cgvgcm805.cloudfront.net/8128/100/d3d17a79643f2fe218375529093d12d7e27bacf772510b50e03aae1fae5a6973.jpg 100w, https://do84cgvgcm805.cloudfront.net/8128/375/d3d17a79643f2fe218375529093d12d7e27bacf772510b50e03aae1fae5a6973.jpg 375w" sizes="auto" alt="Fully Upgraded, Chic Design Apartment with Dubai Fountain Views" class="full-width-responsive brd" loading="lazy" width="375" height="282">
             <p class="mb-0 font-weight-bold mt-3 text-white text-left">{!! $type->productname !!}</p>
             <p class="mb-0 text-muted text-left">AED {!! number_format($type->Price, 0, ',', ','); !!}</p>
           </a>
