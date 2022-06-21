@@ -3,7 +3,7 @@
 @if (session('status'))
 
 @endif
-@include('Admin.adminDashBoardLayout')  
+@include('admin.adminDashBoardLayout')  
 <div class="col-sm-10">
     
   @if(count($pagedatas) === 0)

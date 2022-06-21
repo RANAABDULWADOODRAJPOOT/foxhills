@@ -3,7 +3,7 @@
 @if (session('status'))
 
 @endif
-@include('Admin.adminDashBoardLayout')  
+@include('admin.adminDashBoardLayout')  
 
  <script src="https://cdn.tiny.cloud/1/1v5l1ka1kfezl9uoe9okyrtv9kzgoze381dm9wt19tr4j8nz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="col-sm-10">

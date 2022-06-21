@@ -5,7 +5,7 @@
     {{ session('status') }}
 </div>
 @endif
-@include('Admin.adminDashBoardLayout')  
+@include('admin.adminDashBoardLayout')  
 <div class="col-sm-10">
 
 
