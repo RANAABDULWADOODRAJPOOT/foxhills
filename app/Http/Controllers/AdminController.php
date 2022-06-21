@@ -42,12 +42,12 @@ class AdminController  extends Controller
      */
     public function index()
     {
-        return view('Admin.adminDashBoard');
+        return view('admin.adminDashBoard');
     }
 
     public function addPropertyType()
     {
-        return view('Admin.propertyType');
+        return view('admin.propertyType');
     }
 
      public function savePropertyType(Request $request)
@@ -61,7 +61,7 @@ class AdminController  extends Controller
     public function showPropertyType()
      { 
         $showProperty = PropertyType::all();
-        return view('Admin.show_property_type', compact('showProperty'));
+        return view('admin.show_property_type', compact('showProperty'));
         
     }
 
@@ -69,7 +69,7 @@ class AdminController  extends Controller
      {
        
        $PropertyType = PropertyType::find($id);
-       return view('Admin.edit_property_type', compact('PropertyType'));
+       return view('admin.edit_property_type', compact('PropertyType'));
         
     }
 
@@ -77,7 +77,7 @@ class AdminController  extends Controller
     {
 
         $UserRequests = UserRequest::all();
-        return view('Admin.User_Request', compact('UserRequests'));
+        return view('admin.User_Request', compact('UserRequests'));
 
     }
 
@@ -110,7 +110,7 @@ class AdminController  extends Controller
          $showProperty = PropertyType::all();
          $allagents = agent::all();
         $pagedatas =  page::all();
-        return view('Admin.upload_items',compact('showProperty','pagedatas','allagents'));
+        return view('admin.upload_items',compact('showProperty','pagedatas','allagents'));
      }
      
       public function saveItems(Request $request)
@@ -173,7 +173,7 @@ class AdminController  extends Controller
      { 
         $AvailableProperties = AvailableProperty::with('propertyType')->get();
        
-        return view('Admin.show_property_items',compact('AvailableProperties'));
+        return view('admin.show_property_items',compact('AvailableProperties'));
      }
 
        public function editItems($id)
@@ -181,7 +181,7 @@ class AdminController  extends Controller
          $AvailableProperty = AvailableProperty::find($id);
          $showProperty = PropertyType::all();
          $allagents =  agent::all();
-         return view('Admin.edit_available-property', compact('AvailableProperty','showProperty','allagents'));
+         return view('admin.edit_available-property', compact('AvailableProperty','showProperty','allagents'));
      }
 
        public function updateItems(Request $request , $id)
@@ -236,12 +236,12 @@ class AdminController  extends Controller
      public function uploadJournals()
      {     
             $alldata = multipleimageblog::all();
-           return view('Admin.upload_journals',compact('alldata'));  
+           return view('admin.upload_journals',compact('alldata'));  
      }
 
      public function multiJournals()
      {    
-           return view('Admin.uploadblogmultiple');  
+           return view('admin.uploadblogmultiple');  
      }
 
        public function saveJournalspics(Request $request)
@@ -285,13 +285,13 @@ class AdminController  extends Controller
      { 
         $Journals = Journal::all();
 
-        return view('Admin.show_journal',compact('Journals'));  
+        return view('admin.show_journal',compact('Journals'));  
     }
 
     public function editJournals($id)
     { 
          $Journal = Journal::find($id);
-        return view('Admin.edit_journal',compact('Journal'));  
+        return view('admin.edit_journal',compact('Journal'));  
     }
 
 
@@ -332,7 +332,7 @@ class AdminController  extends Controller
 
      public function createPage()
      { 
-           return view('Admin.dynamicheader');
+           return view('admin.dynamicheader');
      }
      
 
@@ -348,14 +348,14 @@ class AdminController  extends Controller
       public function showpage()
      { 
        $pagedatas =  page::all();
-       return view('Admin.show_headings',compact('pagedatas'));
+       return view('admin.show_headings',compact('pagedatas'));
 
      }
 
       public function editpage($id)
     { 
         $page = page::find($id);
-        return view('Admin.edit_heading',compact('page'));  
+        return view('admin.edit_heading',compact('page'));  
     }
 
 
@@ -379,14 +379,14 @@ class AdminController  extends Controller
      { 
          $GeneralContents = GeneralContent::with('propertyType')->get();
 
-        return view('Admin.show_general_content',compact('GeneralContents')); 
+        return view('admin.show_general_content',compact('GeneralContents')); 
      }
 
       public function editcontent($id)
     { 
         $GeneralContents = GeneralContent::find($id);
         $showProperty = PropertyType::all();
-        return view('Admin.edit_content',compact('GeneralContents','showProperty'));  
+        return view('admin.edit_content',compact('GeneralContents','showProperty'));  
     }
 
 
@@ -429,7 +429,7 @@ class AdminController  extends Controller
 
       public function addagent()
      { 
-           return view('Admin.addagent');  
+           return view('admin.addagent');  
      }
 
       public function saveagent(Request $request)
@@ -454,13 +454,13 @@ class AdminController  extends Controller
      { 
         $showagent = agent::all();
 
-        return view('Admin.showagent',compact('showagent'));  
+        return view('admin.showagent',compact('showagent'));  
     }
 
     public function editaddagent($id)
     { 
         $editaddagent = agent::find($id);
-        return view('Admin.editagent',compact('editaddagent'));  
+        return view('admin.editagent',compact('editaddagent'));  
     }
 
 

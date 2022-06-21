@@ -314,13 +314,19 @@
 			
 			
 			<div  class="modal myModalAll" tabindex="-1" role="dialog">
-					<div class="col-md-8 offset-md-2 col-12 mt-5" role="document">
+					<div class="col-md-6 offset-md-3 col-12 mt-5" role="document">
 						<div style="background-color: black; border: 5px solid #222;" class="modal-content">
 							<div class="modal-body p-4">
-								<div class="col-12">
-									<h3 class="text-light">{!! $userProducts->productname !!}</h3>
-									<p class="text-grey d-md-block d-none">Contact our Luxury Specialist on <a  style="color: #999; text-decoration: none; font-size: 14px;" href="tel:+971 48 89 67 77">+971 48 89 67 77</Span> or kindly provide your details below
-									</p>
+								<div class="col-12 m-0 p-0">
+									<h3 class="text-light">Enquiry About Listing {!! $userProducts->productname !!}</h3>
+									<p class="text-grey d-md-block d-none">Contact our Luxury Specialist on <a  style="color: #999; text-decoration: none; font-size: 14px;" href="tel:+971 48 89 67 77">+971 48 89 67 77</a> or kindly provide your details below</p>
+									 <button type="button" data-dismiss="modal" aria-label="Close" style="position: relative;
+									 float: right;
+									 width: 43px;
+									 margin-top: -100px;
+									 border: 0px;">
+										<span aria-hidden="true">&times;</span>
+									</button>
 								</div>
 
 								<div class="row">
@@ -342,7 +348,7 @@
                                             @endif
 											
 											<div class="col-12 text-center m-0 p-0">
-												<button style="background-color:white; border: 1px solid white;  color: black  ;" class="btn btn-lg text-center btn-block mt-3">Submit Enquiry</button>
+												<button style="background-color:white; border: 1px solid white;  color: black  ;" class="btn btn-md text-right mt-1 float-right">Submit Enquiry</button>
 											</div>
 										</form>
 									</div>

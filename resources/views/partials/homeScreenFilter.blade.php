@@ -6,10 +6,10 @@
 			<path d="M0 0h24v24H0z" fill="none"></path>
 		</svg>
 	</div>
-	<div class="col-6 p-0">
+	<div class="col-6 p-0" style="min-width: 55%">
 		<input  style="height: 43px;background-color:#222;border: none; " class="form-group w-100 mb-0" type="" name="" placeholder="Enter any area or development ">
 	</div>
-	<div style="margin-top: 4px;" id="filterbarhover"  class="col-5 d-flex">
+	<div style="margin-top: 4px !important;justify-content:end;" id="filterbarhover"  class="col-5 d-flex m-0 p-0">
 
  @php ($allheadings = App\Models\page::getallheadings())
  <div id="Firstdropdown" class="dropdown">

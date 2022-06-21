@@ -40,7 +40,7 @@
 								<h3 class="mt-3 mb-2 text-light">{!! $internationProduct->productname !!}</h3>
 								<p class="mb-0 text-grey">{!! $internationProduct->Area !!}</p>
 								<p class="mb-0 text-grey"><Span>{!! App\Models\PropertyType::getpropertytypeviaid($internationProduct->property_type_id) !!}  | {!! $internationProduct->Bedrooms !!} | {!! $internationProduct->length !!}</Span></p>
-								<h4 class="mt-2 mb-3 text-light"> {!! number_format($internationProduct->Price, 0, ',', ','); !!}</h4>
+								<h4 class="mt-2 mb-3 text-light"> AED {!! number_format($internationProduct->Price, 0, ',', ','); !!}</h4>
 							</div>
 						</div>
 					</a>
