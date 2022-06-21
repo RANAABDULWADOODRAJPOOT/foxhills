@@ -264,8 +264,9 @@
 			</article>
 			</div>
 			<div class="column-33 right brd-left brd-ignore-mobile">
-			 <iframe width="100%" height="300" src="https://maps.google.com/maps?q=<?php echo "31.5204" ?>,<?php echo "74.3587"; ?>&output=embed"></iframe>
- 			</div>
+			
+			 <iframe width="100%" height="300" src="https://maps.google.com/maps?q=<?php echo $userProducts->lat ?>,<?php echo $userProducts->lon; ?>&output=embed"></iframe>
+			</div>
 			</aside>
 			</article>
 			<section id="related-properties" class="cf-group left pw100 mrg-bottom-30">
@@ -318,15 +319,16 @@
 						<div style="background-color: black; border: 5px solid #222;" class="modal-content">
 							<div class="modal-body p-4">
 								<div class="col-12 m-0 p-0">
+									<button type="button" data-dismiss="modal" aria-label="Close" style="position: relative;
+									float: right;
+									width: 35px;
+									margin-top: 0px;
+									border: 0px;">
+									   <span aria-hidden="true">&times;</span>
+								   </button>
 									<h3 class="text-light">Enquiry About Listing {!! $userProducts->productname !!}</h3>
-									<p class="text-grey d-md-block d-none">Contact our Luxury Specialist on <a  style="color: #999; text-decoration: none; font-size: 14px;" href="tel:+971 48 89 67 77">+971 48 89 67 77</a> or kindly provide your details below</p>
-									 <button type="button" data-dismiss="modal" aria-label="Close" style="position: relative;
-									 float: right;
-									 width: 43px;
-									 margin-top: -100px;
-									 border: 0px;">
-										<span aria-hidden="true">&times;</span>
-									</button>
+									<p class="text-grey d-md-block">Contact our Luxury Specialist on <a  style="color: #999; text-decoration: none; font-size: 14px;" href="tel:+971 48 89 67 77">+971 48 89 67 77</a> or kindly provide your details below</p>
+									
 								</div>
 
 								<div class="row">
@@ -340,7 +342,7 @@
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="name" placeholder="Full Name" required>
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="email" name="email" placeholder="Email" required>
 											<input  style="height: 40px;border: none; " class="form-group w-100 " type="tel" name="phone" placeholder="Phone Number" id="mobile-number" required>
-											<input  style="height: 40px;border: none; " class="form-group w-100 " type="text" name="description" value="I'd like to have more information about the property ID #  {!! $data->id !!}" required>
+											<textarea  style="border: none; " class="form-group w-100 " type="text" name="description" required>I'd like to have more information about the property ID #  {!! $data->id !!}</textarea>
                                             @if(str_contains( App\Models\AvailableProperty::getPropertyType($userProducts->Category) ,"Sale"))
                                            <input  style="height: 40px;border: none; " class="form-group w-100 " type="hidden" name="user_request_type" value="buy">
                                             @else

@@ -22,7 +22,7 @@
 		<article id="property-10382">
 			<header class="brd-bottom">
 				<h1 id="property-title" class="tw mrg-bottom-20">Our Team</h1>
-				<p class="text-grey">Meet our team of real estate agents and marketing specialists</p>
+				<p class="text-grey text-center">Meet our team of real estate agents and marketing specialists</p>
 			</header>
 		</article>
 	</div>

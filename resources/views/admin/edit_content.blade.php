@@ -64,6 +64,16 @@
     <p class="mt-3 text-success" id="imageName"></p>
   </div>
 
+
+  <div class="form-group col-6">
+    <label for="exampleInputEmail1">Latitude</label>
+    <input type="text" class="form-control"  name="productname" placeholder="Enter Name" value="{!! $GeneralContents->lat !!}">
+  </div>
+
+  <div class="form-group col-6">
+    <label for="exampleInputEmail1">Longitude</label>
+    <input type="text" class="form-control"  name="productname" placeholder="Enter Name" value="{!! $GeneralContents->lon !!}">
+  </div>
  
 
 

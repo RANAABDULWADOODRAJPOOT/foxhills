@@ -132,6 +132,18 @@
     </select>
   </div>
 
+  <div id="Completion" class="form-group col-6">
+    <label for="exampleInputPassword1">Add Latitude:</label>
+    <input  type="text" class="form-control  mt-2" name="lat" value="0">
+  </div>
+
+
+  <div id="Completion" class="form-group col-6">
+    <label for="exampleInputPassword1">Add Longitude:</label>
+    <input  type="text" class="form-control  mt-2" name="lon" value="0">
+  </div>
+
+
    <div class="form-group col-6 ">
     <input id="setstatus" type="hidden" name="status">
   </div>

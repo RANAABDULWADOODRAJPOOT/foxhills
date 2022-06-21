@@ -116,6 +116,17 @@
     <p class="mt-3 text-success" id="bannerimageName"></p>
   </div>
 
+  <div class="form-group col-6">
+    <label for="exampleInputEmail1">Latitude</label>
+    <input type="text" class="form-control"  name="lat"  value="{!! $AvailableProperty->lat !!}">
+  </div>
+
+  <div class="form-group col-6">
+    <label for="exampleInputEmail1">Longitude</label>
+    <input type="text" class="form-control"  name="lon" value="{!! $AvailableProperty->lon !!}">
+  </div>
+ 
+
  
 
 
