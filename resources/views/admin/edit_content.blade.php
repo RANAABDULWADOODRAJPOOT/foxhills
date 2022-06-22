@@ -65,7 +65,7 @@
   </div>
 
 
-  <div class="form-group col-6">
+  {{-- <div class="form-group col-6">
     <label for="exampleInputEmail1">Latitude</label>
     <input type="text" class="form-control"  name="productname" placeholder="Enter Name" value="{!! $GeneralContents->lat !!}">
   </div>
@@ -74,7 +74,7 @@
     <label for="exampleInputEmail1">Longitude</label>
     <input type="text" class="form-control"  name="productname" placeholder="Enter Name" value="{!! $GeneralContents->lon !!}">
   </div>
- 
+  --}}
 
 
   </div>

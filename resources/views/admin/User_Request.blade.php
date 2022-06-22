@@ -14,17 +14,17 @@
   @else  
 
 
-
+<a href={!! url('admin/downloadrequests')!!}><button style="float: right; margin: 10px; background: black; color: white; border: 0px solid;">Download Requests</button></a>
    <table class="table my-5">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">phone</th>
-      <th scope="col">description</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Description</th>
        <th scope="col">Request Type</th>
-        <th scope="col">request Time</th>
+        <th scope="col">Request Time</th>
     </tr>
   </thead>
   <tbody>

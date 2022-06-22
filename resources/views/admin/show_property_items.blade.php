@@ -25,6 +25,7 @@
       <th scope="col">Price</th>
       {{-- <th scope="col">Area</th> --}}  <th scope="col">Location</th>
       <th scope="col">Bedrooms</th>
+      <th scope="col">Bathrooms</th>
       {{-- <th scope="col">length</th> --}}  <th scope="col">Area</th>
       <th scope="col">Speciality</th>
       <th scope="col">PropertyType</th>
@@ -51,6 +52,7 @@
       <td>{!! $availableProperty->Price !!}</td>
       <td>{!! $availableProperty->Area !!}</td>
       <td>{!! $availableProperty->Bedrooms !!}</td>
+      <td>{!! $availableProperty->bathrooms !!}</td>
       <td>{!! $availableProperty->length !!}</td>
       <td>{!! $availableProperty->Speciality !!}</td>
       @if(!empty($availableProperty->propertyType->title))

@@ -8,6 +8,8 @@ use App;
 use Auth;
 use DB;
 use Session;
+// use Reviews;
+// use Response;
 
 use App\Models\PropertyType; 
 use App\Models\AvailableProperty; 
@@ -64,6 +66,51 @@ class AdminController  extends Controller
         return view('admin.show_property_type', compact('showProperty'));
         
     }
+
+
+   
+    
+
+
+    public function downloadRequests()
+    { 
+        // $datas = UserRequest::all();
+
+
+        $headers = [
+            'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0'
+        ,   'Content-type'        => 'text/csv'
+        ,   'Content-Disposition' => 'attachment; filename=Requests.csv'
+        ,   'Expires'             => '0'
+        ,   'Pragma'              => 'public'
+    ];
+
+    $list =  UserRequest::all()->toArray();
+
+    # add headers for each column in the CSV download
+    array_unshift($list, array_keys($list[0]));
+
+   $callback = function() use ($list) 
+    {
+        $FH = fopen('php://output', 'w');
+        foreach ($list as $row) { 
+            fputcsv($FH, $row);
+        }
+        fclose($FH);
+    };
+
+    return response()->stream($callback, 200, $headers);
+    
+      
+
+
+
+
+}
+
+
+
+
 
     public function editPropertyType($id)
      {
@@ -153,6 +200,7 @@ class AdminController  extends Controller
              $GeneralContent->Price = $request->Price ? $request->Price : 0;
              $GeneralContent->Area = $request->Area ? $request->Area : 0;
              $GeneralContent->Bedrooms = $request->Bedrooms ? $request->Bedrooms  : 0;
+             $GeneralContent->bathrooms = $request->bathrooms ? $request->bathrooms  : 0;
              $GeneralContent->property_type_id = 0;
              $GeneralContent->Category = $request->Category ? $request->Category  : 0;
              $GeneralContent->length = $request->length ? $request->length  : 0;
@@ -160,6 +208,7 @@ class AdminController  extends Controller
              $GeneralContent->status = $request->status ? $request->status : 0;
              $GeneralContent->picture = $request->status ? $request->picture : 0;
              $GeneralContent->Completion = $request->Completion ? $request->Completion : 0;
+             
             $GeneralContent->save();
              }
 
@@ -217,12 +266,15 @@ class AdminController  extends Controller
         $AvailableProperty->Price = $request->Price;
         $AvailableProperty->Area = $request->Area;
         $AvailableProperty->Bedrooms = $request->Bedrooms;
+        $AvailableProperty->bathrooms = $request->bathrooms;
         $AvailableProperty->property_type_id = $request->property_type_id;
         $AvailableProperty->Category = $request->selectCategory;
         $AvailableProperty->length = $request->length;
         $AvailableProperty->Speciality = $request->Speciality;
         $AvailableProperty->Completion = $request->Completion;
         $AvailableProperty->agent = $request->agent;
+        $AvailableProperty->lat = $request->lat;
+        $AvailableProperty->lon = $request->lon;
         $AvailableProperty->save();
         return redirect('admin/show-upload-items');
      }

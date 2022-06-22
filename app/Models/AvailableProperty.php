@@ -33,7 +33,7 @@ class AvailableProperty extends Model
     ];
 
 
-     protected $fillable = ['productname', 'city', 'area' , 'Description', 'Price', 'Area', 'Bedrooms', 'length', 'Speciality', 'property_type_id', 'picture', 'Category','Completion','status','agent','bannerimage', 'lon', 'lat'];  
+     protected $fillable = ['productname', 'city', 'area' , 'Description', 'Price', 'Area', 'Bedrooms', 'length', 'Speciality', 'property_type_id', 'picture', 'Category','Completion','status','agent','bannerimage', 'lon', 'lat', 'bathrooms'];  
 
     public function propertyType()
     {

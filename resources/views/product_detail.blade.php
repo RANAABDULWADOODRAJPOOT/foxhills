@@ -21,12 +21,12 @@
 			</li>
 			
 			</ol>
-			<div class="wrapper">
+			<div class="wrapper mb-center">
 			<article id="property-10382">
 			<header class="brd-bottom">
 			<h1 id="property-title" class="tw mrg-bottom-20">{!! $userProducts->productname !!}</h1>
 			</header>
-			<div id="property-media" class="column-66 left relative mrg-bottom-20 mrg-ignore-mobile multiple js-more-images">
+			<div id="property-media" class="column-66 left relative mrg-bottom-20 multiple js-more-images">
              @if(!$images->isEmpty())
 				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 					<div class="carousel-inner">
@@ -61,7 +61,7 @@
 
 
 
-			<div class="more-pictures">
+			<div class="more-pictures ">
 			
 			</div>
 			<a class="heart-button right hover login-button " data-id="10382" title="Add to collection">
@@ -70,13 +70,18 @@
 			</svg>
 			</a>
 			</div>
-			<div id="property-details" class="column-33 right pdg-left-20 pdg-ignore-mobile">
+
+
+
+
+
+			<div id="property-details" class="column-33 right pdg-left-20 mb-center">
 			<div class="cf-group pdg-left-20 pdg-right-20 pdg-ignore-tablet">
 			<div class="pdg-top-20 pdg-bottom-20">
 			<div class="mrg-bottom-5">
 			<span class="f16 lh20 uppercase silver">{!! App\Models\AvailableProperty::getPropertyType($userProducts->Category) !!}</span>
 			</div>
-			<h2 class="f20 lh24 text-left white mrg-top-10 mrg-bottom-auto" style="text-transform: inherit;">{!! $userProducts->productname !!}</h2>
+			<h2 class="f20 lh24 text-left white mrg-top-10 mrg-bottom-auto mb-center" style="text-transform: inherit;">{!! $userProducts->productname !!}</h2>
 			<div class="f20 lh24 uppercase white mt-3">AED {!! number_format($userProducts->Price, 0, ',', ','); !!}</div>
 			</div>
 			<div class="pdg-bottom-10">
@@ -85,7 +90,7 @@
 			</div>
 			</div>
 			</div>
-			<div class="mrg-top-10 mrg-bottom-20 tablet pw100">
+			<div class="mrg-top-10 mrg-bottom-20 pw100">
 			<a  class="btn btn-white open-enquiry request">request information</a>
 			</div>
 			<div class="cf-group mrg-bottom-20 brd-top">
@@ -116,7 +121,16 @@
 			
 			</tbody></table>
 			</div>
-			<div class="cf-group mrg-bottom-20 brd-top mrg-top-10">
+
+
+
+
+
+
+
+
+
+			<div class="cf-group mrg-bottom-20 brd-top mrg-top-10 mb-center">
 			<header>
 			<h2 class="f16 lh24 white uppercase pdg-left-20 pdg-ignore-tablet">Essentials</h2>
 			</header>
@@ -134,14 +148,13 @@
 			</tr>
 			<tr>
 			<td>Bedrooms</td>
-			<td class="light-silver">
-			<a href="/" class="underline hover" title="4 bedrooms Villa">
-			4 bedrooms</a>
-			</td>
+	
+				<td class="light-silver">{!! $userProducts->Bedrooms !!}</td>
+		
 			</tr>
 			<tr>
 			<td>Bathrooms</td>
-			<td class="light-silver">{!! $userProducts->Bedrooms !!}</td>
+			<td class="light-silver">{!! $userProducts->bathrooms !!}</td>
 			</tr>
 			<tr>
 			<td>Built up area</td>

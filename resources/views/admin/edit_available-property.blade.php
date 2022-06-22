@@ -53,7 +53,12 @@
 
   <div class="form-group col-6">
     <label for="exampleInputEmail1">Bedrooms</label>
-    <input type="text" class="form-control" name="Bedrooms"  placeholder="Enter Price"  value="{!! $AvailableProperty->Bedrooms !!}">
+    <input type="text" class="form-control" name="Bedrooms"   value="{!! $AvailableProperty->Bedrooms !!}">
+  </div>
+
+  <div class="form-group col-6">
+    <label for="exampleInputEmail1">Bathrooms</label>
+    <input type="text" class="form-control" name="bathrooms"   value="{!! $AvailableProperty->bathrooms !!}">
   </div>
 
   <div class="form-group col-6">

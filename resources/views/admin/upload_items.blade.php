@@ -84,6 +84,11 @@
     <input type="text" class="form-control" name="Bedrooms"  placeholder="e.g. 5" >
   </div>
 
+  <div id="Bedrooms" class="form-group col-6">
+    <label for="exampleInputEmail1">Bathrooms</label>
+    <input type="text" class="form-control" name="bathrooms"  placeholder="e.g. 5" >
+  </div>
+
   <div id="length" class="form-group col-6">
     <label for="exampleInputEmail1">Area</label>
     <input type="text" class="form-control" name="length"  placeholder="2200" >

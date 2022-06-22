@@ -34,6 +34,8 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('edit/{id}', [App\Http\Controllers\AdminController::class, 'editPropertyType']);
     Route::post('update-property-type/{id}', [App\Http\Controllers\AdminController::class, 'updatePropertyType']);
     Route::get('delete-property-type/{id}', [App\Http\Controllers\AdminController::class, 'deletePropertyType']);
+    Route::get('downloadrequests', [App\Http\Controllers\AdminController::class, 'downloadRequests']);
+ 
 
     
 

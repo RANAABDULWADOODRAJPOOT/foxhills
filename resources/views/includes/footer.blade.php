@@ -1,4 +1,4 @@
-<section  style="background-color:#111">
+<section  style="background-color:#111" class="mb-center">
    <div  class="container pt-5 px-3">
       <div class="col-12 ">
          <h5 class="text-light text-center {!!  (Agent::isMobile()) ? 'mobilefont' : '' !!}">SIGN UP FOR OUR WEEKLY NEWSLETTER FOR MARKET UPDATES</h5>

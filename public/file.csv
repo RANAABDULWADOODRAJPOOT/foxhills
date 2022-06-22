@@ -1,0 +1,6 @@
+id,name,email,phone,description,user_request_type,created_at,updated_at
+1,"Awais Sheikh",awaissheikh480@gmail.com,03218444938,dsdsfds,Buy,2022-05-26T01:37:33.000000Z,2022-05-26T01:37:33.000000Z
+2,"KOhshan Tariq",kohshan_tariq@live.com,03000111152,sdfsadfsdfasdfasdfasdfsadf,Buy,2022-05-30T16:52:25.000000Z,2022-05-30T16:52:25.000000Z
+3,Abdul,abc@gmail.com,1234567890,More,Buy,2022-06-15T21:23:58.000000Z,2022-06-15T21:23:58.000000Z
+4,Abdul,abc@gmaul.com,123456789,"message here",,2022-06-20T10:56:40.000000Z,2022-06-20T10:56:40.000000Z
+5,Abdbul,abc@gmail.com,3165671665,"I'd like to have more information about the property ID #  4",Buy,2022-06-21T18:39:19.000000Z,2022-06-21T18:39:19.000000Z
