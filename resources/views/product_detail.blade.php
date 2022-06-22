@@ -157,9 +157,8 @@
 			<td class="light-silver">{!! $userProducts->bathrooms !!}</td>
 			</tr>
 			<tr>
-			<td>Built up area</td>
-			<td class="light-silver">
-			5,000 sq ft </td>
+			<td>Speciality</td>
+			<td class="light-silver">{!! $userProducts->Speciality !!}</td>
 			</tr>
 			<tr>
 			<td>Plot size</td>
