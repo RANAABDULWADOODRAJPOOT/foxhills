@@ -60,3 +60,8 @@ button {
 
 #result {
   margin-bottom: 100px; }
+
+
+  .active{
+    background:gray !important;
+  }

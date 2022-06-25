@@ -97,7 +97,7 @@ Route::get('details/{id}', 'App\Http\Controllers\luxhabitateIndexController@data
 
 Route::get('Journal', 'App\Http\Controllers\journalController@index');
 Route::get('Journal/{id}', 'App\Http\Controllers\journalController@detail');
-Route::get('Journal/{name}/{id}', 'App\Http\Controllers\journalController@filterbycategory');
+Route::get('Journal/cat/{id}', 'App\Http\Controllers\journalController@filterbycategory');
 
 
 

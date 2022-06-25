@@ -29,7 +29,8 @@ function index()
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }
@@ -47,12 +48,17 @@ function index()
 
 $fistRow = PropertyType::first('id');
     if(!empty($fistRow)){
-    $typeone = AvailableProperty::where('property_type_id',$fistRow->id)->orderBy('property_type_id', 'ASC')->take(9)->get();
+    $typeone_new = AvailableProperty::where('property_type_id',$fistRow->id)->orderBy('created_at', 'DESC')->take(3)->get();
+    $typeone_price = AvailableProperty::where('property_type_id',$fistRow->id)->orderBy('Price', 'DESC')->take(3)->get();
+    $typeone_feature = AvailableProperty::where('property_type_id',$fistRow->id)->where('featured', 1)->take(3)->get();
     }
     
     $secondRow = PropertyType::skip(1)->first();
     if(!empty($secondRow)){
-    $typetwo = AvailableProperty::where('property_type_id',$secondRow->id)->with('propertyType')->orderBy('property_type_id', 'ASC')->take(9)->get();
+    // $typetwo = AvailableProperty::where('property_type_id',$secondRow->id)->with('propertyType')->orderBy('property_type_id', 'ASC')->take(9)->get();
+    $typetwo_new = AvailableProperty::where('property_type_id',$secondRow->id)->orderBy('created_at', 'DESC')->take(3)->get();
+    $typetwo_price = AvailableProperty::where('property_type_id',$secondRow->id)->orderBy('Price', 'DESC')->take(3)->get();
+    $typetwo_feature = AvailableProperty::where('property_type_id',$secondRow->id)->where('featured', 1)->take(3)->get();
 
     }
     
@@ -70,14 +76,19 @@ $fistRow = PropertyType::first('id');
       if($random_key == 0){
         $random_key=$random_key+1; 
       }
-      $AvailableProperty = AvailableProperty::where('id',$random_key)->first();
+
+      $AvailableProperty = AvailableProperty::where('id',$random_key)->orderBy('id','DESC');
+
+
+      // $AvailablePropertys = AvailableProperty::where('id',$random_key);
+      // $AvailableProperty = collect($AvailablePropertys)->last();
     }
      
      
     
 
   $Journals = Journal::take(3)->get();
-  return view('homepage',compact('typeone','typetwo','typethree','Journals','allHeadings','AvailableProperty'));
+  return view('homepage',compact('typeone_new','typeone_price','typeone_feature','typetwo_new','typetwo_price','typetwo_feature','typethree','Journals','allHeadings','AvailableProperty'));
 }
 
 function pagedata($name,$id,$type='')
@@ -95,7 +106,8 @@ function pagedata($name,$id,$type='')
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }
@@ -126,7 +138,8 @@ function pagedata($name,$id,$type='')
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }
@@ -152,7 +165,8 @@ function pagedata($name,$id,$type='')
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }

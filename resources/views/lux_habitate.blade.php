@@ -66,9 +66,9 @@
             display: none;
         }
 
-        .flex-1{
+        /* .flex-1{
             display: none;
-        }
+        } */
         .text-gray-500{
             border: none;
         }
@@ -231,13 +231,13 @@ margin-bottom: 1rem;
 }
 
 
-
     </style>
 
     
 </head>
 <body style="background-color:black;">
 
+ 
     <script   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
     <script  src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
@@ -256,6 +256,8 @@ margin-bottom: 1rem;
     @yield('header', View::make('includes.header',['allHeadings' => $allHeadings]))
     @yield('content')
 
+
+  
     
 
 

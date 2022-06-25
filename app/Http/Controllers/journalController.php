@@ -14,6 +14,7 @@ use Session;
 use App\Models\PropertyType; 
 use App\Models\AvailableProperty; 
 use App\Models\Journal; 
+use App\Models\JournalCategory; 
 use App\Models\page; 
 
 class journalController extends Controller
@@ -60,22 +61,20 @@ class journalController extends Controller
        }
        
        
-       function filterbycategory($name='',$id=''){
-            $MostviewJournals = '';
-            $Journals = Journal::where('id',$id)->paginate(9);
-            $Journalp = Journal::get('id'); 
-             if(!empty($Journalp)){
-              foreach($Journalp as $j){
-              $x[] = $j->id; 
-              }
-              $random_key=array_rand($x);
-              if($random_key == 0){
-                $random_key=$random_key+1; 
-              }
-              $MostviewJournals = Journal::where('id',$random_key)->paginate(9);
-            }
-             $AllJournals = Journal::paginate(30);
+       function filterbycategory($id){
+
+        if($id==0){
+          $AllJournals = Journal::paginate(6);
+        
+         
+        }else{
+          $AllJournals = Journal::where('journal_type',$id)->paginate(6);
+         
+        }
+        
             
+    $category = JournalCategory::all();
+
     $allHeadings = page::with(['properties' => function($query) {
       $query->distinct('property_type_id');
     }])->get();
@@ -96,7 +95,7 @@ class journalController extends Controller
       $head->propertydata = $propertydata;
     }
    
-            return view('journal',compact('Journals','allHeadings','AllJournals','MostviewJournals'));
+            return view('journal',compact('category','AllJournals','allHeadings'));
             
        }
        

@@ -14,9 +14,15 @@
      <form method="POST" action="{{url('admin/save-journals')}}"  enctype="multipart/form-data">
        @csrf
         <div class="row my-5">
-            <div class="form-group col-6">
-                <label for="exampleInputEmail1">Journal Type</label>
-                <input type="text" class="form-control"  name="journal_type" required>
+           
+
+            <div id="Propertytype" class="form-group col-6">
+              <label for="exampleInputPassword1">Property Type</label>
+               <select style="height:34px;" class="form-control" name="journal_type" id="selectCategoryById">
+                  @foreach($category as $cat)
+                  <option value="{!!  $cat->id !!}">{!!  $cat->name !!}</option>
+                  @endforeach
+              </select>
             </div>
              <div class="form-group col-6">
                 <label for="exampleInputEmail1">Journal Title</label>
@@ -29,11 +35,11 @@
             </div>
              <div class="form-group col-6">
                 <label for="exampleInputEmail1">Publish Date</label>
-                <input type="text" class="form-control"  name="Publish_date" required>
+                <input type="date" class="form-control"  name="Publish_date" required>
             </div>
-             <div class="form-group col-6">
+             <div class="form-group col-12">
                 <label for="exampleInputEmail1">Description</label>
-                 <textarea style="height: 300px;" type="text" class="form-control" name="description"></textarea>
+                 <textarea rows="10" type="text" class="form-control" name="description"></textarea>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

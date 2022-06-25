@@ -12,22 +12,22 @@
 	<div style="margin-top: 4px !important;justify-content:end;" id="filterbarhover"  class="col-5 d-flex m-0 p-0">
 
  @php ($allheadings = App\Models\page::getallheadings())
- <div id="Firstdropdown" class="dropdown">
+ {{-- <div id="Firstdropdown" class="dropdown">
 	
  	<button id="typeButton" style="background-color: #222;border:none; color:#999;font-size: 12px;padding-left:7px !important" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		Category
 		<i class="fa-solid fa-angle-down"></i>
  	</button>
  	<div style="background-color:black; min-width: 12rem;" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
- 		<input  type="hidden"  class="mt-1 defaultcategory" type="checkbox" value="0">
+ 		<input  type="hidden"  class="defaultcategory" type="checkbox" value="0" style="margin-top: 0.5rem">
  		@foreach($allheadings as $allheading) 
  		<div class="d-flex px-2 my-2">
- 			<input id="type_{!! $allheading->id !!}"  class="mt-1 Category" type="checkbox"  value="{!! $allheading->id !!}" data-property-name="{!! $allheading->title !!}">
- 			<label for="type_{!! $allheading->id !!}"   style="font-size:13px;" class="text-muted-filter ml-3 font-size-sm" >{!! $allheading->heading !!}</label>
+ 			<input id="type_{!! $allheading->id !!}" style="margin-top:-0.5rem;"  class="Category" type="checkbox"  value="{!! $allheading->id !!}" data-property-name="{!! $allheading->title !!}">
+ 			<label for="type_{!! $allheading->id !!}"   style="font-size:13px;line-height:0px !important;" class="text-muted-filter ml-3 font-size-sm" >{!! $allheading->heading !!}</label>
  		</div>
  		@endforeach
  	</div>
- </div>
+ </div> --}}
 
         
             @php ($types = App\Models\PropertyType::getPropertyTypes())
@@ -39,8 +39,8 @@
               <input  type="hidden"  class="mt-1 defaultproperty" type="checkbox" value="0">
 				@foreach($types as $type)
 				<div class="d-flex px-3 my-2">
-				 <input id="types_{!! $type->id !!}"  class="mt-1 typename" type="checkbox"  value="{!! $type->id !!}" data-property-name="{!! $type->title !!}">
-				 <label for="types_{!! $type->id !!}"   style="font-size:13px;" class="text-muted-filter ml-3 font-size-sm" >{!! $type->title !!}</label>
+				 <input id="types_{!! $type->id !!}" style="margin-top:0rem;"  class="typename" type="checkbox"  value="{!! $type->id !!}" data-property-name="{!! $type->title !!}">
+				 <label for="types_{!! $type->id !!}"   style="font-size:13px;line-height:0px;" class="text-muted-filter ml-3 font-size-sm" >{!! $type->title !!}</label>
 				</div>
 				@endforeach
 
@@ -95,8 +95,8 @@
 				<input  type="hidden"  class="mt-1 defaultBedrooms" type="checkbox" value="0">
 				@for($i=0;$i<4;$i++)
 				<div class="d-flex px-3 my-2">
-					<input id="typess_{!! $allpropertiesbedrooms[$i] !!}"  class="mt-1 Bedrooms" type="checkbox" value="{!! $allpropertiesbedrooms[$i] !!}">
-					 <label for="typess_{!! $allpropertiesbedrooms[$i] !!}"  style="font-size:13px;" class="text-muted-filter ml-3 font-size-sm" >{!! $allpropertiesbedrooms[$i] !!} bedrooms</label>
+					<input id="typess_{!! $allpropertiesbedrooms[$i] !!}"  style="margin-top:0;"  class="Bedrooms" type="checkbox" value="{!! $allpropertiesbedrooms[$i] !!}">
+					 <label for="typess_{!! $allpropertiesbedrooms[$i] !!}"  style="line-height:0px;font-size:13px;" class="text-muted-filter ml-3 font-size-sm" >{!! $allpropertiesbedrooms[$i] !!} bedrooms</label>
 				</div>
 				@endfor
 

@@ -119,3 +119,11 @@ color:white !important;
   
 
   
+
+  label.required::before {
+    content: '*';
+    margin-right: 4px;
+    color: red;
+  }
+
+ 

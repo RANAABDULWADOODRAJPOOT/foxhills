@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Tonysm\RichTextLaravel\Models\Traits\HasRichText;
 
 use App;
 use Auth;
@@ -15,11 +16,13 @@ use App\Models\PropertyType;
 use App\Models\AvailableProperty; 
 use App\Models\Journal; 
 use App\Models\UserRequest; 
+use App\Models\JournalCategory; 
 use App\Models\page; 
 use App\Models\agent; 
 use App\Models\GeneralContent; 
 use App\Models\multipicture; 
 use App\Models\multipleimageblog; 
+use Illuminate\Support\Facades\Validator;
 
 
 
@@ -162,6 +165,14 @@ class AdminController  extends Controller
      
       public function saveItems(Request $request)
      {  
+        // $validator = Validator::make($request::all(), [
+        //     'productname'  => 'required|max:100',
+        // ]);
+
+
+        // if($validator->fails()) {
+        //     return Redirect::back()->withErrors($validator);
+        // }
           
         
         
@@ -193,7 +204,7 @@ class AdminController  extends Controller
            AvailableProperty::where('id',  $data->id)->update(array('bannerimage' => $newImageName));
         }
         else {
-             $GeneralContent = new GeneralContent(); 
+             $GeneralContent = new AvailableProperty(); 
              $GeneralContent->productname = $request->productname ? $request->productname : 0;
              $GeneralContent->city = $request->city ? $request->city : 0;
              $GeneralContent->Description = $request->Description ? $request->Description : 0;
@@ -201,6 +212,7 @@ class AdminController  extends Controller
              $GeneralContent->Area = $request->Area ? $request->Area : 0;
              $GeneralContent->Bedrooms = $request->Bedrooms ? $request->Bedrooms  : 0;
              $GeneralContent->bathrooms = $request->bathrooms ? $request->bathrooms  : 0;
+             $GeneralContent->featured = $request->featured ? $request->featured  : 0;
              $GeneralContent->property_type_id = 0;
              $GeneralContent->Category = $request->Category ? $request->Category  : 0;
              $GeneralContent->length = $request->length ? $request->length  : 0;
@@ -267,6 +279,7 @@ class AdminController  extends Controller
         $AvailableProperty->Area = $request->Area;
         $AvailableProperty->Bedrooms = $request->Bedrooms;
         $AvailableProperty->bathrooms = $request->bathrooms;
+        $AvailableProperty->featured = $request->featured ? $request->featured  : 0;
         $AvailableProperty->property_type_id = $request->property_type_id;
         $AvailableProperty->Category = $request->selectCategory;
         $AvailableProperty->length = $request->length;
@@ -287,8 +300,10 @@ class AdminController  extends Controller
 
      public function uploadJournals()
      {     
-            $alldata = multipleimageblog::all();
-           return view('admin.upload_journals',compact('alldata'));  
+          
+            $alldata= Journal::all();
+            $category = JournalCategory::all();
+           return view('admin.upload_journals',compact('alldata','category'));  
      }
 
      public function multiJournals()
@@ -343,7 +358,8 @@ class AdminController  extends Controller
     public function editJournals($id)
     { 
          $Journal = Journal::find($id);
-        return view('admin.edit_journal',compact('Journal'));  
+         $category = JournalCategory::all();
+        return view('admin.edit_journal',compact('Journal', 'category'));  
     }
 
 

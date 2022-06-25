@@ -8,17 +8,15 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
 {
     public static $files = array (
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
-        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
@@ -33,8 +31,10 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
     );
 
@@ -54,6 +54,10 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
         ),
         'T' => 
         array (
+            'Tonysm\\RichTextLaravel\\Database\\Factories\\' => 42,
+            'Tonysm\\RichTextLaravel\\' => 23,
+            'Tonysm\\GlobalId\\Database\\Factories\\' => 35,
+            'Tonysm\\GlobalId\\' => 16,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
         ),
@@ -85,6 +89,7 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
             'Symfony\\Component\\ErrorHandler\\' => 31,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\LaravelPackageTools\\' => 27,
         ),
         'R' => 
         array (
@@ -206,6 +211,22 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Tonysm\\RichTextLaravel\\Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tonysm/rich-text-laravel/database/factories',
+        ),
+        'Tonysm\\RichTextLaravel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src',
+        ),
+        'Tonysm\\GlobalId\\Database\\Factories\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tonysm/globalid-laravel/database/factories',
+        ),
+        'Tonysm\\GlobalId\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tonysm/globalid-laravel/src',
+        ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
             0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
@@ -317,6 +338,10 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Spatie\\LaravelPackageTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-package-tools/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -601,6 +626,7 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
         'App\\Models\\AvailableProperty' => __DIR__ . '/../..' . '/app/Models/AvailableProperty.php',
         'App\\Models\\GeneralContent' => __DIR__ . '/../..' . '/app/Models/GeneralContent.php',
         'App\\Models\\Journal' => __DIR__ . '/../..' . '/app/Models/Journal.php',
+        'App\\Models\\JournalCategory' => __DIR__ . '/../..' . '/app/Models/JournalCategory.php',
         'App\\Models\\PropertyAgent' => __DIR__ . '/../..' . '/app/Models/PropertyAgent.php',
         'App\\Models\\PropertyType' => __DIR__ . '/../..' . '/app/Models/PropertyType.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
@@ -4797,6 +4823,9 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/type/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Spatie\\LaravelPackageTools\\Exceptions\\InvalidPackage' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Exceptions/InvalidPackage.php',
+        'Spatie\\LaravelPackageTools\\Package' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/Package.php',
+        'Spatie\\LaravelPackageTools\\PackageServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-package-tools/src/PackageServiceProvider.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',
@@ -5598,6 +5627,52 @@ class ComposerStaticInit573b110c7bf5d433849244ce8a643f4b
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Tonysm\\GlobalId\\Commands\\GlobalIdCommand' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Commands/GlobalIdCommand.php',
+        'Tonysm\\GlobalId\\Exceptions\\GlobalIdException' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Exceptions/GlobalIdException.php',
+        'Tonysm\\GlobalId\\Exceptions\\InvalidSignatureException' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Exceptions/InvalidSignatureException.php',
+        'Tonysm\\GlobalId\\Exceptions\\LocatorException' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Exceptions/LocatorException.php',
+        'Tonysm\\GlobalId\\Exceptions\\MissingVerifierException' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Exceptions/MissingVerifierException.php',
+        'Tonysm\\GlobalId\\Exceptions\\SignedGlobalIdException' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Exceptions/SignedGlobalIdException.php',
+        'Tonysm\\GlobalId\\Facades\\Locator' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Facades/Locator.php',
+        'Tonysm\\GlobalId\\GlobalId' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/GlobalId.php',
+        'Tonysm\\GlobalId\\GlobalIdServiceProvider' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/GlobalIdServiceProvider.php',
+        'Tonysm\\GlobalId\\Locator' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Locator.php',
+        'Tonysm\\GlobalId\\Locators\\BaseLocator' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Locators/BaseLocator.php',
+        'Tonysm\\GlobalId\\Locators\\LocatorContract' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Locators/LocatorContract.php',
+        'Tonysm\\GlobalId\\Models\\HasGlobalIdentification' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Models/HasGlobalIdentification.php',
+        'Tonysm\\GlobalId\\SignedGlobalId' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/SignedGlobalId.php',
+        'Tonysm\\GlobalId\\URI\\GID' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/URI/GID.php',
+        'Tonysm\\GlobalId\\URI\\GIDParsingException' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/URI/GIDParsingException.php',
+        'Tonysm\\GlobalId\\Verifier' => __DIR__ . '/..' . '/tonysm/globalid-laravel/src/Verifier.php',
+        'Tonysm\\RichTextLaravel\\Actions\\FragmentByCanonicalizingAttachmentGalleries' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Actions/FragmentByCanonicalizingAttachmentGalleries.php',
+        'Tonysm\\RichTextLaravel\\Actions\\FragmentByCanonicalizingAttachments' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Actions/FragmentByCanonicalizingAttachments.php',
+        'Tonysm\\RichTextLaravel\\AttachableFactory' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/AttachableFactory.php',
+        'Tonysm\\RichTextLaravel\\Attachables\\Attachable' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachables/Attachable.php',
+        'Tonysm\\RichTextLaravel\\Attachables\\AttachableContract' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachables/AttachableContract.php',
+        'Tonysm\\RichTextLaravel\\Attachables\\ContentAttachment' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachables/ContentAttachment.php',
+        'Tonysm\\RichTextLaravel\\Attachables\\MissingAttachable' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachables/MissingAttachable.php',
+        'Tonysm\\RichTextLaravel\\Attachables\\RemoteFile' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachables/RemoteFile.php',
+        'Tonysm\\RichTextLaravel\\Attachables\\RemoteImage' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachables/RemoteImage.php',
+        'Tonysm\\RichTextLaravel\\Attachment' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachment.php',
+        'Tonysm\\RichTextLaravel\\AttachmentGallery' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/AttachmentGallery.php',
+        'Tonysm\\RichTextLaravel\\Attachments\\Minification' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachments/Minification.php',
+        'Tonysm\\RichTextLaravel\\Attachments\\TrixConvertion' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Attachments/TrixConvertion.php',
+        'Tonysm\\RichTextLaravel\\Casts\\AsRichTextContent' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Casts/AsRichTextContent.php',
+        'Tonysm\\RichTextLaravel\\Casts\\ForwardsAttributeToRelationship' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Casts/ForwardsAttributeToRelationship.php',
+        'Tonysm\\RichTextLaravel\\Commands\\RichTextLaravelInstallCommand' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Commands/RichTextLaravelInstallCommand.php',
+        'Tonysm\\RichTextLaravel\\Content' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Content.php',
+        'Tonysm\\RichTextLaravel\\Exceptions\\RichTextException' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Exceptions/RichTextException.php',
+        'Tonysm\\RichTextLaravel\\Fragment' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Fragment.php',
+        'Tonysm\\RichTextLaravel\\HtmlConversion' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/HtmlConversion.php',
+        'Tonysm\\RichTextLaravel\\LivewireSupportsRichText' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/LivewireSupportsRichText.php',
+        'Tonysm\\RichTextLaravel\\Livewire\\WithRichTexts' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Livewire/WithRichTexts.php',
+        'Tonysm\\RichTextLaravel\\Models\\RichText' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Models/RichText.php',
+        'Tonysm\\RichTextLaravel\\Models\\Traits\\HasRichText' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Models/Traits/HasRichText.php',
+        'Tonysm\\RichTextLaravel\\PlainTextConversion' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/PlainTextConversion.php',
+        'Tonysm\\RichTextLaravel\\RichTextLaravelServiceProvider' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/RichTextLaravelServiceProvider.php',
+        'Tonysm\\RichTextLaravel\\Serialization' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/Serialization.php',
+        'Tonysm\\RichTextLaravel\\TrixAttachment' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/TrixAttachment.php',
+        'Tonysm\\RichTextLaravel\\View\\Components\\TrixStyles' => __DIR__ . '/..' . '/tonysm/rich-text-laravel/src/View/Components/TrixStyles.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',

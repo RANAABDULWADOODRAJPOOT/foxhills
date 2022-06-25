@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '83b500faa441a580474e45f641db2c695a62c230',
+    'reference' => '1a217e4a9775e3b25a8a76812380bb1ae5262566',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -472,7 +472,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '83b500faa441a580474e45f641db2c695a62c230',
+      'reference' => '1a217e4a9775e3b25a8a76812380bb1ae5262566',
     ),
     'laravel/sail' => 
     array (
@@ -862,8 +862,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0|2.0',
-        1 => '1.0.0 || 2.0.0 || 3.0.0',
+        0 => '1.0.0 || 2.0.0 || 3.0.0',
+        1 => '1.0|2.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -1068,6 +1068,15 @@
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'spatie/laravel-package-tools' => 
+    array (
+      'pretty_version' => '1.12.0',
+      'version' => '1.12.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9e6c0382553f1317c02f1ae0ee71c64821eb5af0',
     ),
     'swiftmailer/swiftmailer' => 
     array (
@@ -1352,6 +1361,24 @@
       array (
       ),
       'reference' => 'da444caae6aca7a19c0c140f68c6182e337d5b1c',
+    ),
+    'tonysm/globalid-laravel' => 
+    array (
+      'pretty_version' => '1.1.0',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '63ff6d82304ad5415a72374985ba9c1235362fcf',
+    ),
+    'tonysm/rich-text-laravel' => 
+    array (
+      'pretty_version' => '1.5.0',
+      'version' => '1.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '86648ac9bb7bad92d6719aad342f9d0ba2d4e7f4',
     ),
     'vlucas/phpdotenv' => 
     array (

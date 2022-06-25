@@ -24,6 +24,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/qvo97mjpi28xr3g3h54rx8yda1h96sv4o8a31mih22sgy5q4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -32,6 +33,9 @@
     .options{
          background:blue !important;
         }
+        .active{
+  background:gray !important;
+}
 
 
     </style>
@@ -135,5 +139,18 @@
         utilsScript: "build/js/utils.js",
       });
     </script>
+
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      images_upload_url: 'admin/uploadblogmultiple',
+        automatic_uploads: false
+    });
+  </script>
 </body>
 </html>

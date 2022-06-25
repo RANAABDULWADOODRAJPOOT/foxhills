@@ -15,6 +15,11 @@
     </div>
 @endif
 
+@if($errors->any())
+  {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+@endif
+
+
 
 @if(count($showProperty) === 0)
 <h2 class="text-center font-weight-bold text-danger"class="text-dark">Please Add The Property Type First</h2>
@@ -29,39 +34,42 @@
 
 <h2 class="text-center"class="text-dark">Please Select The Category</h2>
 
-    <select style="height:40px;" class="form-control my-5" name="selectCategory" id="selectCategoryById">
+    <select style="height:40px;" class="form-control my-5" name="selectCategory" id="selectCategoryById" required>
+      <label for="exampleInputEmail1">Category <span style="color: red">*</span></label>
         <option style="display:none" value="0">Categories</option>
         @foreach($pagedatas as $pagedata)
         <option value="{!! $pagedata->id !!}">{!! $pagedata->heading !!}</option>
         @endforeach
     </select>
 
-
+{{-- 
     <select style="height:40px;" class="form-control my-5 d-none" name="selection" id="selection">
+      <label for="exampleInputEmail1">Property Type</label>
         <option style="display:none" value="0">Categories</option>
-
-        <option value="1">Detail Content</option>
+        @foreach($showProperty as $propertydata)
+        <option value="{!! $propertydata->id !!}" selected>{!! $propertydata->title !!}</option>
+        @endforeach
         <option value="2">General Content</option>
 
-    </select>
+    </select> --}}
 
 
   
 
-  <div id="otherType" class="mt-5  d-none">
+  <div class="mt-5 ">
     <h3 style="font-weight:500" class="mb-4">Add Details</h3>
     <form method="POST" action="{{url('admin/save-items')}}" enctype="multipart/form-data">
        @csrf
     <div class="row">
 
   <div class="form-group col-6">
-    <label for="exampleInputEmail1">Name</label>
-    <input type="text" class="form-control"  name="productname" placeholder="Enter Name" >
+    <label for="exampleInputEmail1">Name <span style="color: red">*</span></label>
+    <input type="text" class="form-control"  name="productname" placeholder="Enter Name" required>
   </div>
 
   <div id="City" class="form-group col-6">
-    <label for="exampleInputPassword1">City</label>
-    <input type="text" class="form-control" name="city" placeholder="e.g Dubai" >
+    <label for="exampleInputPassword1">City <span style="color: red">*</span></label>
+    <input type="text" class="form-control" name="city" placeholder="e.g Dubai" required>
   </div>
 
   <div  class="form-group col-6">
@@ -70,13 +78,13 @@
   </div>
 
     <div id="Price" class="form-group col-6">
-    <label for="exampleInputEmail1">Price</label>
-    <input type="text" class="form-control" name="Price"  placeholder="200000000" >
+    <label for="exampleInputEmail1">Price <span style="color: red">*</span></label>
+    <input type="text" class="form-control" name="Price"  placeholder="200000000" required>
   </div>
 
   <div id="Area" class="form-group col-6">
-    <label for="exampleInputEmail1">Location</label>
-    <input type="text" class="form-control" name="Area"  placeholder="e.g Dubai West" >
+    <label for="exampleInputEmail1">Location <span style="color: red">*</span></label>
+    <input type="text" class="form-control" name="Area"  placeholder="e.g Dubai West" required>
   </div>
 
   <div id="Bedrooms" class="form-group col-6">
@@ -90,8 +98,8 @@
   </div>
 
   <div id="length" class="form-group col-6">
-    <label for="exampleInputEmail1">Area</label>
-    <input type="text" class="form-control" name="length"  placeholder="2200" >
+    <label for="exampleInputEmail1">Area <span style="color: red">*</span></label>
+    <input type="text" class="form-control" name="length"  placeholder="2200" required>
   </div>
 
   <div id="Speciality" class="form-group col-6">
@@ -108,16 +116,7 @@
     </select>
   </div>
 
-  <div class="form-group col-6">
-    <label for="exampleInputPassword1">Image</label>
-    <input style="border:none" type="file" class="form-control p-0 mt-2" name="image">
-  </div>
 
-
-  <div id="bannerimage" class="form-group col-6">
-    <label for="exampleInputPassword1">bannerimage</label>
-    <input style="border:none" type="file" class="form-control p-0 mt-2" name="bannerimage">
-  </div>
 
     <div id="Completion" class="form-group col-6">
     <label for="exampleInputPassword1">Completion:</label>
@@ -153,6 +152,28 @@
     <input id="setstatus" type="hidden" name="status">
   </div>
 
+  <div class="form-group col-6">
+    <label for="exampleInputPassword1">Feature</label>
+    <select style="height:34px;" class="form-control" name="featured">
+     
+      <option value="0" selected>No</option>
+      <option value="1">Yes</option>
+    
+    </select>
+  </div>
+
+
+  <div class="form-group col-6">
+    <label for="exampleInputPassword1">Image <span style="color: red">*</span></label>
+    <input style="border:none" type="file" class="form-control p-0 mt-2" name="image" required>
+  </div>
+
+
+  <div id="bannerimage" class="form-group col-6">
+    <label for="exampleInputPassword1" class="required">bannerimage <span style="color: red">*</span></label>
+    <input style="border:none" type="file" class="form-control p-0 mt-2 required" name="bannerimage" required>
+  </div>
+
 
   </div>
   <button type="submit" class="btn btn-primary mb-5">Submit</button>
@@ -175,42 +196,42 @@
         document.getElementById("setCategory").value = a;
     });
 
-     $( "#selection" ).on( "change", function() {
-        var select =  $('#selection option:selected').val();
-         document.getElementById("setstatus").value = select;
-        if(select == 1){
-           $( "#otherType" ).removeClass( "d-none" );
-            $( "#City" ).removeClass("d-none");
-            $( "#Price" ).removeClass("d-none");
-            $( "#Area" ).removeClass("d-none");
-            $( "#Bedrooms" ).removeClass("d-none");
-            $( "#length" ).removeClass("d-none");
-            $( "#Completion" ).removeClass("d-none");
-            $( "#bannerimage" ).removeClass("d-none");
-            $( "#Speciality" ).removeClass("d-none");
-            $( "#Completion" ).removeClass("d-none");
-             $( "#bannerimage" ).removeClass("d-none");
-              $( "#agenttype" ).removeClass("d-none");
-             $( "#Propertytype" ).removeClass("d-none");
-          }
-        else
-        {
-           $( "#otherType" ).removeClass( "d-none" );
-            $( "#City" ).addClass("d-none");
-            $( "#Price" ).addClass("d-none");
-            $( "#Area" ).addClass("d-none");
-            $( "#Bedrooms" ).addClass("d-none");
-            $( "#length" ).addClass("d-none");
-            $( "#Completion" ).addClass("d-none");
-             $( "#bannerimage" ).addClass("d-none");
-            $( "#Speciality" ).addClass("d-none");
-            $( "#Completion" ).addClass("d-none");
-               $( "#bannerimage" ).addClass("d-none");
-             $( "#agenttype" ).addClass("d-none");
-            $( "#Propertytype" ).addClass("d-none");
+    //  $( "#selection" ).on( "change", function() {
+    //     var select =  $('#selection option:selected').val();
+    //      document.getElementById("setstatus").value = select;
+    //     if(select == 1){
+    //        $( "#otherType" ).removeClass( "d-none" );
+    //         $( "#City" ).removeClass("d-none");
+    //         $( "#Price" ).removeClass("d-none");
+    //         $( "#Area" ).removeClass("d-none");
+    //         $( "#Bedrooms" ).removeClass("d-none");
+    //         $( "#length" ).removeClass("d-none");
+    //         $( "#Completion" ).removeClass("d-none");
+    //         $( "#bannerimage" ).removeClass("d-none");
+    //         $( "#Speciality" ).removeClass("d-none");
+    //         $( "#Completion" ).removeClass("d-none");
+    //          $( "#bannerimage" ).removeClass("d-none");
+    //           $( "#agenttype" ).removeClass("d-none");
+    //          $( "#Propertytype" ).removeClass("d-none");
+    //       }
+    //     else
+    //     {
+    //        $( "#otherType" ).removeClass( "d-none" );
+    //         $( "#City" ).addClass("d-none");
+    //         $( "#Price" ).addClass("d-none");
+    //         $( "#Area" ).addClass("d-none");
+    //         $( "#Bedrooms" ).addClass("d-none");
+    //         $( "#length" ).addClass("d-none");
+    //         $( "#Completion" ).addClass("d-none");
+    //          $( "#bannerimage" ).addClass("d-none");
+    //         $( "#Speciality" ).addClass("d-none");
+    //         $( "#Completion" ).addClass("d-none");
+    //            $( "#bannerimage" ).addClass("d-none");
+    //          $( "#agenttype" ).addClass("d-none");
+    //         $( "#Propertytype" ).addClass("d-none");
          
-        }
-    });
+    //     }
+    // });
 
 
 

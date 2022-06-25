@@ -64,20 +64,21 @@
     <div style="border-radius: 10px; background-color: black; height:800px" class="col-sm-2  sidenav hidden-xs">
       <img class="mt-5 mb-4"  style="{!!  (Agent::isMobile()) ? 'height: 30px;' : 'height: 40px;' !!}"  src="{!! config('urls.web_cdn_url') . '/assets/images/header' !!}/logo.png" > 
       <ul style="display:block;" class="nav nav-pills nav-stacked">
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/create-page') !!}">Create Page</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/show-pages') !!}">Show Pages</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/add-property-type') !!}">Add Sub pages</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/show-property-type') !!}">Show Sub pages</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/upload-items') !!}">Upload Data of pages</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/show-upload-items') !!}">Show Data of pages</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/show-general-page') !!}">show Data General pages</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/upload-journals') !!}">Upload Journals</a></li>
-          <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/multi-journals') !!}">Upload mutiple picture Journals</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/show-journals') !!}">Show Journals</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/addagent') !!}">Add agent</a></li>
-          <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/showagent') !!}">Show agents</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/show-request') !!}">Show Request</a></li>
-        <li><a style="font-weight: 700;" class="text-light" href="{{ route('logout') }}"
+      
+        <li><a style="font-weight: 700;"  class="text-light {{ Request::is('admin/create-page') ? 'active' : '' }}" href="{!! url('admin/create-page') !!}">Create Menu</a></li>
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/show-pages') ? 'active' : '' }}" href="{!! url('admin/show-pages') !!}">Show Menu</a></li>
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/add-property-type') ? 'active' : '' }}" href="{!! url('admin/add-property-type') !!}">Add Property Type</a></li>
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/show-property-type') ? 'active' : '' }}" href="{!! url('admin/show-property-type') !!}">Show Property Type</a></li>
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/upload-items') ? 'active' : '' }}" href="{!! url('admin/upload-items') !!}">Add Listing</a></li>
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/show-upload-items') ? 'active' : '' }}" href="{!! url('admin/show-upload-items') !!}">Show Listing</a></li>
+        {{-- <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/show-general-page') !!}">show Data General pages</a></li> --}}
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/upload-journals') ? 'active' : '' }}" href="{!! url('admin/upload-journals') !!}">Add Journals</a></li>
+          {{-- <li><a style="font-weight: 700;" class="text-light" href="{!! url('admin/multi-journals') !!}">Upload mutiple picture Journals</a></li> --}}
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/show-journals') ? 'active' : '' }}" href="{!! url('admin/show-journals') !!}">Show Journals</a></li>
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/addagent') ? 'active' : '' }}" href="{!! url('admin/addagent') !!}">Add Agent</a></li>
+          <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/showagent') ? 'active' : '' }}" href="{!! url('admin/showagent') !!}">Show Agents</a></li>
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('admin/show-request') ? 'active' : '' }}" href="{!! url('admin/show-request') !!}">Show Request</a></li>
+        <li><a style="font-weight: 700;" class="text-light {{ Request::is('logout') ? 'active' : '' }}" href="{{ route('logout') }}"
           onclick="event.preventDefault();
           document.getElementById('logout-form').submit();">
           {{ __('Logout') }}

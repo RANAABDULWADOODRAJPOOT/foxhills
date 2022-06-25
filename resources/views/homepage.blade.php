@@ -399,12 +399,12 @@
 	<section id="listings" class="wrapper">
 	<div class="home-section cf-group mrg-bottom-60">
 	<header class="home-section-header cf-group">
-     @foreach($typeone as $saleVilla)
+     @foreach($typeone_new as $saleVilla)
      <h2 class="title mrg-top-auto" style="white-space: nowrap;">FEATURED {!! App\Models\PropertyType::getpropertytypeviaid($saleVilla->property_type_id) !!}</h2>
      @break;
      @endforeach
 	<span class="btn-group cf-group selector">
-	<a id="vilaone" class="btn compact selected tab-trigger">New To Market</a>
+	<a id="vilaone" class="btn compact tab-trigger">New To Market</a>
 	<a id="vilatwo" class="btn compact tab-trigger">Price Reduction</a>
 	<a id="vilathree" class="btn compact  tab-trigger">Featured</a>
 	</span>
@@ -414,13 +414,12 @@
 	<div class="mobile-slider">
 	<div class="list inner">
 	    
-	     @foreach($typeone as $saleVilla)
-    @if($loop->index < 3)
+	     @foreach($typeone_new as $saleVilla)
 	<div class="column-33 property villasone">
 	<article id="property_10411" class="list-item no-brd mrg-auto img-override">
 	<a href="{{ url('details/'.$saleVilla->id ) }}" class="cf-group">
 	<div class="no-brd">
-	<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleVilla->picture  !!}" class="full-width-responsive brd" loading="lazy" width="375" height="282">
+	<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleVilla->picture  !!}" class="full-width-responsive brd" loading="lazy" width="375" height="210" style="height: 210px !important;width:375 !important;">
 	<span class="override animated text-left pdg-20">
 	<h2 class="white normalcase mrg-top-auto">Brand New</h2>
 	<p class="white f16 lh20 text-truncate">{!! $saleVilla->Description !!}</p>
@@ -441,12 +440,13 @@
 	</a>
 	</article>
 	</div>
-	@elseif($loop->index < 6)
+	@endforeach
+	@foreach($typeone_price as $saleVilla)
 	<div class="column-33 property d-none villastwo">
 	<article id="property_10411" class="list-item no-brd mrg-auto img-override">
 	<a href="{{ url('details/'.$saleVilla->id ) }}" class="cf-group">
 	<div class="no-brd">
-	<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleVilla->picture  !!}" class="full-width-responsive brd" loading="lazy" width="375" height="282">
+	<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleVilla->picture  !!}" class="full-width-responsive brd" loading="lazy" width="375" height="210" style="height: 210px !important;width:375 !important;">
 	<span class="override animated text-left pdg-20">
 	<h2 class="white normalcase mrg-top-auto">Brand New</h2>
 	<p class="white f16 lh20">{!! $saleVilla->Description !!}</p>
@@ -467,12 +467,13 @@
 	</a>
 	</article>
 	</div>
-	@else
+	@endforeach
+	@foreach($typeone_feature as $saleVilla)
 	<div class="column-33 property d-none villasthree">
 	<article id="property_10411" class="list-item no-brd mrg-auto img-override">
 	<a href="{{ url('details/'.$saleVilla->id ) }}" class="cf-group">
 	<div class="no-brd">
-	<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleVilla->picture  !!}" class="full-width-responsive brd" loading="lazy" width="375" height="282">
+	<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleVilla->picture  !!}" class="full-width-responsive brd" loading="lazy" width="375" height="210" style="height: 210px !important;width:375 !important;">
 	<span class="override animated text-left pdg-20">
 	<h2 class="white normalcase mrg-top-auto">Brand New</h2>
 	<p class="white f16 lh20 text-truncate">{!! $saleVilla->Description !!}</p>
@@ -493,7 +494,6 @@
 	</a>
 	</article>
 	</div>
-	@endif
     
 	@endforeach
 	
@@ -514,7 +514,7 @@
 	<section id="listings" class="wrapper">
 	<div class="home-section cf-group mrg-bottom-60">
 	<header class="home-section-header cf-group">
-	    @foreach($typetwo as $saleApartment)
+	    @foreach($typetwo_new as $saleApartment)
 	<h2 class="title mrg-top-auto" style="white-space: nowrap;">{!! App\Models\PropertyType::getpropertytypeviaid($saleApartment->property_type_id) !!}</h2>
 	@break;
 		@endforeach
@@ -529,13 +529,13 @@
 	<div class="mobile-slider">
 	<div class="list inner">
 	    
-		@foreach($typetwo as $saleApartment)  
-		@if($loop->index < 3) 
+		@foreach($typetwo_new as $saleApartment)  
+	
 		<div class="column-33 property appartmentone">
 			<article id="property_10407" class="list-item no-brd mrg-auto img-override">
 				<a href="{{ url('details/'.$saleApartment->id ) }}" class="cf-group">
 					<div class="no-brd">
-						<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleApartment->picture  !!}" loading="lazy" width="375" height="282">
+						<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleApartment->picture  !!}" loading="lazy" width="375" height="210" style="height: 210px !important;width:375 !important;">
 						<span class="override animated text-left pdg-20">
 							<h2 class="white normalcase mrg-top-auto">Dramatically Impressive, Luxury Apartment in Downtown Dubai</h2>
 							<p class="white f16 lh20 text-truncate">{!! $saleApartment->Description !!}</p>
@@ -556,13 +556,13 @@
 						</a>
 					</article>
 				</div>
-
-				@elseif($loop->index < 6)
+				@endforeach
+				@foreach($typetwo_price as $saleApartment)  
 				<div class="column-33 property d-none  appartmenttwo">
 					<article id="property_10407" class="list-item no-brd mrg-auto img-override">
 						<a href="{{ url('details/'.$saleApartment->id ) }}" class="cf-group">
 							<div class="no-brd">
-								<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleApartment->picture  !!}" loading="lazy" width="375" height="282">
+								<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleApartment->picture  !!}" loading="lazy" width="375" height="210" style="height: 210px !important;width:375 !important;">
 								<span class="override animated text-left pdg-20">
 									<h2 class="white normalcase mrg-top-auto">Dramatically Impressive, Luxury Apartment in Downtown Dubai</h2>
 									<p class="white f16 lh20 text-truncate">{!! $saleApartment->Description !!}</p>
@@ -583,13 +583,13 @@
 								</a>
 							</article>
 						</div>
-
-						@else
+						@endforeach
+						@foreach($typetwo_new as $saleApartment)  
 						<div class="column-33 property d-none appartmentthree ">
 							<article id="property_10407" class="list-item no-brd mrg-auto img-override">
 								<a href="{{ url('details/'.$saleApartment->id ) }}" class="cf-group">
 									<div class="no-brd">
-										<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleApartment->picture  !!}" loading="lazy" width="375" height="282">
+										<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleApartment->picture  !!}" loading="lazy" width="375" height="210" style="height: 210px !important;width:375 !important;">
 										<span class="override animated text-left pdg-20">
 											<h2 class="white normalcase mrg-top-auto">Dramatically Impressive, Luxury Apartment in Downtown Dubai</h2>
 											<p class="white f16 lh20 text-truncate">{!! $saleApartment->Description !!}</p>
@@ -610,7 +610,6 @@
 										</a>
 									</article>
 								</div>
-								@endif
 								@endforeach
 	
 	

@@ -109,6 +109,29 @@
 
 
  
+
+
+  <div class="form-group col-6">
+    <label for="exampleInputEmail1">Latitude</label>
+    <input type="text" class="form-control"  name="lat"  value="{!! $AvailableProperty->lat !!}">
+  </div>
+
+  <div class="form-group col-6">
+    <label for="exampleInputEmail1">Longitude</label>
+    <input type="text" class="form-control"  name="lon" value="{!! $AvailableProperty->lon !!}">
+  </div>
+
+
+  <div class="form-group col-6">
+    <label for="exampleInputPassword1">Feature</label>
+    <select style="height:34px;" class="form-control" name="featured" value="{!! $AvailableProperty->featured !!}">
+     
+      <option value="0" >No</option>
+      <option value="1" >Yes</option>
+    
+    </select>
+  </div>
+ 
   <div class="form-group col-6">
     <label for="exampleInputPassword1">Image</label>
     <input id="imagecontent" style="border:none" type="file" class="form-control p-0 mt-2" name="image"  value="{!! $AvailableProperty->picture !!}">
@@ -120,17 +143,6 @@
     <input id="bannerimage" style="border:none" type="file" class="form-control p-0 mt-2" name="bannerimage"  value="{!! $AvailableProperty->bannerimage !!}">
     <p class="mt-3 text-success" id="bannerimageName"></p>
   </div>
-
-  <div class="form-group col-6">
-    <label for="exampleInputEmail1">Latitude</label>
-    <input type="text" class="form-control"  name="lat"  value="{!! $AvailableProperty->lat !!}">
-  </div>
-
-  <div class="form-group col-6">
-    <label for="exampleInputEmail1">Longitude</label>
-    <input type="text" class="form-control"  name="lon" value="{!! $AvailableProperty->lon !!}">
-  </div>
- 
 
  
 

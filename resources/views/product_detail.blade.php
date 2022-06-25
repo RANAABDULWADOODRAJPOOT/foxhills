@@ -28,28 +28,34 @@
 			</header>
 			<div id="property-media" class="column-66 left relative mrg-bottom-20 multiple js-more-images">
              @if(!$images->isEmpty())
-				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+				<div id="demo" class="carousel slide" data-ride="carousel">
+					  <!-- Indicators -->
+				<ul class="carousel-indicators">
+					@foreach($images as $imageindex)
+					<li data-target="#demo" data-slide-to="{{$loop->index}}" class="active"></li>
+					@endforeach
+					
+				</ul>
 					<div class="carousel-inner">
 						@foreach($images as $imageindex)
-						@if($loop->index > 0 )
+						@if($loop->index == 0 )
 						<div class="carousel-item active">
-							<img src="<?php echo asset("assets/allimages/$imageindex->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive" width="786" height="591">
+							<img src="<?php echo asset("assets/allimages/$imageindex->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive" width="786" height="591" style="min-width:786px;min-height:591px;max-width:786px;max-height:591px">
 						</div>
 						@else
 						<div class="carousel-item">
-							<img src="<?php echo asset("assets/allimages/$imageindex->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive" width="786" height="591">
+							<img src="<?php echo asset("assets/allimages/$imageindex->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive" width="786" height="591" style="min-width:786px;min-height:591px;max-width:786px;max-height:591px">
 						</div>
 						@endif
 						@endforeach
 					</div>
-					<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
+					  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
 				</div>
 				@else
 				<picture class="pw100">
@@ -64,11 +70,11 @@
 			<div class="more-pictures ">
 			
 			</div>
-			<a class="heart-button right hover login-button " data-id="10382" title="Add to collection">
+			{{-- <a class="heart-button right hover login-button " data-id="10382" title="Add to collection">
 			<svg fill="#000000" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
 			<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
 			</svg>
-			</a>
+			</a> --}}
 			</div>
 
 

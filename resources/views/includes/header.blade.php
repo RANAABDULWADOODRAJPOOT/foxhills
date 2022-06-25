@@ -81,7 +81,7 @@
 <a href="{!! url('sale') !!}" class="nav-link menu-item {!!  (Agent::isMobile()) ? 'mobilefont' : '' !!}">Sell</a>
 </li>
 <li clas="navbar-item">
-<a href="{!! url('Journal') !!}" class="nav-link menu-item {!!  (Agent::isMobile()) ? 'mobilefont' : '' !!}">Journals</a>
+<a href="{!! url('Journal/cat/0') !!}" class="nav-link menu-item {!!  (Agent::isMobile()) ? 'mobilefont' : '' !!}">Journals</a>
 </li>
 </ul>
 </div>

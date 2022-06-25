@@ -33,7 +33,7 @@
 
 					@foreach($userproducts as $internationProduct)
 					<div class="col-md-4  col-12 mb-3">
-							<a href="{{ url('internation/'.$internationProduct->id ) }}">
+							<a href="{{ url('details/'.$internationProduct->id ) }}">
 						<div style="border:2px solid #222" >
 							<img style="height: 250px;" class=" img-fluid w-100" src="<?php echo asset("assets/allimages/{$internationProduct->picture}")?>" >
 							<div class="px-3">

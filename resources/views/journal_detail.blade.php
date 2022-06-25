@@ -15,10 +15,10 @@
 		@else
 		<div class="row justify-content-center">
 			@endif
-		<div class="col-md-10 col-12">
-			<p class="text-grey text-center my-3 ">Home > The Journal</p>
+		<div class="col-md-10 col-12 mt-5">
+			{{-- <p class="text-grey text-center my-3 ">Home > The Journal</p> --}}
 			<h1  class="text-light text-center my-3">{!! $Journals->journal_title !!}</h1>
-			<p class="mb-md-0 text-muted text-center">{!! $Journals->journal_type !!}</p>
+			{{-- <p class="mb-md-0 text-muted text-center">{!! $Journals->journal_type !!}</p> --}}
 			<hr class="text-light">
 			@if(Agent::isMobile())
 			<div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll">
@@ -139,11 +139,11 @@
 	</script>
 
 	
-		@include('includes.footer')
+	
 </div>
 </section>
 
-
+@include('includes.footer')
 
 
 @endsection
