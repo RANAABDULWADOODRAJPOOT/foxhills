@@ -61,7 +61,7 @@
 @endif
 
 
-@if(count($alldata) === 0)
+{{-- @if(count($alldata) === 0)
 <h2 class="text-center font-weight-bold text-danger"class="text-dark">No Record Found</h2>
 @else  
 
@@ -93,7 +93,7 @@
 </table>
 </div>
 </div>
-@endif
+@endif --}}
 
 
 
