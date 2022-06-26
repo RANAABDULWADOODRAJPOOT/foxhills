@@ -313,7 +313,7 @@
 
 <main id="content" class="pw100" style="display:table;">
 
-  
+ 
 	@if(!empty($AvailableProperty))
 	@if(!empty($AvailableProperty->bannerimage))
 	<section id="featured-properties" class="mrg-bottom-60 mrg-ignore-mobile">

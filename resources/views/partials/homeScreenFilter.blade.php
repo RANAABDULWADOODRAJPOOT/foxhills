@@ -1,4 +1,4 @@
-<div style="background-color:#222" class="d-flex">
+<div style="background-color:#222" class="d-none d-sm-none d-md-flex ">
 <div class="row wrapper m-auto">
 	<div class="col-1 p-0" style="max-width: 30px;">
 		<svg style=" margin-top: 12px;" fill="#000000" height="21" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

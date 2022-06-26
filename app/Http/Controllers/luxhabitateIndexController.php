@@ -67,22 +67,22 @@ $fistRow = PropertyType::first('id');
     $typethree = AvailableProperty::where('property_type_id',$thirdRow->id)->with('propertyType')->orderBy('property_type_id', 'ASC')->take(3)->get();
     }
 
-    $AvailableProperty = AvailableProperty::where('Category',1)->get('id'); 
-    if(!empty($AvailableProperty)){
-      foreach($AvailableProperty as $j){
-        $x[] = $j->id; 
-      }
-      $random_key=array_rand($x);
-      if($random_key == 0){
-        $random_key=$random_key+1; 
-      }
+    $AvailableProperty = AvailableProperty::where('featured',true)->get()->random();
+    // if(!empty($AvailableProperty)){
+    //   foreach($AvailableProperty as $j){
+    //     $x[] = $j->id; 
+    //   }
+    //   $random_key=array_rand($x);
+    //   if($random_key == 0){
+    //     $random_key=$random_key+1; 
+    //   }
 
-      $AvailableProperty = AvailableProperty::where('id',$random_key)->orderBy('id','DESC');
+    //   $AvailableProperty = AvailableProperty::where('id',$random_key);
 
 
       // $AvailablePropertys = AvailableProperty::where('id',$random_key);
       // $AvailableProperty = collect($AvailablePropertys)->last();
-    }
+    // }
      
      
     
