@@ -48,9 +48,9 @@
 			</div> --}}
 
 
-			<div class="col-12 my-4 p-0">
+			{{-- <div class="col-12 my-4 p-0">
 				<h2 class="text-light">THE JOURNAL</h2>
-			</div>
+			</div> --}}
 			@if(Agent::isMobile())
 			<div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll m-sm-auto">
 				@else
