@@ -85,15 +85,15 @@
          <div class="column-66 left text-left pdg-top-10">
          © 2022 LUXHABITAT®
          <span class="footer-separator break"></span>
-         <a href="https://www.luxhabitat.ae/terms-of-use/" class="hover">Terms Of Use</a>
+         <a href="{!! url('terms-conditions') !!}" class="hover">Terms Of Use</a>
          <span class="footer-separator"></span>
-         <a href="https://www.luxhabitat.ae/privacy-policy/" class="hover">Privacy Policy</a>
+         <a href="{!! url('privacy-policy') !!}" class="hover">Privacy Policy</a>
          <span class="footer-separator"></span>
          <a href="https://www.luxhabitat.ae/sitemap/" class="hover">Sitemap</a>
          <span class="footer-separator"></span>
          <a href="https://www.luxhabitat.ae/portfolio/" class="hover">Portfolio</a>
          <span class="footer-separator"></span>
-         <a href="https://www.luxhabitat.ae/archive/" class="hover">Archive</a>
+         <a href="{!! url('cookies') !!}" class="hover">Cookies</a>
          <div class="desktop mrg-top-10" style="width:650px">LUXHABITAT® is a registered trademark. LUXHABITAT Sotheby’s website, LUXHABITAT.AE is operated by LXT Real Estate Brokers LLC as a platform for the publication of real estate properties from LUXHABITAT Real Estate LLC (ORN 12521)</div>
          </div>
          <div class="column-33 right pdg-top-10">

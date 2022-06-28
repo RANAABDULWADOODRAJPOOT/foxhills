@@ -332,6 +332,86 @@ function agentdetails($id){
 }
 
 
+function privacy(){
+  $allHeadings = page::with(['properties' => function($query) {
+    $query->distinct('property_type_id');
+  }])->get();
+  foreach($allHeadings as $head){
+    $propertydata = array();
+    $data = array();
+    $var = 0;
+    $pro= collect($head->properties)->sortByDesc('id');
+    foreach($pro as $head1){
+      if(in_array($head1->property_type_id , $data)){
+        continue;
+      }
+      else{
+        array_push($propertydata, $head1);
+        $var = $head1->property_type_id;
+        array_push($data, $var);
+      }
+    }
+    $head->propertydata = $propertydata;
+  }
+ 
+      $Journals = Journal::take(3)->get();
+
+  return view('privacy',compact('Journals','allHeadings'));
+  
+}
+
+function terms(){
+  $allHeadings = page::with(['properties' => function($query) {
+    $query->distinct('property_type_id');
+  }])->get();
+  foreach($allHeadings as $head){
+    $propertydata = array();
+    $data = array();
+    $var = 0;
+    $pro= collect($head->properties)->sortByDesc('id');
+    foreach($pro as $head1){
+      if(in_array($head1->property_type_id , $data)){
+        continue;
+      }
+      else{
+        array_push($propertydata, $head1);
+        $var = $head1->property_type_id;
+        array_push($data, $var);
+      }
+    }
+    $head->propertydata = $propertydata;
+  }
+ 
+      $Journals = Journal::take(3)->get();
+  return view('terms',compact('Journals','allHeadings'));
+}
+
+function cookies(){
+  $allHeadings = page::with(['properties' => function($query) {
+    $query->distinct('property_type_id');
+  }])->get();
+  foreach($allHeadings as $head){
+    $propertydata = array();
+    $data = array();
+    $var = 0;
+    $pro= collect($head->properties)->sortByDesc('id');
+    foreach($pro as $head1){
+      if(in_array($head1->property_type_id , $data)){
+        continue;
+      }
+      else{
+        array_push($propertydata, $head1);
+        $var = $head1->property_type_id;
+        array_push($data, $var);
+      }
+    }
+    $head->propertydata = $propertydata;
+  }
+ 
+      $Journals = Journal::take(3)->get();
+  return view('cookies',compact('Journals','allHeadings'));
+}
+
 
 
 }

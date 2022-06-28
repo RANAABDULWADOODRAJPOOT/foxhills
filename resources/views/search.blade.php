@@ -16,7 +16,7 @@
 	</ol> --}}
 	<div class="wrapper">
 	<section id="filtered" class="cf-group">
-	<header class="pw100 text-center cf-group">
+	{{-- <header class="pw100 text-center cf-group">
 	<h1 class="tw mrg-bottom-20 p-2"><?php echo $property->heading ?> LUXURY PROPERTIES IN DUBAI </h1>
 	<div class="location-block collpase cf-group pw100 light-bg brd" data-name="Dubai ">
 	<div class="column-66 pdg-20 text-left">
@@ -35,36 +35,39 @@
 	
 	<button class="shortcuts__trigger desktop">show more</button>
 	</div>
-	</header>
+	</header> --}}
 	<div class="filtered-content pw100">
+        <h1 class="tw mrg-bottom-20 p-2"> Search Result for "{{ $s }}"</h1>
 	<div class="list flex">
+       
 	    
-	 @foreach($alldatas as $alldata)
-						@foreach($alldata->properties as $userproduct)   
+	 @foreach($alldatas as  $alldata)
+     
+						  
 	<div class="column-33 pdg-ignore-mobile">
 	<article id="item_10410" class="list-item img-override">
-	<a href="{{ url('details/'.$userproduct->id ) }}" class="cf-group">
+	<a href="{{ url('details/'.$alldata->id ) }}" class="cf-group">
 	<div class="image no-brd">
 	<picture class="pw100">
-	<img src="<?php echo asset("assets/allimages/{$userproduct->picture}")?>" class="full-width-responsive" alt="Stunning Lake View Mansion Villa in Emirates Hills" width="375" height="282">
+	<img src="<?php echo asset("assets/allimages/{$alldata->picture}")?>" class="full-width-responsive" alt="Stunning Lake View Mansion Villa in Emirates Hills" width="375" height="282">
 	</picture>
 	<span class="override animated text-left pdg-20">
-	<h3 class="white normalcase mrg-top-auto">{!! $userproduct->productname !!}</h3>
-	<p class="white f16 lh20 text-truncate">{!! $userproduct->Description !!}</p>
+	<h3 class="white normalcase mrg-top-auto">{!! $alldata->productname !!}</h3>
+	<p class="white f16 lh20 text-truncate">{!! $alldata->Description !!}</p>
 	<p class="f16 lh20 white mrg-top-10">View details ›</p>
 	</span>
 	<span class="tag">exclusive</span>
 	</div>
 	<div class="pdg-10 relative brd-top">
-	<p class="f18 lh18 uppercase white ellipsis mrg-bottom-10">{!! $userproduct->productname !!}</p>
+	<p class="f18 lh18 uppercase white ellipsis mrg-bottom-10">{!! $alldata->productname !!}</p>
 	<p class="f14 lh14 ellipsis mrg-bottom-5">
-	{!! $userproduct->Area !!} </p>
+	{!! $alldata->Area !!} </p>
 	<ul class="f14 lh14 ellipsis features ellipsis mrg-bottom-10">
-	  @php ($title = App\Models\AvailableProperty::getpropertytypeinfo($userproduct->property_type_id))
+	  @php ($title = App\Models\AvailableProperty::getpropertytypeinfo($alldata->property_type_id))
 	<li class="feature left">{!!  $title  !!}</li>
-	<li class="feature left"><span class="separator"></span>{!! $userproduct->Bedrooms !!} bd</li><li class="feature left"><span class="separator"></span>{!! $userproduct->length !!} SQ FT</li> </ul>
+	<li class="feature left"><span class="separator"></span>{!! $alldata->Bedrooms !!} bd</li><li class="feature left"><span class="separator"></span>{!! $alldata->length !!} SQ FT</li> </ul>
 	<p class="f18 lh18 mrg-bottom-auto pw100 cf-group">
-	<span class="white">AED {!! number_format($userproduct->Price, 0, ',', ','); !!}</span>
+	<span class="white">AED {!! number_format($alldata->Price, 0, ',', ','); !!}</span>
 	</p>
 	</div>
 	</a>
@@ -75,7 +78,7 @@
 	</svg> </button>
 	</article>
 	</div>
-	@endforeach
+
 					  @endforeach
 	
 	
@@ -83,11 +86,11 @@
 	
 	 </div>
 	 
-	  @if(!empty($userproducts))
+	  {{-- @if(!empty($alldatas))
                 <Span class="mt-5">
-                	{!! $userproducts->links();  !!}
+                	{!! $alldatas->links();  !!}
                 </Span>
-                @endif
+                @endif --}}
 	 
 	 
 	<div class="left pw100">

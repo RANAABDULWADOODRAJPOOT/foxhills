@@ -109,6 +109,9 @@ Route::get('{name}/{id}/{type?}', 'App\Http\Controllers\luxhabitateIndexControll
 Route::get('agents', 'App\Http\Controllers\luxhabitateIndexController@agents');
 
 Route::get('agent', 'App\Http\Controllers\luxhabitateIndexController@agent');
+Route::get('privacy-policy', 'App\Http\Controllers\luxhabitateIndexController@privacy');
+Route::get('cookies', 'App\Http\Controllers\luxhabitateIndexController@cookies');
+Route::get('terms-conditions', 'App\Http\Controllers\luxhabitateIndexController@terms');
 
 
 
