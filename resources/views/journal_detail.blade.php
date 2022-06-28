@@ -42,7 +42,7 @@
 		$( document ).ready(function() {
         
 
-         $( ".Category" ).click(function() {
+			$( ".Category" ).click(function() {
          	var parameterarray = getUrlVars();
          	var Category = $(this).val();
          	var typeid = parameterarray['propertytypeid'];
@@ -52,7 +52,7 @@
          	var minprice = parameterarray['minprice'];
          	var maxprice = parameterarray['maxprice'];
          	var pathname = window.location.origin
-         	var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+         	var  redirecturl = pathname +  '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
 		});
 
@@ -68,7 +68,7 @@
          	var maxprice = parameterarray['maxprice'];
       
 			var pathname = window.location.origin
-			var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+			var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
 		});
 
@@ -86,7 +86,7 @@
          	var minprice = parameterarray['minprice'];
          	var maxprice = parameterarray['maxprice'];
 			var pathname = window.location.origin
-			var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+			var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
            });
 
@@ -100,7 +100,7 @@
          	var minprice = parameterarray['minprice'];
          	var maxprice = parameterarray['maxprice'];
 			var pathname = window.location.origin
-		    var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		    var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
 		});
 
@@ -115,7 +115,7 @@
          	var minprice = parameterarray['minprice'];
          	var maxprice = $(this).val();
 			var pathname = window.location.origin
-		    var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		    var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
 		});
 

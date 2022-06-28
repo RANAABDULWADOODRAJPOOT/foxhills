@@ -6,151 +6,18 @@
 
 
 
-{{-- <section class="container-fluid ">
-	@if(Agent::isMobile())
-	<div class="justify-content-center">
-		@else
-		<div class="row justify-content-center">
-			@endif
-		<div class="col-md-10 col-12">
-			<p class="text-grey text-center my-3">Home > Dubai</p>
-			<h1 class="text-light text-center">LUXURY PROPERTIES FOR SALE IN DUBAI</h1>
-			<div style="background-color: #222;border-bottom: 1px solid #999 " class="row justify-content-center mt-5">
-				<div class="col-md-6  col-12 my-md-5 my-2">
-					<P class="text-grey mt-3">LUXHABITAT Sotheby's presents many excellent luxury properties for sale in Dubai. These homes are designed and created with some of the best materials sourced from all around the world. The properties for sale that are available in the Dubai market are beautifully made and emphasise the luxury lifestyle that Dubai exudes. Our expert luxury sales specialists can guide you through the whole process from start to finish. You can choose from a selection of apartments, villas, penthouses, lofts, and duplexes, and even purchase a plot to create your dream home.</P>
-					
-					
-				</div>
-				<div class="col-md-6  col-12 my-md-5 my-2">
-					@if(Agent::isMobile())
-					<div style="border:2px solid #222" >
-						<img style="height: 200px" class="img-fluid w-100"src="{!! config('urls.web_cdn_url') . '/assets/allimages' !!}/modalimage.JPG" >
-					</div>
-					@else
-					<div style="border:2px solid #222" >
-						<img style="height: 300px" class="img-fluid w-100"src="{!! config('urls.web_cdn_url') . '/assets/allimages' !!}/modalimage.JPG" >
-					</div>
-					@endif
-				</div>
-			</div>
-			<div class="row">
-			<div class="col-12 pt-2 pb-3 custom-filter horizontal-scroll smart-bar mt-3  p-0">
-				
-			 </div>
-			<div class="col-12 mb-4 p-0">
-				<h2 class="text-light">Featured Development</h2>
-			</div>
-			@if(Agent::isMobile())
-			<div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll">
-				@else
-				<div class="row w-100 mt-5">
-					@endif
-
-					@foreach($alldatas as $alldata)
-						@foreach($alldata->properties as $userproduct)
-					<div class="col-md-4  col-12 mb-3">
-						<a href="{{ url('details/'.$userproduct->id ) }}">
-						<div style="border:2px solid #222" >
-							<img style="height: 250px;" class=" img-fluid w-100" src="{!! config('urls.web_cdn_url') . '/assets/allimages' !!}/{!! $userproduct->picture  !!}" >
-							<div class="px-3">
-								<h3 class="mt-3 mb-2 text-light">{!! $userproduct->productname !!}</h3>
-								<p class="mb-0 text-grey">{!! $userproduct->Area !!}</p>
-								<p class="mb-0 text-grey">
-									@php ($title = App\Models\AvailableProperty::getpropertytypeinfo($userproduct->property_type_id))
-								  
-									<Span>{!!  $title  !!}</Span>
-									
-                               <span> | {!! $userproduct->Bedrooms !!} | </span>
-								<Span> {!! $userproduct->length !!}</Span>
-								 </p>
-								<h4 class="mt-2 mb-3 text-light">{!! $userproduct->Price !!}</h4>
-							</div>
-						</div>
-					</a>
-				   
-
-					</div>
-					  @endforeach
-					  @endforeach
-
-                </div>
-                @if(!empty($serproducts))
-                <Span class="mt-5">
-                	{!! $userproducts->links();  !!}
-                </Span>
-                @endif
-			</div>
-				<div style="border-top: 1px solid #999 ;border-bottom: 1px solid #999 " class="row justify-content-center mt-5">
-					<div class="col-md-6  col-12 my-md-5 my-2 p-0">
-						<h2 class="text-light">Learn more about our Properties for Sale in Dubai </h2>
-						<P style="font-size: 18px;;" class="text-grey mt-3">Dubai has become one of the favourite destinations for second-hand property buyers worldwide. Several people are attracted to its comfortable lifestyle, cosmopolitan environment and subtropical climate. It also offers outstanding and safe investment opportunities, with many high quality projects launching every month and a steady return on investment.</P>
-						<button style="border: 1px solid white; border-radius: 10px; color: BLACK  ;" class="btn btn-sm my-3">Request Information</button>
-					</div>
-					<div class="col-md-6  col-12 my-md-5 my-2 p-0">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 my-4 p-md-0 p-0">
-						<h4 class="text-light">Popular searches</h4>
-						<a style="border: 1px solid #222; color: #999; border-radius: 30px" class=" btn  px-3 mt-2 box-shadow-sm font-size-xs p-2">1 bedroom apartment for Sale in Dubai </a>
-						<a style="border: 1px solid #222; color: #999; border-radius: 30px" class=" btn  px-3 mt-2 box-shadow-sm font-size-xs p-2">2 bedroom apartment for Sale in Dubai </a>
-						<a style="border: 1px solid #222; color: #999; border-radius: 30px" class=" btn  px-3 mt-2 box-shadow-sm font-size-xs p-2">8 bedroom villa for Sale in Dubai </a>
-						<a style="border: 1px solid #222; color: #999; border-radius: 30px" class=" btn  px-3 mt-2 box-shadow-sm font-size-xs p-2">4 bedroom villa for Sale in Dubai  </a>
-						<a style="border: 1px solid #222; color: #999; border-radius: 30px" class=" btn  px-3 mt-2 box-shadow-sm font-size-xs p-2">1 bedroom apartment for Sale in Dubai </a>
-						<a style="border: 1px solid #222; color: #999; border-radius: 30px" class=" btn  px-3 mt-2 box-shadow-sm font-size-xs p-2">2 bedroom apartment for Sale in Dubai </a>
-						<a style="border: 1px solid #222; color: #999; border-radius: 30px" class=" btn  px-3 mt-2 box-shadow-sm font-size-xs p-2">3 bedroom villa for Sale in Dubai </a>
-						<a style="border: 1px solid #222; color: #999; border-radius: 30px" class=" btn  px-3 mt-2 box-shadow-sm font-size-xs p-2">6 bedroom villa for Sale in Dubai  </a>
-					</div>
-					<div class="col-12 my-4 p-0">
-						<h2 class="text-light">THE JOURNAL</h2>
-					</div>
-					@if(Agent::isMobile())
-					<div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll mb-3">
-						@else
-						<div class="row w-100 my-5">
-							@endif
-							@foreach($Journals as $Journal)
-							<div class="col-md-4  col-12 mb-3">
-
-								<img style="height: 250px;" class=" img-fluid w-100" src="{!! config('urls.web_cdn_url') . '/assets/allimages' !!}/{!! $Journal->picture !!}" >
-								<div class="px-3">
-									<p class="mb-0 text-grey mt-3">{!! $Journal->Publish_date !!}</p>
-									<h3 class="mt-3 mb-2 text-light">{!! $Journal->journal_title !!}</h3>
-									<p class="mb-0 text-grey">{!! substr($Journal->description,0,300) !!} </p>
-								</div>
-
-							</div>
-							<div class="col-md-12  col-12">
-								<a href="{!! url('Journal/'.$Journal->id ) !!}" style="border: 1px solid white; border-radius: 10px; color: white  ;" class="btn btn-md my-4">View ALL Articles</a>
-							</div>
-							@endforeach
-						</div>
-					</section>
-				</div>
-			</div>
-		</section>
-
-		
-
-
-		@include('includes.footer')
-	</div>
-</section> --}}
-
-
-
 
 <main id="content" class="pw100" style="display:table;">
-	<ol id="breadcrumbs" class="row-li">
+	{{-- <ol id="breadcrumbs" class="row-li">
 	<li>
 	<a href="/">Home</a>
 	</li>
 	<li>Dubai </li>
-	</ol>
+	</ol> --}}
 	<div class="wrapper">
 	<section id="filtered" class="cf-group">
 	<header class="pw100 text-center cf-group">
-	<h1 class="tw mrg-bottom-20">LUXURY VILLAS FOR SALE IN DUBAI</h1>
+	<h1 class="tw mrg-bottom-20 p-2"><?php echo $property->heading ?> LUXURY PROPERTIES IN DUBAI </h1>
 	<div class="location-block collpase cf-group pw100 light-bg brd" data-name="Dubai ">
 	<div class="column-66 pdg-20 text-left">
 	<div class=" light-bg"><p>Dubai villas for sale provide villa owners the option of living in tranquil villa communities that are surrounded by lush greenery or the sea side. Most villa communities in Dubai are extremely family friendly and diverse; often with very close-knit communities in a gated environment that ensure safety and security. The many different styles of villa developments often include easy access to make daily life easier - from schools, strip malls to shopping centres, health facilities, gyms, and a variety of restaurants and cafés within a short distance.</p></div>
@@ -336,121 +203,124 @@
 	</aside>
 	</main>
 
-	<script type="text/javascript">
-     
 
-		$(".faq-item").click(function(){
-			$(".faq-item").removeClass("active");
-			$(this).addClass("active");
-			
-		});
-
-
-
-		$( document ).ready(function() {
-
-			$( ".request" ).click(function() {
-				$(".myModalAll").modal("toggle")
-			});
-
-
-         $( ".Category" ).click(function() {
-         	var parameterarray = getUrlVars();
-         	var Category = $(this).val();
-         	var typeid = parameterarray['propertytypeid'];
-         	var minsize = parameterarray['minsize'];
-         	var maxsize = parameterarray['maxsize'];
-         	var bedrooms = parameterarray['Bedrooms'];
-         	var minprice = parameterarray['minprice'];
-         	var maxprice = parameterarray['maxprice'];
-         	var pathname = window.location.origin
-         	var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
-         	window.location.href = redirecturl;
-		});
-
-
-       $( ".typename" ).click(function() {
-       	    var parameterarray = getUrlVars();
-         	var Category = parameterarray['Category'];
-         	var typeid = $(this).val();
-         	var minsize = parameterarray['minsize'];
-         	var maxsize = parameterarray['maxsize'];
-         	var bedrooms = parameterarray['Bedrooms'];
-         	var minprice = parameterarray['minprice'];
-         	var maxprice = parameterarray['maxprice'];
-      
-			var pathname = window.location.origin
-			var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
-         	window.location.href = redirecturl;
-		});
-
-      
-
-
-
-		$('.maxvalue').on('change', function() {
-			var parameterarray = getUrlVars();
-         	var Category = parameterarray['Category'];
-         	var typeid = parameterarray['propertytypeid'];
-         	var minsize = parameterarray['minsize'];
-         	var maxsize = $(this).val();
-         	var bedrooms = parameterarray['Bedrooms'];
-         	var minprice = parameterarray['minprice'];
-         	var maxprice = parameterarray['maxprice'];
-			var pathname = window.location.origin
-			var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
-         	window.location.href = redirecturl;
-           });
-
-		  $( ".Bedrooms" ).click(function() {
-		  	var parameterarray = getUrlVars();
-         	var Category = parameterarray['Category'];
-         	var typeid = parameterarray['propertytypeid'];
-         	var minsize = parameterarray['minsize'];
-         	var maxsize = parameterarray['maxsize'];
-         	var bedrooms = $(this).val();
-         	var minprice = parameterarray['minprice'];
-         	var maxprice = parameterarray['maxprice'];
-			var pathname = window.location.origin
-		    var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
-         	window.location.href = redirecturl;
-		});
-
-
-       	$('.maxprice').on('change', function() {
-       		var parameterarray = getUrlVars();
-         	var Category = parameterarray['Category'];
-         	var typeid = parameterarray['propertytypeid'];
-         	var minsize = parameterarray['minsize'];
-         	var maxsize = parameterarray['maxsize'];
-         	var bedrooms = parameterarray['Bedrooms'];
-         	var minprice = parameterarray['minprice'];
-         	var maxprice = $(this).val();
-			var pathname = window.location.origin
-		    var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
-         	window.location.href = redirecturl;
-		});
-
-		});
-
-
-
-		function getUrlVars()
-		{
-			var vars = [], hash;
-			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-			for(var i = 0; i < hashes.length; i++)
-			{
-				hash = hashes[i].split('=');
-				vars.push(hash[0]);
-				vars[hash[0]] = hash[1];
-			}
-			return vars;
-		}
-
-	</script>
 
 @include('includes.footer')
+
+
+<script type="text/javascript">
+     
+
+	$(".faq-item").click(function(){
+		$(".faq-item").removeClass("active");
+		$(this).addClass("active");
+		
+	});
+
+
+
+	$( document ).ready(function() {
+
+		$( ".request" ).click(function() {
+			$(".myModalAll").modal("toggle")
+		});
+
+
+	 $( ".Category" ).click(function() {
+		 var parameterarray = getUrlVars();
+		 var Category = $(this).val();
+		 var typeid = parameterarray['propertytypeid'];
+		 var minsize = parameterarray['minsize'];
+		 var maxsize = parameterarray['maxsize'];
+		 var bedrooms = parameterarray['Bedrooms'];
+		 var minprice = parameterarray['minprice'];
+		 var maxprice = parameterarray['maxprice'];
+		 var pathname = window.location.origin
+		 var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		 window.location.href = redirecturl;
+	});
+
+
+   $( ".typename" ).click(function() {
+		   var parameterarray = getUrlVars();
+		 var Category = parameterarray['Category'];
+		 var typeid = $(this).val();
+		 var minsize = parameterarray['minsize'];
+		 var maxsize = parameterarray['maxsize'];
+		 var bedrooms = parameterarray['Bedrooms'];
+		 var minprice = parameterarray['minprice'];
+		 var maxprice = parameterarray['maxprice'];
+  
+		var pathname = window.location.origin
+		var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		 window.location.href = redirecturl;
+	});
+
+  
+
+
+
+	$('.maxvalue').on('change', function() {
+		var parameterarray = getUrlVars();
+		 var Category = parameterarray['Category'];
+		 var typeid = parameterarray['propertytypeid'];
+		 var minsize = parameterarray['minsize'];
+		 var maxsize = $(this).val();
+		 var bedrooms = parameterarray['Bedrooms'];
+		 var minprice = parameterarray['minprice'];
+		 var maxprice = parameterarray['maxprice'];
+		var pathname = window.location.origin
+		var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		 window.location.href = redirecturl;
+	   });
+
+	  $( ".Bedrooms" ).click(function() {
+		  var parameterarray = getUrlVars();
+		 var Category = parameterarray['Category'];
+		 var typeid = parameterarray['propertytypeid'];
+		 var minsize = parameterarray['minsize'];
+		 var maxsize = parameterarray['maxsize'];
+		 var bedrooms = $(this).val();
+		 var minprice = parameterarray['minprice'];
+		 var maxprice = parameterarray['maxprice'];
+		var pathname = window.location.origin
+		var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		 window.location.href = redirecturl;
+	});
+
+
+	   $('.maxprice').on('change', function() {
+		   var parameterarray = getUrlVars();
+		 var Category = parameterarray['Category'];
+		 var typeid = parameterarray['propertytypeid'];
+		 var minsize = parameterarray['minsize'];
+		 var maxsize = parameterarray['maxsize'];
+		 var bedrooms = parameterarray['Bedrooms'];
+		 var minprice = parameterarray['minprice'];
+		 var maxprice = $(this).val();
+		var pathname = window.location.origin
+		var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		 window.location.href = redirecturl;
+	});
+
+	});
+
+
+
+	function getUrlVars()
+	{
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++)
+		{
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		return vars;
+	}
+
+</script>
 
 
 @endsection

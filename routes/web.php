@@ -102,6 +102,7 @@ Route::get('Journal/cat/{id}', 'App\Http\Controllers\journalController@filterbyc
 
 
 Route::get('filters', 'App\Http\Controllers\buyController@filterviatype');
+Route::get('filter/{search}', 'App\Http\Controllers\buyController@filterviasearch');
 Route::get('agentdetails/{id}', 'App\Http\Controllers\luxhabitateIndexController@agentdetails');
 Route::get('/', 'App\Http\Controllers\luxhabitateIndexController@index');
 Route::get('{name}/{id}/{type?}', 'App\Http\Controllers\luxhabitateIndexController@pagedata');

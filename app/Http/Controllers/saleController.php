@@ -26,7 +26,8 @@ class saleController extends Controller
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }

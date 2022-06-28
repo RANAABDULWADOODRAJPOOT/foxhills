@@ -537,7 +537,7 @@
 					<div class="no-brd">
 						<img src="{!! config('urls.web_cdn_url') . 'assets/allimages' !!}/{!! $saleApartment->picture  !!}" loading="lazy" width="375" height="210" style="height: 210px !important;width:375 !important;">
 						<span class="override animated text-left pdg-20">
-							<h2 class="white normalcase mrg-top-auto">Dramatically Impressive, Luxury Apartment in Downtown Dubai</h2>
+							<h2 class="white normalcase mrg-top-auto">{!! $saleApartment->productname !!}</h2>
 							<p class="white f16 lh20 text-truncate">{!! $saleApartment->Description !!}</p>
 							<p class="f16 lh20 white mrg-top-10">Learn more ›</p>
 						</span>

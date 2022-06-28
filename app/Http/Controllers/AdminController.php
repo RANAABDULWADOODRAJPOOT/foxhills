@@ -183,28 +183,33 @@ class AdminController  extends Controller
         
 
 
+        $GeneralContent = new AvailableProperty(); 
 
-
-        $file = $request->file('image')->getClientOriginalName();
-        $filename = pathinfo($file, PATHINFO_FILENAME);
-        $extension = pathinfo($file, PATHINFO_EXTENSION);
-        $newImageName = time() . '-' .  $filename  . '.' . $extension;
-        $request->image->move(public_path('assets/allimages'),$newImageName);
-        $request->request->add(['picture' => $newImageName]);
-
-        $file = $request->bannerimage->getClientOriginalName();
-        $filename = pathinfo($file, PATHINFO_FILENAME);
-        $token = rand(0,10000000000000);
-        $extension = pathinfo($file, PATHINFO_EXTENSION);
-        $newImageName = $token . '-' .  $filename  . '.' . $extension;
-        $request->bannerimage->move(public_path('assets/allimages'),$newImageName);
+        if($request->file('image')){
+            $file = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($file, PATHINFO_FILENAME);
+            $extension = pathinfo($file, PATHINFO_EXTENSION);
+            $newImageName = time() . '-' .  $filename  . '.' . $extension;
+            $request->image->move(public_path('assets/allimages'),$newImageName);
+            $request->request->add(['picture' => $newImageName]);
+            $GeneralContent->picture = $request->picture;
+        }
+        if($request->file('bannerimage')){
+            $file = $request->file('bannerimage')->getClientOriginalName();
+            $filename = pathinfo($file, PATHINFO_FILENAME);
+            $token = rand(0,10000000000000);
+            $extension = pathinfo($file, PATHINFO_EXTENSION);
+            $newImageName = $token . '-' .  $filename  . '.' . $extension;
+            $request->bannerimage->move(public_path('assets/allimages'),$newImageName);
+            $GeneralContent->bannerimage = $newImageName;
+        }
         
         if($request->status == 1){
            $data = AvailableProperty::create($request->except(['_token','image']));
            AvailableProperty::where('id',  $data->id)->update(array('bannerimage' => $newImageName));
         }
         else {
-             $GeneralContent = new AvailableProperty(); 
+            
              $GeneralContent->productname = $request->productname ? $request->productname : 0;
              $GeneralContent->city = $request->city ? $request->city : 0;
              $GeneralContent->Description = $request->Description ? $request->Description : 0;
@@ -213,12 +218,11 @@ class AdminController  extends Controller
              $GeneralContent->Bedrooms = $request->Bedrooms ? $request->Bedrooms  : 0;
              $GeneralContent->bathrooms = $request->bathrooms ? $request->bathrooms  : 0;
              $GeneralContent->featured = $request->featured ? $request->featured  : 0;
-             $GeneralContent->property_type_id = 0;
+             $GeneralContent->property_type_id = $request->property_type_id;
              $GeneralContent->Category = $request->Category ? $request->Category  : 0;
              $GeneralContent->length = $request->length ? $request->length  : 0;
              $GeneralContent->Speciality = $request->Speciality ? $request->Speciality  : 0;
              $GeneralContent->status = $request->status ? $request->status : 0;
-             $GeneralContent->picture = $request->status ? $request->picture : 0;
              $GeneralContent->Completion = $request->Completion ? $request->Completion : 0;
              
             $GeneralContent->save();
@@ -261,8 +265,8 @@ class AdminController  extends Controller
         $request->request->add(['picture' => $newImageName]);
         $AvailableProperty->picture = $request->picture;
     }
-    if($request->file('image')){
-        $file = $request->bannerimage->getClientOriginalName();
+    if($request->file('bannerimage')){
+        $file = $request->file('bannerimage')->getClientOriginalName();
         $filename = pathinfo($file, PATHINFO_FILENAME);
         $token = rand(0,10000000000000);
         $extension = pathinfo($file, PATHINFO_EXTENSION);

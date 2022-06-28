@@ -7,7 +7,7 @@
 		</svg>
 	</div>
 	<div class="col-6 p-0" style="min-width: 55%">
-		<input  style="height: 43px;background-color:#222;border: none; " class="form-group w-100 mb-0" type="" name="" placeholder="Enter any area or development ">
+		<input  style="height: 43px;background-color:#222;border: none; " class="form-group w-100 mb-0" type="text" name="" placeholder="Enter any area or development " id="search">
 	</div>
 	<div style="margin-top: 4px !important;justify-content:end;" id="filterbarhover"  class="col-5 d-flex m-0 p-0">
 
@@ -196,5 +196,17 @@
 		$('input[type="checkbox"]').on('change', function() {
 			$('input[type="checkbox"]').not(this).prop('checked', false);
 		});
+
+		$('input[type="text"]').on('keydown', function(event){
+			if (event.key === "Enter") {
+				var pathname = window.location.origin
+				var  redirecturl = pathname  + '/'  +  'filter' + '/' + event.target.value;
+				window.location.href = redirecturl;
+				// alert(pathname);
+       
+    }
+			
+		});
+
 	});
 </script>

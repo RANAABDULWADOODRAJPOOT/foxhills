@@ -49,7 +49,7 @@ function index()
 $fistRow = PropertyType::first('id');
     if(!empty($fistRow)){
     $typeone_new = AvailableProperty::where('property_type_id',$fistRow->id)->orderBy('created_at', 'DESC')->take(3)->get();
-    $typeone_price = AvailableProperty::where('property_type_id',$fistRow->id)->orderBy('Price', 'DESC')->take(3)->get();
+    $typeone_price = AvailableProperty::where('property_type_id',$fistRow->id)->orderBy('Price', 'ASC')->take(3)->get();
     $typeone_feature = AvailableProperty::where('property_type_id',$fistRow->id)->where('featured', 1)->take(3)->get();
     }
     
@@ -57,7 +57,7 @@ $fistRow = PropertyType::first('id');
     if(!empty($secondRow)){
     // $typetwo = AvailableProperty::where('property_type_id',$secondRow->id)->with('propertyType')->orderBy('property_type_id', 'ASC')->take(9)->get();
     $typetwo_new = AvailableProperty::where('property_type_id',$secondRow->id)->orderBy('created_at', 'DESC')->take(3)->get();
-    $typetwo_price = AvailableProperty::where('property_type_id',$secondRow->id)->orderBy('Price', 'DESC')->take(3)->get();
+    $typetwo_price = AvailableProperty::where('property_type_id',$secondRow->id)->orderBy('Price', 'ASC')->take(3)->get();
     $typetwo_feature = AvailableProperty::where('property_type_id',$secondRow->id)->where('featured', 1)->take(3)->get();
 
     }
@@ -93,11 +93,15 @@ $fistRow = PropertyType::first('id');
 
 function pagedata($name,$id,$type='')
 {  
+  $property=page::where('id', $id)->first();
 
   if ($type == 1 ) {
     $alldatas = page::where('id',$name)->with(['properties'=> function($q) use ($id) {
       $q->where('property_type_id',$id);
     }])->get();
+
+   
+
     
     $allHeadings = page::with(['properties' => function($query) {
       $query->distinct('property_type_id');
@@ -121,7 +125,7 @@ function pagedata($name,$id,$type='')
     }
    
     $Journals = Journal::take(3)->get();
-    return view('Buy',compact('alldatas','Journals','allHeadings'));
+    return view('Buy',compact('alldatas','Journals','allHeadings','property'));
   }
   else{
     $status =  GeneralContent::where('Category',$id)->first();
@@ -153,7 +157,7 @@ function pagedata($name,$id,$type='')
     }
    
           $Journals = Journal::take(3)->get();
-          return view('content_not_found',compact('Journals','allHeadings'));
+          return view('content_not_found',compact('Journals','allHeadings','property'));
         }
       } 
 
@@ -180,7 +184,7 @@ function pagedata($name,$id,$type='')
     }
    
       $Journals = Journal::take(3)->get();
-      return view('Buy',compact('alldatas','Journals','allHeadings'));
+      return view('Buy',compact('alldatas','Journals','allHeadings','property'));
     }
     else{
       $GeneralContents = GeneralContent::where('Category',$id)->first();
@@ -206,7 +210,7 @@ function pagedata($name,$id,$type='')
     }
    
       $Journals = Journal::take(3)->get();
-      return view('generalcontent',compact('GeneralContents','Journals','allHeadings'));
+      return view('generalcontent',compact('GeneralContents','Journals','allHeadings', 'property'));
     }
   }
 
@@ -226,7 +230,8 @@ function datadetail($id)
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }
@@ -253,7 +258,8 @@ function agents(){
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }
@@ -280,7 +286,8 @@ function agent(){
     $propertydata = array();
     $data = array();
     $var = 0;
-    foreach($head->properties as $head1){
+    $pro= collect($head->properties)->sortByDesc('id');
+    foreach($pro as $head1){
       if(in_array($head1->property_type_id , $data)){
         continue;
       }
@@ -307,7 +314,8 @@ function agentdetails($id){
     $propertydata = array();
     $data = array();
     $var = 0;
-    foreach($head->properties as $head1){
+    $pro= collect($head->properties)->sortByDesc('id');
+    foreach($pro as $head1){
       if(in_array($head1->property_type_id , $data)){
         continue;
       }

@@ -186,6 +186,9 @@
 
 
 
+
+
+
 <script type="text/javascript">
 	$( "#saleRequest" ).click(function() {
 		$(".myModalsale").modal("toggle")
@@ -195,6 +198,121 @@
 
 
 		@include('includes.footer')
+
+
+		<script type="text/javascript">
+     
+
+			$(".faq-item").click(function(){
+				$(".faq-item").removeClass("active");
+				$(this).addClass("active");
+				
+			});
+		
+		
+		
+			$( document ).ready(function() {
+		
+				$( ".request" ).click(function() {
+					$(".myModalAll").modal("toggle")
+				});
+		
+		
+			 $( ".Category" ).click(function() {
+				 var parameterarray = getUrlVars();
+				 var Category = $(this).val();
+				 var typeid = parameterarray['propertytypeid'];
+				 var minsize = parameterarray['minsize'];
+				 var maxsize = parameterarray['maxsize'];
+				 var bedrooms = parameterarray['Bedrooms'];
+				 var minprice = parameterarray['minprice'];
+				 var maxprice = parameterarray['maxprice'];
+				 var pathname = window.location.origin
+				 var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+				 window.location.href = redirecturl;
+			});
+		
+		
+		   $( ".typename" ).click(function() {
+				   var parameterarray = getUrlVars();
+				 var Category = parameterarray['Category'];
+				 var typeid = $(this).val();
+				 var minsize = parameterarray['minsize'];
+				 var maxsize = parameterarray['maxsize'];
+				 var bedrooms = parameterarray['Bedrooms'];
+				 var minprice = parameterarray['minprice'];
+				 var maxprice = parameterarray['maxprice'];
+		  
+				var pathname = window.location.origin
+				var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+				 window.location.href = redirecturl;
+			});
+		
+		  
+		
+		
+		
+			$('.maxvalue').on('change', function() {
+				var parameterarray = getUrlVars();
+				 var Category = parameterarray['Category'];
+				 var typeid = parameterarray['propertytypeid'];
+				 var minsize = parameterarray['minsize'];
+				 var maxsize = $(this).val();
+				 var bedrooms = parameterarray['Bedrooms'];
+				 var minprice = parameterarray['minprice'];
+				 var maxprice = parameterarray['maxprice'];
+				var pathname = window.location.origin
+				var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+				 window.location.href = redirecturl;
+			   });
+		
+			  $( ".Bedrooms" ).click(function() {
+				  var parameterarray = getUrlVars();
+				 var Category = parameterarray['Category'];
+				 var typeid = parameterarray['propertytypeid'];
+				 var minsize = parameterarray['minsize'];
+				 var maxsize = parameterarray['maxsize'];
+				 var bedrooms = $(this).val();
+				 var minprice = parameterarray['minprice'];
+				 var maxprice = parameterarray['maxprice'];
+				var pathname = window.location.origin
+				var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+				 window.location.href = redirecturl;
+			});
+		
+		
+			   $('.maxprice').on('change', function() {
+				   var parameterarray = getUrlVars();
+				 var Category = parameterarray['Category'];
+				 var typeid = parameterarray['propertytypeid'];
+				 var minsize = parameterarray['minsize'];
+				 var maxsize = parameterarray['maxsize'];
+				 var bedrooms = parameterarray['Bedrooms'];
+				 var minprice = parameterarray['minprice'];
+				 var maxprice = $(this).val();
+				var pathname = window.location.origin
+				var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+				 window.location.href = redirecturl;
+			});
+		
+			});
+		
+		
+		
+			function getUrlVars()
+			{
+				var vars = [], hash;
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				for(var i = 0; i < hashes.length; i++)
+				{
+					hash = hashes[i].split('=');
+					vars.push(hash[0]);
+					vars[hash[0]] = hash[1];
+				}
+				return vars;
+			}
+		
+		</script>
 
 
 

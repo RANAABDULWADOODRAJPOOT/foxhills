@@ -16,8 +16,8 @@
 		<div class="row justify-content-center">
 			@endif
 		<div class="col-md-10 col-12">
-			<p class="text-grey text-center my-3">Home > Dubai</p>
-			<h1 class="text-light text-center">LUXURY PROPERTIES FOR RENT IN DUBAI</h1>
+			{{-- <p class="text-grey text-center my-3">Home > Dubai</p> --}}
+			<h1 class="text-light text-center p-2">LUXURY PROPERTIES FOR RENT IN DUBAI</h1>
 			<div style="background-color: #222;border-bottom: 1px solid #999 " class="row justify-content-center mt-5">
 				<div class="col-md-6  col-12 my-md-5 my-2">
 					<P class="text-grey mt-3">LUXHABITAT Sotheby's presents many excellent luxury properties for sale in Dubai. These homes are designed and created with some of the best materials sourced from all around the world. The properties for sale that are available in the Dubai market are beautifully made and emphasise the luxury lifestyle that Dubai exudes. Our expert luxury sales specialists can guide you through the whole process from start to finish. You can choose from a selection of apartments, villas, penthouses, lofts, and duplexes, and even purchase a plot to create your dream home.</P>

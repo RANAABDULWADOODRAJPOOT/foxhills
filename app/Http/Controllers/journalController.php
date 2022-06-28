@@ -34,7 +34,7 @@ class journalController extends Controller
               if($random_key == 0){
                 $random_key=$random_key+1; 
               }
-              $MostviewJournals = Journal::where('id',$random_key)->paginate(9);
+              $MostviewJournals = Journal::paginate(6);
             }
               
     $allHeadings = page::with(['properties' => function($query) {
@@ -44,7 +44,8 @@ class journalController extends Controller
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }
@@ -65,10 +66,21 @@ class journalController extends Controller
 
         if($id==0){
           $AllJournals = Journal::paginate(6);
+          $MostviewJournals=Journal::paginate(6)->reverse()->values();
         
          
         }else{
           $AllJournals = Journal::where('journal_type',$id)->paginate(6);
+          $MostviewJournals=Journal::where('journal_type',$id)->paginate(6)->reverse()->values();
+
+        //   $AllJournals = Journal::macro('sortDesc', function () {
+        //     return $this->sort(function($a, $b)  {
+        //         if ($a == $b) {
+        //             return 0;
+        //         }
+        //         return ($a > $b) ? -1 : 1;
+        //     });
+        // });
          
         }
         
@@ -82,7 +94,8 @@ class journalController extends Controller
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }
@@ -94,8 +107,9 @@ class journalController extends Controller
       }
       $head->propertydata = $propertydata;
     }
+    
    
-            return view('journal',compact('category','AllJournals','allHeadings'));
+            return view('journal',compact('category','AllJournals','allHeadings','MostviewJournals'));
             
        }
        
@@ -114,7 +128,8 @@ class journalController extends Controller
       $propertydata = array();
       $data = array();
       $var = 0;
-      foreach($head->properties as $head1){
+      $pro= collect($head->properties)->sortByDesc('id');
+      foreach($pro as $head1){
         if(in_array($head1->property_type_id , $data)){
           continue;
         }

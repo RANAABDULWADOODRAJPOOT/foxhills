@@ -24,7 +24,7 @@
 					<div class="col-12 p-0">
 				@endif
 				
-			<ul style=" list-style-type: none;padding-left: 10px; display: flex; justify-content: center;">
+			<ul style=" list-style-type: none;padding-left: 10px; display: flex; justify-content: center;m-auto">
 			  <li class="text-muted-filter my-2 mr-5"><a href="{!! url('Journal/cat/0') !!}">All categories</a></li>
             @foreach($category as $head)
 				<li class="text-muted-filter my-2 mr-5"><a href="{!! url('Journal/cat/'.$head->id ) !!}">{!! $head->name !!}</a></li>
@@ -33,28 +33,31 @@
 			</ul>
 		</div>
 
-			{{-- <div style="border-bottom: 1px solid #222;" class="row pb-5 py-3">
+			<div style="border-bottom: 1px solid #222;" class="row pb-5 py-3 container justify-content-center m-auto">
               @foreach($MostviewJournals as $Journal)
+			  <a href="{!! url('Journal/'. $Journal->id ) !!}" class="row">
 				<div class="col-md-6 col-12 p-0">
-					<img class=" img-fluid w-100" src="<?php echo asset("assets/allimages/{$Journal->picture}")?>" >
+					<img class=" img-fluid w-100" style="max-width: 500px !important;max-height:300px !important;min-width: 500px !important;min-height:300px !important;" src="<?php echo asset("assets/allimages/{$Journal->picture}")?>" >
 				</div>
 				
 				<div class="col-md-6 col-12 p-md-3 p-0 py-2 float-left {!!  (Agent::isMobile()) ? '' : 'margin-450 ' !!}">
-					<p class="text-grey">{!! $Journal->journal_type   !!} </p>
+					{{-- <p class="text-grey">{!! $Journal->journal_type   !!} </p> --}}
 					<h1 class="text-light text-left ml-0 mr-0 pl-0 pr-0">{!! $Journal->journal_title !!}</h1>
 					<p class="text-grey ">{!! substr($Journal->description,0,100) !!} </p>
 				</div>
+			  </a>
+				<?php break; ?>
 	         @endforeach
-			</div> --}}
+			</div>
 
 
 			{{-- <div class="col-12 my-4 p-0">
 				<h2 class="text-light">THE JOURNAL</h2>
 			</div> --}}
 			@if(Agent::isMobile())
-			<div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll m-sm-auto">
+			<div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll m-sm-auto container">
 				@else
-				<div class="row w-100 my-5">
+				<div class="row w-100 my-5 container m-auto">
 					@endif
                     
                     @foreach( $AllJournals as $jour)
@@ -106,7 +109,7 @@
          	var minprice = parameterarray['minprice'];
          	var maxprice = parameterarray['maxprice'];
          	var pathname = window.location.origin
-         	var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+         	var  redirecturl = pathname +  '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
 		});
 
@@ -122,7 +125,7 @@
          	var maxprice = parameterarray['maxprice'];
       
 			var pathname = window.location.origin
-			var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+			var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
 		});
 
@@ -140,7 +143,7 @@
          	var minprice = parameterarray['minprice'];
          	var maxprice = parameterarray['maxprice'];
 			var pathname = window.location.origin
-			var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+			var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
            });
 
@@ -154,7 +157,7 @@
          	var minprice = parameterarray['minprice'];
          	var maxprice = parameterarray['maxprice'];
 			var pathname = window.location.origin
-		    var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		    var  redirecturl = pathname  + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
 		});
 
@@ -169,7 +172,7 @@
          	var minprice = parameterarray['minprice'];
          	var maxprice = $(this).val();
 			var pathname = window.location.origin
-		    var  redirecturl = pathname + '/LUXHABITAT/public/index.php' + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
+		    var  redirecturl = pathname + '/'  +  'filters' + '?' + 'Category=' +  Category + '&' + 'propertytypeid=' +  typeid + '&' + 'minsize=' +  minsize + '&' +  'maxsize=' +  maxsize + '&' +  'Bedrooms=' +  bedrooms +  '&'  +  'minprice=' +  minprice + '&' +  'maxprice=' +  maxprice ;
          	window.location.href = redirecturl;
 		});
 

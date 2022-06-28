@@ -9,7 +9,7 @@
 
 
 		<main id="content" class="pw100" style="display:table;">
-			<ol id="breadcrumbs" class="row-li">
+			{{-- <ol id="breadcrumbs" class="row-li">
 			<li>
 			<a href="/">Home</a>
 			</li>
@@ -20,8 +20,8 @@
 			<a href="">{!! $userProducts->productname !!}</a>
 			</li>
 			
-			</ol>
-			<div class="wrapper mb-center">
+			</ol> --}}
+			<div class="wrapper p-2">
 			<article id="property-10382">
 			<header class="brd-bottom">
 			<h1 id="property-title" class="tw mrg-bottom-20">{!! $userProducts->productname !!}</h1>
@@ -81,13 +81,13 @@
 
 
 
-			<div id="property-details" class="column-33 right pdg-left-20 mb-center">
+			<div id="property-details" class="column-33 right pdg-left-20 ">
 			<div class="cf-group pdg-left-20 pdg-right-20 pdg-ignore-tablet">
 			<div class="pdg-top-20 pdg-bottom-20">
 			<div class="mrg-bottom-5">
 			<span class="f16 lh20 uppercase silver">{!! App\Models\AvailableProperty::getPropertyType($userProducts->Category) !!}</span>
 			</div>
-			<h2 class="f20 lh24 text-left white mrg-top-10 mrg-bottom-auto mb-center" style="text-transform: inherit;">{!! $userProducts->productname !!}</h2>
+			<h2 class="f20 lh24 text-left white mrg-top-10 mrg-bottom-auto" style="text-transform: inherit;">{!! $userProducts->productname !!}</h2>
 			<div class="f20 lh24 uppercase white mt-3">AED {!! number_format($userProducts->Price, 0, ',', ','); !!}</div>
 			</div>
 			<div class="pdg-bottom-10">
@@ -96,16 +96,16 @@
 			</div>
 			</div>
 			</div>
-			<div class="mrg-top-10 mrg-bottom-20 pw100">
+			<div class="mrg-top-10 mrg-bottom-20 pw100 mb-center">
 			<a  class="btn btn-white open-enquiry request">request information</a>
 			</div>
 			<div class="cf-group mrg-bottom-20 brd-top">
 			<header>
 			<h2 class="f16 lh24 white uppercase pdg-left-20 pdg-ignore-tablet">location</h2>
 			</header>
-			<table class="property-details-table silver pw100">
+			<table class="property-details-table silver pw100" style="table-layout: fixed;">
 			<tbody><tr>
-			<td width="120">City</td>
+			<td>City</td>
 			<td class="light-silver">
 			<span>{!! $userProducts->city !!} </span>
 			</td>
@@ -136,7 +136,7 @@
 
 
 
-			<div class="cf-group mrg-bottom-20 brd-top mrg-top-10 mb-center">
+			<div class="cf-group mrg-bottom-20 brd-top mrg-top-10">
 			<header>
 			<h2 class="f16 lh24 white uppercase pdg-left-20 pdg-ignore-tablet">Essentials</h2>
 			</header>
@@ -176,10 +176,10 @@
 			<div id="description-and-features" class="column-66 left">
 			<div class="pw100 cf-group pdg-20 mobile brd-top">
 			<div class="pw50 pdg-right-10 left">
-			<a class="btn btn-white pw100" href="tel:+97144550888">Call</a>
+			<a class="btn btn-white pw100" href="tel:+9745896777">Call</a>
 			</div>
 			<div class="pw50 left">
-			<a class="btn btn-white pw100 open-enquiry">E-mail</a>
+			<a class="btn btn-white pw100 open-enquiry" href="mailto:info@foxhills.ae">E-mail</a>
 			</div>
 			</div>
 
