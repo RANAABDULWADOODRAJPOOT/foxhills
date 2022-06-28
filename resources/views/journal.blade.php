@@ -12,6 +12,7 @@
 	<div class="justify-content-center">
 		@else
 		<div class="row justify-content-center p-5">
+			
 			@endif
 		<div class="col-md-12 col-12">
 			{{-- <p class="text-grey text-center my-3 ">Home > The Journal</p> --}}
@@ -19,18 +20,25 @@
 			<p class="mb-md-0 text-muted text-center">The online journal of luxury homes, design, interiors, art and style</p>
 			<hr class="text-light">
 			@if(Agent::isMobile())
-			<div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll">
+			<div style="overflow-x: hidden;overflow:visible;" class="row flex-row d-flex flex-nowrap horizontal-scroll sticky-hoz-list">
 				@else
 					<div class="col-12 p-0">
 				@endif
 				
 			<ul style=" list-style-type: none;padding-left: 10px; display: flex; justify-content: center;m-auto">
-			  <li class="text-muted-filter my-2 mr-5"><a href="{!! url('Journal/cat/0') !!}">All categories</a></li>
+			  <li class="text-muted-filter my-2 mr-3"  style="font-size:16px;"><a href="{!! url('Journal/cat/0') !!}">All categories</a></li>
             @foreach($category as $head)
-				<li class="text-muted-filter my-2 mr-5"><a href="{!! url('Journal/cat/'.$head->id ) !!}">{!! $head->name !!}</a></li>
+				<li class="text-muted-filter my-2 mr-3"  style="font-size:16px;"><a href="{!! url('Journal/cat/'.$head->id ) !!}">{!! $head->name !!}</a></li>
 			@endforeach
 				
 			</ul>
+
+
+
+
+
+
+	
 		</div>
 
 			<div style="border-bottom: 1px solid #222;" class="row pb-5 py-3 container justify-content-center m-auto">
