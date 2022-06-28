@@ -37,6 +37,25 @@ label.required::before {
 }
 
 
+@media only screen and (max-width: 450px) {
+  .mb-slider{
+   width:100% !important;
+   height:auto !important;
+   min-width:300px !important;
+   min-height:300px !important;
+   max-width:405px !important;
+   max-height:304px !important;
+  }
+}
+
+@media only screen and (min-width: 455px) {
+  .md-slider{
+   min-width:786px !important;
+   min-height:591px !important;
+  }
+}
+  
+
 
 
 

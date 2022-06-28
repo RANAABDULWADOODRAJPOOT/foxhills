@@ -26,9 +26,9 @@
 			<header class="brd-bottom">
 			<h1 id="property-title" class="tw mrg-bottom-20">{!! $userProducts->productname !!}</h1>
 			</header>
-			<div id="property-media" class="column-66 left relative mrg-bottom-20 multiple js-more-images">
+			<div id="property-media" class="column-66 left relative mrg-bottom-20 multiple js-more-images mb-slider">
              @if(!$images->isEmpty())
-				<div id="demo" class="carousel slide" data-ride="carousel">
+				<div id="demo" class="carousel slide mb-slider" data-ride="carousel">
 					  <!-- Indicators -->
 				<ul class="carousel-indicators">
 					@foreach($images as $imageindex)
@@ -40,11 +40,11 @@
 						@foreach($images as $imageindex)
 						@if($loop->index == 0 )
 						<div class="carousel-item active">
-							<img src="<?php echo asset("assets/allimages/$imageindex->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive" width="786" height="591" style="min-width:786px;min-height:591px;max-width:786px;max-height:591px">
+							<img src="<?php echo asset("assets/allimages/$imageindex->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive mb-slider md-slider" width="786" height="591" style="max-width:786px;max-height:591px">
 						</div>
 						@else
 						<div class="carousel-item">
-							<img src="<?php echo asset("assets/allimages/$imageindex->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive" width="786" height="591" style="min-width:786px;min-height:591px;max-width:786px;max-height:591px">
+							<img src="<?php echo asset("assets/allimages/$imageindex->picture")?>" alt="Brand New Designer Villa on Palm Jumeirah image 1" class="full-width-responsive mb-slider md-slider" width="786" height="591" style="max-width:786px;max-height:591px">
 						</div>
 						@endif
 						@endforeach

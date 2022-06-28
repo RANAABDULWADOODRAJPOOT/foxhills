@@ -72,7 +72,7 @@
     <input type="text" class="form-control" name="city" placeholder="e.g Dubai" required>
   </div>
 
-  <div  class="form-group col-6">
+  <div  class="form-group col-12">
     <label for="exampleInputPassword1">Description</label>
     <textarea type="text" class="form-control" name="Description"></textarea>
   </div>

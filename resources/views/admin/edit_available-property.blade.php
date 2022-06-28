@@ -36,9 +36,9 @@
     <input type="text" class="form-control" name="city" placeholder="Enter city" value="{!! $AvailableProperty->city !!}">
   </div>
 
-  <div class="form-group col-6">
+  <div class="form-group col-12">
     <label for="exampleInputPassword1">Description</label>
-    <input type="text" class="form-control" name="Description" placeholder="Enter Description"  value="{!! $AvailableProperty->Description !!}">
+    <textarea type="text" class="form-control" name="Description" >{!! $AvailableProperty->Description !!}</textarea>
   </div>
 
     <div class="form-group col-6">
@@ -74,7 +74,7 @@
   <div class="form-group col-6">
     <label for="exampleInputEmail1">Category</label>
     <select class="selectCategory form-control" style="height:34px;"  name="selectCategory" id="selectCategoryById">
-      <option  style="display: none" value="{!! $AvailableProperty->Category !!}">{!! App\Models\AvailableProperty::getPropertyType($AvailableProperty->Category) !!}</option>
+      <option  style="display: none" value="{!! $AvailableProperty->Category !!}" >{!! App\Models\AvailableProperty::getPropertyType($AvailableProperty->Category) !!}</option>
       <option value="1">Sale Product</option>
       <option value="2">Rental Product</option>
     </select>
@@ -82,9 +82,9 @@
 
   <div class="form-group col-6">
     <label for="exampleInputPassword1">Property Type</label>
-     <select style="height:34px;" class="form-control" name="property_type_id" id="selectCategoryById">
+     <select style="height:34px;" class="form-control" name="property_type_id" id="selectCategoryById" >
         @foreach($showProperty as $showPropertyIndex)
-        <option value="{!!  $showPropertyIndex->id !!}">{!!  $showPropertyIndex->title !!}</option>
+        <option value="{!!  $showPropertyIndex->id !!}" {{ $showPropertyIndex->id == $AvailableProperty->property_type_id ? 'selected="selected"' : '' }}>{!!  $showPropertyIndex->title !!}</option>
         @endforeach
     </select>
   </div>

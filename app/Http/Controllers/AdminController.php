@@ -224,6 +224,8 @@ class AdminController  extends Controller
              $GeneralContent->Speciality = $request->Speciality ? $request->Speciality  : 0;
              $GeneralContent->status = $request->status ? $request->status : 0;
              $GeneralContent->Completion = $request->Completion ? $request->Completion : 0;
+             $GeneralContent->lat = $request->lat;
+             $GeneralContent->lon = $request->lon;
              
             $GeneralContent->save();
              }
