@@ -18,6 +18,24 @@
 			{{-- <p class="text-grey text-center my-3 ">Home > The Journal</p> --}}
 			<h1  class="text-light text-center my-3">The Journal</h1>
 			<p class="mb-md-0 text-muted text-center">The online journal of luxury homes, design, interiors, art and style</p>
+
+			<div class="row">
+				<div class="sticky-hoz-list">
+					<div class="selected">
+					<span>All categories</span>
+					<svg fill="#000000" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+					<path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+					<path d="M0 0h24v24H0z" fill="none"></path>
+					</svg> </div>
+					<ul>
+						<li><a href="{!! url('Journal/cat/0') !!}" class="{{ Request::is('Journal/cat/0') ? 'text-white' : '' }}">All categories</a></li>
+					  @foreach($category as $head)
+						  <li ><a href="{!! url('Journal/cat/'.$head->id ) !!}"  class="{{ Request::is('Journal/cat/'.$head->id) ? 'text-white' : '' }}">{!! $head->name !!}</a></li>
+					  @endforeach
+						  
+					  </ul>
+					</div>
+			</div>
 			<hr class="text-light">
 			@if(Agent::isMobile())
 			<div style="overflow-x: hidden;overflow:visible;" class="row flex-row d-flex flex-nowrap horizontal-scroll sticky-hoz-list">
@@ -25,13 +43,13 @@
 					<div class="col-12 p-0">
 				@endif
 				
-			<ul style=" list-style-type: none;padding-left: 10px; display: flex; justify-content: center;m-auto">
+			{{-- <ul style=" list-style-type: none;padding-left: 10px; display: flex; justify-content: center;m-auto">
 			  <li class="text-muted-filter my-2 mr-3"  style="font-size:16px;"><a href="{!! url('Journal/cat/0') !!}">All categories</a></li>
             @foreach($category as $head)
 				<li class="text-muted-filter my-2 mr-3"  style="font-size:16px;"><a href="{!! url('Journal/cat/'.$head->id ) !!}">{!! $head->name !!}</a></li>
 			@endforeach
 				
-			</ul>
+			</ul> --}}
 
 
 
