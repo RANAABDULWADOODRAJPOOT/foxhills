@@ -11,7 +11,7 @@
 	@if(Agent::isMobile())
 	<div class="justify-content-center">
 		@else
-		<div class="row justify-content-center p-5">
+		<div class="row justify-content-center pt-5 pb-5">
 			
 			@endif
 		<div class="col-md-12 col-12">
@@ -61,9 +61,9 @@
 
 			<div style="border-bottom: 1px solid #222;" class="row pb-5 py-3 container justify-content-center m-auto">
               @foreach($MostviewJournals as $Journal)
-			  <a href="{!! url('Journal/'. $Journal->id ) !!}" class="row">
+			  <a href="{!! url('Journal/'. $Journal->id ) !!}" class="row container">
 				<div class="col-md-6 col-12 p-0">
-					<img class=" img-fluid w-100" style="max-width: 500px !important;max-height:300px !important;min-width: 500px !important;min-height:300px !important;" src="<?php echo asset("assets/allimages/{$Journal->picture}")?>" >
+					<img class=" img-fluid w-100 mb-journal-top" src="<?php echo asset("assets/allimages/{$Journal->picture}")?>" >
 				</div>
 				
 				<div class="col-md-6 col-12 p-md-3 p-0 py-2 float-left {!!  (Agent::isMobile()) ? '' : 'margin-450 ' !!}">
@@ -80,11 +80,11 @@
 			{{-- <div class="col-12 my-4 p-0">
 				<h2 class="text-light">THE JOURNAL</h2>
 			</div> --}}
-			@if(Agent::isMobile())
-			<div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll m-sm-auto container">
-				@else
+			{{-- @if(Agent::isMobile()) --}}
+			{{-- <div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll m-sm-auto container"> --}}
+				{{-- @else --}}
 				<div class="row w-100 my-5 container m-auto">
-					@endif
+					{{-- @endif --}}
                     
                     @foreach( $AllJournals as $jour)
 					<div class="col-md-4  col-12 mb-3">
@@ -112,8 +112,8 @@
 				</div>	
 				
 				
-		 </div>
-		 <div class="row m-auto float-right p-5">
+		 {{-- </div> --}}
+		 <div class="row m-auto float-right pt-5 pb-5">
 			{{ $AllJournals->links(); }}
 		</div>
 		</div>

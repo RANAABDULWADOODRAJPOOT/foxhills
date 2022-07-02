@@ -65,3 +65,13 @@ button {
   .active{
     background:gray !important;
   }
+
+
+  @media only screen and (min-width: 768px) {
+  .mb-journal-top{
+    max-width: 500px !important;
+    max-height:300px !important;
+    min-width: 500px !important;
+    min-height:300px !important;
+  }
+}
