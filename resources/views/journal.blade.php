@@ -66,7 +66,7 @@
 					<img class=" img-fluid w-100 mb-journal-top" src="<?php echo asset("assets/allimages/{$Journal->picture}")?>" >
 				</div>
 				
-				<div class="col-md-6 col-12 p-md-3 p-0 py-2 float-left {!!  (Agent::isMobile()) ? '' : 'margin-450 ' !!}">
+				<div class="col-md-6 col-12 p-md-3 p-0 py-2 float-left">
 					{{-- <p class="text-grey">{!! $Journal->journal_type   !!} </p> --}}
 					<h1 class="text-light text-left ml-0 mr-0 pl-0 pr-0">{!! $Journal->journal_title !!}</h1>
 					<p class="text-grey ">{!! substr($Journal->description,0,100) !!} </p>
