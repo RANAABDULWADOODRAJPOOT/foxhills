@@ -59,9 +59,9 @@
 	
 		</div>
 
-			<div style="border-bottom: 1px solid #222;" class="row pb-5 py-3 container justify-content-center m-auto">
+			<div style="border-bottom: 1px solid #222;" class="row p-0 m-0 pb-5 py-3 container justify-content-center m-auto">
               @foreach($MostviewJournals as $Journal)
-			  <a href="{!! url('Journal/'. $Journal->id ) !!}" class="row container">
+			  <a href="{!! url('Journal/'. $Journal->id ) !!}" class="row container p-0 m-0">
 				<div class="col-md-6 col-12 p-0">
 					<img class=" img-fluid w-100 mb-journal-top" src="<?php echo asset("assets/allimages/{$Journal->picture}")?>" >
 				</div>
@@ -83,21 +83,21 @@
 			{{-- @if(Agent::isMobile()) --}}
 			{{-- <div style=" overflow-x: scroll;" class="row flex-row d-flex flex-nowrap horizontal-scroll m-sm-auto container"> --}}
 				{{-- @else --}}
-				<div class="row w-100 my-5 container m-auto">
+				<div class="row w-100 my-5 m-0 container p-0 m-auto">
 					{{-- @endif --}}
                     
                     @foreach( $AllJournals as $jour)
-					<div class="col-md-4  col-12 mb-3">
+					<div class="col-md-4  col-12 mb-3 {{ Agent::isMobile() ? 'p-0' : '' }}">
 						
 					        <img style="height: 250px;" class=" img-fluid w-100" src="<?php echo asset("assets/allimages/{$jour->picture}")?>" >
-							<div class="px-3">
+							<div class="p-0">
 								<p class="mb-0 text-grey mt-3">{!!  $jour->Publish_date !!}</p>
 								<h3 class="mt-3 mb-2 text-light">{!! $jour->journal_title !!}</h3>
 								<p class="mb-0 text-grey">{!! substr( $jour->description,0,150) !!} </p>
 							</div>
 						
 					
-					<div class="col-md-12  col-12">
+					<div class="col-md-12  col-12 p-0">
 						<a href="{!! url('Journal/'. $jour->id ) !!}" style="border: 1px solid white; border-radius: 10px; color: white  ;" class="btn btn-md my-4">View  Articles</a>
 					</div>
 				</div>
