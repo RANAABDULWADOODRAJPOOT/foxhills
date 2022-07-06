@@ -37,11 +37,11 @@
 					</div>
 			</div>
 			<hr class="text-light">
-			@if(Agent::isMobile())
-			<div style="overflow-x: hidden;overflow:visible;" class="row flex-row d-flex flex-nowrap horizontal-scroll sticky-hoz-list">
+			{{-- @if(Agent::isMobile()) --}}
+			{{-- <div style="overflow-x: hidden;overflow:visible;" class="row flex-row d-flex flex-nowrap horizontal-scroll sticky-hoz-list">
 				@else
 					<div class="col-12 p-0">
-				@endif
+				@endif --}}
 				
 			{{-- <ul style=" list-style-type: none;padding-left: 10px; display: flex; justify-content: center;m-auto">
 			  <li class="text-muted-filter my-2 mr-3"  style="font-size:16px;"><a href="{!! url('Journal/cat/0') !!}">All categories</a></li>
@@ -57,7 +57,7 @@
 
 
 	
-		</div>
+		{{-- </div> --}}
 
 			<div style="border-bottom: 1px solid #222;" class="row p-0 m-0 pb-5 py-3 container justify-content-center m-auto">
               @foreach($MostviewJournals as $Journal)
@@ -116,7 +116,7 @@
 		 <div class="row m-auto float-right pt-5 pb-5">
 			{{ $AllJournals->links(); }}
 		</div>
-		</div>
+		{{-- </div> --}}
 
 
 
